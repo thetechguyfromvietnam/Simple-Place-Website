@@ -1,0 +1,3802 @@
+{
+  "Pizza": [
+    {
+      "name": "V-Nấm Pizzadilla / V-Mushroom Pizzadilla",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "V-Rau Củ Hỗn Hợp Pizzadilla / V-Mix Veggie Pizzadilla",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "3 Phô Mai Pizzadilla / 3 Cheese Pizzadilla",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Xúc Xích Chorizo & Xúc Xích Salami Pizzadilla / Chorizo & Salami Pizzadilla",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Thịt Xông Khói & Xúc Xích Salami Pizzadilla / Bacon & Salami Pizzadilla",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Tôm Pizzadilla / Shrimp Pizzadilla",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Bò Pizzadilla / Beef Pizzadilla",
+      "unit": "Phần",
+      "price": 140000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Gà Pizzadilla / Chicken Pizzadilla",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Tropical Pizzadilla / Tropical Pizzadilla",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Nấm Pizzadilla / Funghi Pizzadilla",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Xúc Xích Salami Pizzadilla / Salami Pizzadilla",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "V-Quattro Formaggi Pizzadilla / V-Quattro Formaggi Pizzadilla",
+      "unit": "Phần",
+      "price": 160000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Thịt Xông Khói Supreme Pizzadilla / Bacon Supreme Pizzadilla",
+      "unit": "Phần",
+      "price": 160000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Smoke Salmon Pizzadilla / Smoke Salmon Pizzadilla",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Frutti Dimare Pizzadilla / Frutti Dimare Pizzadilla",
+      "unit": "Phần",
+      "price": 160000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Thịt Lovers Pizzadilla / Meat Lovers Pizzadilla",
+      "unit": "Phần",
+      "price": 160000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "V-Rau Bó Xôi Formaggi Pizzadilla / V-Spinach Formaggi Pizzadilla",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Giăm Bông and Nấm Pizzadilla / Ham and Mushroom Pizzadilla",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pepperoni Pizzadilla / Pepperoni Pizzadilla",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Parmaham Pizzadilla / Parmaham Pizzadilla",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Margherita Pizzadilla / Margherita Pizzadilla",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Giăm Bông Pizza Extra / Ham Pizza Extra",
+      "unit": "Phần",
+      "price": 50000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pepperoni M",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Pepperoni L",
+      "unit": "Phần",
+      "price": 240000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Margherita Pizza Kid ",
+      "unit": "Phần",
+      "price": 95000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Ham Pizza Kid ",
+      "unit": "Phần",
+      "price": 110000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pepperoni Pizza Kid ",
+      "unit": "Phần",
+      "price": 110000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Seafood Pizza Kid ",
+      "unit": "Phần",
+      "price": 120000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Italian Sausage Pizza Kid ",
+      "unit": "Phần",
+      "price": 120000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Meatlovers Pizza Kid ",
+      "unit": "Phần",
+      "price": 120000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Garlic Pizza Bread",
+      "unit": "Phần",
+      "price": 75000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Bánh Mì Tỏi Kiểu Pizza / Garlic Pizza Bread",
+      "unit": "Phần",
+      "price": 75000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Thập Cẩm Thịt Cỡ Nhỏ / Meatlovers Pizza Kid",
+      "unit": "Phần",
+      "price": 120000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Xúc Xích Ý Cỡ Nhỏ / Italian Sausage Pizza Kid",
+      "unit": "Phần",
+      "price": 120000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Hải Sản Cỡ Nhỏ / Seafood Pizza Kid",
+      "unit": "Phần",
+      "price": 120000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Pepperoni Cỡ Nhỏ / Pepperoni Pizza Kid",
+      "unit": "Phần",
+      "price": 110000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Giăm Bông Cỡ Nhỏ / Ham Pizza Kid",
+      "unit": "Phần",
+      "price": 110000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Margherita Cỡ Nhỏ / Margherita Pizza Kid",
+      "unit": "Phần",
+      "price": 95000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Tôm Bơ Cay Cỡ Lớn / Shrimp Avocado L (Spicy)",
+      "unit": "Phần",
+      "price": 280000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Tôm Bơ Cay Cỡ Vừa / Shrimp Avocado M (Spicy)",
+      "unit": "Phần",
+      "price": 215000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Cá Hồi Xông Khói Cỡ Lớn / Smoked Salmon L",
+      "unit": "Phần",
+      "price": 290000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Cá Hồi Xông Khói Cỡ Vừa / Smoked Salmon M",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Capricciosa Cỡ Lớn / Capricciosa L",
+      "unit": "Phần",
+      "price": 260000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Capricciosa Cỡ Vừa / Capricciosa M",
+      "unit": "Phần",
+      "price": 195000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Phô Mai Burrata Cỡ Lớn / Burrata L",
+      "unit": "Phần",
+      "price": 370000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Phô Mai Burrata Cỡ Vừa / Burrata M",
+      "unit": "Phần",
+      "price": 300000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Hải Sản Cay Frutti Dimare Cỡ Lớn / Frutti Dimare L (Spicy)",
+      "unit": "Phần",
+      "price": 270000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Hải Sản Cay Frutti Dimare Cỡ Vừa / Frutti Dimare M (Spicy)",
+      "unit": "Phần",
+      "price": 210000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Cá Ngừ Cỡ Lớn / Tonno L",
+      "unit": "Phần",
+      "price": 235000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Cá Ngừ Cỡ Vừa / Tonno M",
+      "unit": "Phần",
+      "price": 175000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Hải Sản Cỡ Lớn / Seafood L",
+      "unit": "Phần",
+      "price": 280000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Hải Sản Cỡ Vừa / Seafood M",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Calzone Cỡ Lớn / Calzone L",
+      "unit": "Phần",
+      "price": 275000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Calzone Cỡ Vừa / Calzone M",
+      "unit": "Phần",
+      "price": 215000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Xúc Xích Ý Cỡ Lớn / Italian Sausage L",
+      "unit": "Phần",
+      "price": 245000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Xúc Xích Ý Cỡ Vừa / Italian Sausage M",
+      "unit": "Phần",
+      "price": 185000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Sốt Kem Trứng Thịt Xông Khói Cỡ Lớn / Carbonara L",
+      "unit": "Phần",
+      "price": 255000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Sốt Kem Trứng Thịt Xông Khói Cỡ Vừa / Carbonara M",
+      "unit": "Phần",
+      "price": 195000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Thịt Sống Parmaham Cỡ Lớn / Parmaham L",
+      "unit": "Phần",
+      "price": 320000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Thịt Sống Parmaham Cỡ Vừa / Parmaham M",
+      "unit": "Phần",
+      "price": 260000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Gà Nấm Cỡ Lớn / Pollo E Funghi L",
+      "unit": "Phần",
+      "price": 255000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Gà Nấm Cỡ Vừa / Pollo E Funghi M",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Bít Tết Phô Mai Philly Cỡ Lớn / Philly Cheese Steak L",
+      "unit": "Phần",
+      "price": 285000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Bít Tết Phô Mai Philly Cỡ Vừa / Philly Cheese Steak M",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Thập Cẩm Thịt Cỡ Lớn / Meat Lovers L",
+      "unit": "Phần",
+      "price": 290000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Thập Cẩm Thịt Cỡ Vừa / Meat Lovers M",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Sốt Bò Bằm Cỡ Lớn / Bolognese L",
+      "unit": "Phần",
+      "price": 270000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Sốt Bò Bằm Cỡ Vừa / Bolognese M",
+      "unit": "Phần",
+      "price": 210000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Xúc Xích Pesto Cỡ Lớn / Pesto Sausage L",
+      "unit": "Phần",
+      "price": 280000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Xúc Xích Pesto Cỡ Vừa / Pesto Sausage M",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Thịt Xông Khói Đặc Biệt Cỡ Lớn / Bacon Supreme L",
+      "unit": "Phần",
+      "price": 280000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Thịt Xông Khói Đặc Biệt Cỡ Vừa / Bacon Supreme M",
+      "unit": "Phần",
+      "price": 210000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Giăm Bông Nấm Cỡ Lớn / Prosciutto E Funghi L",
+      "unit": "Phần",
+      "price": 245000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Giăm Bông Nấm Cỡ Vừa / Prosciutto E Funghi M",
+      "unit": "Phần",
+      "price": 195000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Salami Milano Cỡ Lớn / Salami Milano L",
+      "unit": "Phần",
+      "price": 240000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Salami Milano Cỡ Vừa / Salami Milano M",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Hawaii Cỡ Lớn / Hawaii L",
+      "unit": "Phần",
+      "price": 240000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Hawaii Cỡ Vừa / Hawaii M",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Xúc Xích Pepperoni Cỡ Lớn / Pepperoni L",
+      "unit": "Phần",
+      "price": 240000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Xúc Xích Pepperoni Cỡ Vừa / Pepperoni M",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Parmigiana Chay Cỡ Lớn / V - Parmigiana L",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Parmigiana Chay Cỡ Vừa / V - Parmigiana M",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Bốn Loại Phô Mai Chay Cỡ Lớn / V - Quattro Formaggi L",
+      "unit": "Phần",
+      "price": 265000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Bốn Loại Phô Mai Chay Cỡ Vừa / V - Quattro Formaggi M",
+      "unit": "Phần",
+      "price": 200000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Rau Bina Nấm Chay Cỡ Lớn / V - Spinaci E Funghi L",
+      "unit": "Phần",
+      "price": 235000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Rau Bina Nấm Chay Cỡ Vừa / V - Spinaci E Funghi M",
+      "unit": "Phần",
+      "price": 185000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Rau Củ Chay Cỡ Lớn / V - Veggie L",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Rau Củ Chay Cỡ Vừa / V - Veggie M",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Rau Bina Phô Mai Chay Cỡ Lớn / V - Spinach Formaggi L",
+      "unit": "Phần",
+      "price": 285000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Rau Bina Phô Mai Chay Cỡ Vừa / V - Spinach Formaggi M",
+      "unit": "Phần",
+      "price": 230000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Địa Trung Hải Chay Cỡ Lớn / V - Mediterranean L",
+      "unit": "Phần",
+      "price": 255000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Địa Trung Hải Chay Cỡ Vừa / V - Mediterranean M",
+      "unit": "Phần",
+      "price": 195000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Margherita Chay Cỡ Lớn / V - Margerita L",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "name": "Pizza Margherita Chay Cỡ Vừa / V - Margerita M",
+      "unit": "Phần",
+      "price": 160000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": true,
+      "sizes": [
+        "Medium",
+        "Large"
+      ]
+    }
+  ],
+  "Tacos": [
+    {
+      "name": "Gà Nướng Tacos / Grilled Chicken Tacos",
+      "unit": "Phần",
+      "price": 55000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bò Bằm Tacos / Ground Beef Tacos",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Thịt Heo Hầm Tacos / Pork Carnitas Tacos",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Cá Nướng Tacos / Grilled Fish Tacos",
+      "unit": "Phần",
+      "price": 55000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Tôm Tacos / Shrimp Tacos",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Vịt Tacos / Duck Tacos",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Xúc Xích Chorizo Tacos / Chorizo Tacos",
+      "unit": "Phần",
+      "price": 75000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Thịt Xông Khói Tacos / Bacon Tacos",
+      "unit": "Phần",
+      "price": 75000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Đậu Tacos / Bean Tacos",
+      "unit": "Phần",
+      "price": 50000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bơ Tacos / Avocado Tacos",
+      "unit": "Phần",
+      "price": 65000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nấm Tacos / Mushroom Tacos",
+      "unit": "Phần",
+      "price": 65000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Rau Củ Hỗn Hợp Tacos / Mix Veggie Tacos",
+      "unit": "Phần",
+      "price": 50000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Khoai Tây Tacos / Potato Tacos",
+      "unit": "Phần",
+      "price": 65000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Cá Chiên Giòn Tacos / Deep-Fried Fish Tacos",
+      "unit": "Phần",
+      "price": 75000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Tôm Xoài Tacos / Shrimp Mango Salsa Tacos",
+      "unit": "Phần",
+      "price": 75000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Đậu Hũ Tacos / Tofu Tacos",
+      "unit": "Phần",
+      "price": 50000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Gà Cà Ri Burrito / Chicken Curry Burrito",
+      "unit": "Phần",
+      "price": 95000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bò Bằm Burrito / Ground Beef Burrito",
+      "unit": "Phần",
+      "price": 105000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Thịt Heo Hầm Burrito / Pork Carnitas Burrito",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Cá Nướng Burrito / Grilled Fish Burrito",
+      "unit": "Phần",
+      "price": 95000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Tôm Burrito / Shrimp Burrito",
+      "unit": "Phần",
+      "price": 105000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Vịt Burrito / Duck Burrito",
+      "unit": "Phần",
+      "price": 105000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Thịt Xông Khói Burrito / Bacon Burrito",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bơ Khoai Tây Burrito / Avocado Sweet Potato Burrito",
+      "unit": "Phần",
+      "price": 95000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Rau Bó Xôi Burrito / Spinach Burrito",
+      "unit": "Phần",
+      "price": 95000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Đậu và Bắp Burrito / Bean and Corn Burrito",
+      "unit": "Phần",
+      "price": 90000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Rau Củ Hỗn Hợp Burrito / Mix Veggie Burrito",
+      "unit": "Phần",
+      "price": 90000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Cá Chiên Giòn Burrito / Deep-Fried Fish Burrito",
+      "unit": "Phần",
+      "price": 140000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Gà Nướng Quesadilla / Grilled Chicken Quesadilla",
+      "unit": "Phần",
+      "price": 165000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bò Bằm Quesadilla / Ground Beef Quesadilla",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Thịt Heo Hầm Quesadilla / Pork Carnitas Quesadilla",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Vịt Quesadilla / Duck Quesadilla",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Tôm Quesadilla / Shrimp Quesadilla",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Đậu Pumpkin Quesadilla / Bean Pumpkin Quesadilla",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bơ Quesadilla / Avocado Quesadilla",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Phô Mai Quesadilla / Plain Cheese Quesadilla",
+      "unit": "Phần",
+      "price": 120000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Giăm Bông Tacos Extra / Ham Tacos Extra",
+      "unit": "Phần",
+      "price": 25000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Plain Cheese Quesadilla",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Avocado Quesadilla",
+      "unit": "Phần",
+      "price": 140000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bean Pumpkin Quesadilla",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Shrimp Quesadilla",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Duck Quesadilla",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Pork Carnitas Quesadilla",
+      "unit": "Phần",
+      "price": 175000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Ground Beef Quesadilla",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Grilled Chicken Quesadilla",
+      "unit": "Phần",
+      "price": 165000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Mix Veggie Burrito",
+      "unit": "Phần",
+      "price": 95000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bean and Corn Burrito",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Spinach Burrito",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Avocado Sweet Potato Burrito",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Deep-Fried Fish Burrito",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bacon Burrito",
+      "unit": "Phần",
+      "price": 125000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Duck Burrito",
+      "unit": "Phần",
+      "price": 115000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Shrimp Burrito",
+      "unit": "Phần",
+      "price": 115000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Grilled Fish Burrito",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Pork Carnitas Burrito",
+      "unit": "Phần",
+      "price": 110000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Ground Beef Burrito",
+      "unit": "Phần",
+      "price": 115000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Chicken Curry Burrito",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Shrimp Mango Salsa Tacos",
+      "unit": "Phần",
+      "price": 80000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Deep-Fried Fish Tacos",
+      "unit": "Phần",
+      "price": 80000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Potato Tacos",
+      "unit": "Phần",
+      "price": 55000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Mix Veggie Tacos",
+      "unit": "Phần",
+      "price": 50000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Mushroom Tacos",
+      "unit": "Phần",
+      "price": 60000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Avocado Tacos",
+      "unit": "Phần",
+      "price": 60000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bean Tacos",
+      "unit": "Phần",
+      "price": 55000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Birria Beef Tacos",
+      "unit": "Phần",
+      "price": 85000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bacon Tacos",
+      "unit": "Phần",
+      "price": 75000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Chorizo Tacos",
+      "unit": "Phần",
+      "price": 75000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Duck Tacos",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Shrimp Tacos",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Grilled Fish Tacos",
+      "unit": "Phần",
+      "price": 55000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Pork Carnitas Tacos",
+      "unit": "Phần",
+      "price": 65000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Ground Beef Tacos",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Grilled Chicken Tacos",
+      "unit": "Phần",
+      "price": 55000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Gà Nướng / Grilled Chicken Tacos",
+      "unit": "Phần",
+      "price": 55000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Bò Bằm / Ground Beef Tacos",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Heo Carnitas / Pork Carnitas Tacos",
+      "unit": "Phần",
+      "price": 65000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Cá Nướng / Grilled Fish Tacos",
+      "unit": "Phần",
+      "price": 55000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Tôm / Shrimp Tacos",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Vịt / Duck Tacos",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Xúc Xích Chorizo / Chorizo Tacos",
+      "unit": "Phần",
+      "price": 75000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Thịt Xông Khói / Bacon Tacos",
+      "unit": "Phần",
+      "price": 75000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Bò Hầm Birria / Birria Beef Tacos",
+      "unit": "Phần",
+      "price": 85000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Đậu / Bean Tacos",
+      "unit": "Phần",
+      "price": 55000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Bơ / Avocado Tacos",
+      "unit": "Phần",
+      "price": 60000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Nấm / Mushroom Tacos",
+      "unit": "Phần",
+      "price": 60000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Rau Củ Trộn / Mix Veggie Tacos",
+      "unit": "Phần",
+      "price": 50000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Khoai Tây / Potato Tacos",
+      "unit": "Phần",
+      "price": 55000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Cá Chiên Giòn / Deep-Fried Fish Tacos",
+      "unit": "Phần",
+      "price": 80000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Taco Tôm Sốt Xoài / Shrimp Mango Salsa Tacos",
+      "unit": "Phần",
+      "price": 80000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrito Gà Cà Ri / Chicken Curry Burrito",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrito Bò Bằm / Ground Beef Burrito",
+      "unit": "Phần",
+      "price": 115000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrito Heo Carnitas / Pork Carnitas Burrito",
+      "unit": "Phần",
+      "price": 110000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrito Cá Nướng / Grilled Fish Burrito",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrito Tôm / Shrimp Burrito",
+      "unit": "Phần",
+      "price": 115000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrito Vịt / Duck Burrito",
+      "unit": "Phần",
+      "price": 115000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrito Thịt Xông Khói / Bacon Burrito",
+      "unit": "Phần",
+      "price": 125000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrito Cá Chiên Giòn / Deep-Fried Fish Burrito",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrito Bơ Khoai Lang / Avocado Sweet Potato Burrito",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrito Rau Bina / Spinach Burrito",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrito Đậu Và Bắp / Bean And Corn Burrito",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrito Rau Củ Trộn / Mix Veggie Burrito",
+      "unit": "Phần",
+      "price": 95000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Quesadilla Gà Nướng / Grilled Chicken Quesadilla",
+      "unit": "Phần",
+      "price": 165000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Quesadilla Bò Bằm / Ground Beef Quesadilla",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Quesadilla Thịt Heo Carnitas / Pork Carnitas Quesadilla",
+      "unit": "Phần",
+      "price": 175000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Quesadilla Vịt / Duck Quesadilla",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Quesadilla Tôm / Shrimp Quesadilla",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Quesadilla Đậu Bí Đỏ / Bean Pumpkin Quesadilla",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Quesadilla Bơ / Avocado Quesadilla",
+      "unit": "Phần",
+      "price": 140000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Quesadilla Phô Mai / Plain Cheese Quesadilla",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    }
+  ],
+  "Appetizers": [
+    {
+      "name": "Khoai Tây Chiên / French Fries",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Bột với Salsa và Guacamole / Flour chips with salsa and guacamole",
+      "unit": "Phần",
+      "price": 75000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Ngô với Salsa và Guacamole / Corn chips with salsa and guacamole",
+      "unit": "Phần",
+      "price": 90000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Cá Tẩm Bột Chiên / Fish Fingers",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Gà Viên Chiên / Chicken Nugget",
+      "unit": "Phần",
+      "price": 130000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Gà / Chicken Salad",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Chay / V-Vegan Salad",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Tôm Cay / Spicy Shrimp Salad",
+      "unit": "Phần",
+      "price": 195000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Caesar / Caesar Salad",
+      "unit": "Phần",
+      "price": 185000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Cá Hồi Xông Khói & Bơ / Smoked Salmon & Avocado Salad",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Khoai Tây Lát Extra / Chips Extra",
+      "unit": "Phần",
+      "price": 40000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Smoked Salmon & Avocado Salad",
+      "unit": "Phần",
+      "price": 215000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Caesar Salad",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V-Summer Salad",
+      "unit": "Phần",
+      "price": 185000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V-Green Salad",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V-Arugula Salad",
+      "unit": "Phần",
+      "price": 185000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V-Carprese Salad",
+      "unit": "Phần",
+      "price": 215000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V-Greek Salad",
+      "unit": "Phần",
+      "price": 185000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Spicy Shrimp Salad",
+      "unit": "Phần",
+      "price": 200000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Pumpkin and Sweet Potato Soup",
+      "unit": "Phần",
+      "price": 95000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V-Bruschetta",
+      "unit": "Phần",
+      "price": 95000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Fish Fingers",
+      "unit": "Phần",
+      "price": 140000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Corn chips with salsa and guacamole",
+      "unit": "Phần",
+      "price": 90000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "French Fries",
+      "unit": "Phần",
+      "price": 65000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Khoai Tây Chiên / French Fries",
+      "unit": "Phần",
+      "price": 65000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Ngô Tortilla Kèm Salsa Và Guacamole / Corn Chips With Salsa And Guacamole",
+      "unit": "Phần",
+      "price": 90000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Cá Tẩm Bột Chiên Giòn (Fish Fingers) / Fish Fingers",
+      "unit": "Phần",
+      "price": 140000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bruschetta Ý Chay (Bánh Mì Nướng Phủ Cà Chua Tươi, Dầu Ôliu) / V-Bruschetta",
+      "unit": "Phần",
+      "price": 95000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Súp Bí Đỏ Khoai Lang / Pumpkin And Sweet Potato Soup",
+      "unit": "Phần",
+      "price": 95000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Tôm Cay / Spicy Shrimp Salad",
+      "unit": "Phần",
+      "price": 200000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Hy Lạp Chay (Dưa Leo, Cà Chua, Ôliu, Phô Mai Feta) / V-Greek Salad",
+      "unit": "Phần",
+      "price": 185000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Caprese (Cà Chua, Phô Mai Mozzarella, Húng Quế) / V-Carprese Salad",
+      "unit": "Phần",
+      "price": 215000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Rau Rocket (Arugula) Chay / V-Arugula Salad",
+      "unit": "Phần",
+      "price": 185000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Rau Xanh Chay / V-Green Salad",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Mùa Hè Chay / V-Summer Salad",
+      "unit": "Phần",
+      "price": 185000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Caesar (Xà Lách Romaine, Sốt Caesar, Phô Mai Parmesan) / Caesar Salad",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salad Cá Hồi Xông Khói Và Bơ / Smoked Salmon & Avocado Salad",
+      "unit": "Phần",
+      "price": 215000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    }
+  ],
+  "Drinks": [
+    {
+      "name": "Nước Đóng Chai / Bottled Water",
+      "unit": "Lon",
+      "price": 20000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Soda / Soda Water",
+      "unit": "Lon",
+      "price": 30000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Tonic / Soda Tonic",
+      "unit": "Lon",
+      "price": 35000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Soda Việt Quất / Blueberry Soda",
+      "unit": "Ly",
+      "price": 60000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Soda Chanh Dây / Passion Fruit Soda",
+      "unit": "Ly",
+      "price": 60000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bia 333 / 333",
+      "unit": "Lon",
+      "price": 35000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bia Saigon Special / Saigon Special",
+      "unit": "Lon",
+      "price": 40000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Watermelon",
+      "unit": "Ly",
+      "price": 55000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Passion Fruit Soda",
+      "unit": "Ly",
+      "price": 65000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Blueberry Soda",
+      "unit": "Ly",
+      "price": 65000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Soda Tonic",
+      "unit": "Lon",
+      "price": 37000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Soda Water",
+      "unit": "Lon",
+      "price": 32000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bottled Water",
+      "unit": "Lon",
+      "price": 22000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Grilled Steak",
+      "unit": "Phần",
+      "price": 395000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Grilled Salmon Steak",
+      "unit": "Phần",
+      "price": 340000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Philly Cheese Steak M",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Philly Cheese Steak L",
+      "unit": "Phần",
+      "price": 285000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Cá Hồi Nướng / Grilled Salmon Steak",
+      "unit": "Phần",
+      "price": 340000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bít Tết Bò Nướng / Grilled Steak",
+      "unit": "Phần",
+      "price": 395000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Đóng Chai / Bottled Water",
+      "unit": "Lon",
+      "price": 22000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Soda / Soda Water",
+      "unit": "Lon",
+      "price": 32000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Soda Tonic / Soda Tonic",
+      "unit": "Lon",
+      "price": 37000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Soda Việt Quất / Blueberry Soda",
+      "unit": "Ly",
+      "price": 65000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Soda Chanh Dây / Passion Fruit Soda",
+      "unit": "Ly",
+      "price": 65000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Dưa Hấu / Watermelon",
+      "unit": "Ly",
+      "price": 55000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bia Tiger / Tiger",
+      "unit": "Lon",
+      "price": 45000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bia Heineken / Heineken",
+      "unit": "Lon",
+      "price": 50000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    }
+  ],
+  "Desserts": [
+    {
+      "name": "Passion Fruit Panna Cotta ",
+      "unit": "Phần",
+      "price": 85000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Panna Cotta Chanh Dây / Passion Fruit Panna Cotta",
+      "unit": "Phần",
+      "price": 85000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    }
+  ],
+  "Other": [
+    {
+      "name": "Bò Bằm Nachos / Ground Beef Nachos",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Chicken Nachos / Chicken Nachos",
+      "unit": "Phần",
+      "price": 160000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V-Đậu & Bơ Nachos / V-Bean & Avocado Nachos",
+      "unit": "Phần",
+      "price": 145000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V-Phô Mai Chimichanga / V-Cheese Chimichanga",
+      "unit": "Phần",
+      "price": 145000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V-Vegetable Chimichanga (bean, pumpkin, avocado) / V-Vegetable Chimichanga (bean, pumpkin, avocado)",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Tôm Chimichanga / Shrimp Chimichanga",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Vịt Chimichanga / Duck Chimichanga",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bò Bằm Chimichanga / Ground Beef Chimichanga",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Thịt Heo Hầm Chimichanga / Pork Carnitas Chimichanga",
+      "unit": "Phần",
+      "price": 160000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Gà Nướng Chimichanga / Grilled Chicken Chimichanga",
+      "unit": "Phần",
+      "price": 155000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V-Vegetable Enchilada / V-Vegetable Enchilada",
+      "unit": "Phần",
+      "price": 85000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Tôm Enchilada / Shrimp Enchilada",
+      "unit": "Phần",
+      "price": 110000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Vịt Enchilada / Duck Enchilada",
+      "unit": "Phần",
+      "price": 110000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bò Bằm Enchilada / Ground Beef Enchilada",
+      "unit": "Phần",
+      "price": 110000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Thịt Heo Hầm Enchilada / Pork Carnitas Enchilada",
+      "unit": "Phần",
+      "price": 105000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Gà Nướng Enchilada / Grilled Chicken Enchilada",
+      "unit": "Phần",
+      "price": 100000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Enchilada Extra / Enchilada Extra",
+      "unit": "Phần",
+      "price": 15000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Trứng Extra / Egg Extra",
+      "unit": "Phần",
+      "price": 10000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Khoai Tây Extra / Potato Extra",
+      "unit": "Phần",
+      "price": 15000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Ớt Chuông Extra / Bell Pepper Extra",
+      "unit": "Phần",
+      "price": 15000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Rau Bó Xôi Extra / Spinach Extra",
+      "unit": "Phần",
+      "price": 15000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Small Corn Bánh Tortilla Extra / Small Corn Tortilla Extra",
+      "unit": "Phần",
+      "price": 10000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Crispy Flour Shell Extra / Crispy Flour Shell Extra",
+      "unit": "Phần",
+      "price": 12000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Big Flour Bánh Tortilla Extra / Big Flour Tortilla Extra",
+      "unit": "Phần",
+      "price": 12000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Small Flour Bánh Tortilla Extra / Small Flour Tortilla Extra",
+      "unit": "Phần",
+      "price": 7000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Ớt Jalapeño Extra / Jalapeos Extra",
+      "unit": "Phần",
+      "price": 25000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Dứa Extra / Pineapple Extra",
+      "unit": "Phần",
+      "price": 15000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nấm Extra / Mushroom Extra",
+      "unit": "Phần",
+      "price": 30000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Ôliu Extra / Olive Extra",
+      "unit": "Phần",
+      "price": 20000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Xúc Xích Salami Extra / Salami Extra",
+      "unit": "Phần",
+      "price": 25000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Thịt Xông Khói Extra / Bacon Extra",
+      "unit": "Phần",
+      "price": 30000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salsa Extra / Salsa Extra",
+      "unit": "Phần",
+      "price": 15000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Guacamole Extra / Guacamole Extra",
+      "unit": "Phần",
+      "price": 25000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Kem Chua Extra / Sour Cream Extra",
+      "unit": "Phần",
+      "price": 30000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Black Đậu Extra / Black Bean Extra",
+      "unit": "Phần",
+      "price": 15000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Gorgonazola Phô Mai Extra / Gorgonazola Cheese Extra",
+      "unit": "Phần",
+      "price": 60000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Parmesan Phô Mai Extra / Parmesan Cheese Extra",
+      "unit": "Phần",
+      "price": 35000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Phô Mai Extra / Cheese Extra",
+      "unit": "Phần",
+      "price": 40000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Thịt Extra / Meat Extra",
+      "unit": "Phần",
+      "price": 40000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Coca-Cola / Coke",
+      "unit": "Lon",
+      "price": 30000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Sprite / Sprite",
+      "unit": "Lon",
+      "price": 30000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Fanta / Fanta",
+      "unit": "Lon",
+      "price": 30000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Coca-Cola Light / Coke Light",
+      "unit": "Lon",
+      "price": 35000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Coca-Cola Zero / Coke Zero",
+      "unit": "Lon",
+      "price": 35000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Ginger Ale / Ginger Ale",
+      "unit": "Lon",
+      "price": 40000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Dừa / Coconut",
+      "unit": "Trái",
+      "price": 40000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Khoáng Lavie / Lavie Natural Mineral",
+      "unit": "Chai",
+      "price": 50000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Khoáng Có Gas Lavie / Lavie Sparkling Mineral",
+      "unit": "Chai",
+      "price": 55000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Tiger",
+      "unit": "Lon",
+      "price": 45000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Heineken",
+      "unit": "Lon",
+      "price": 50000,
+      "source": "Menu-Taco-Place-Translated.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Saigon Special",
+      "unit": "Lon",
+      "price": 40000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "333",
+      "unit": "Lon",
+      "price": 35000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Cream Brulee",
+      "unit": "Phần",
+      "price": 80000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Churros",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Lemonade",
+      "unit": "Ly",
+      "price": 40000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Carrot",
+      "unit": "Ly",
+      "price": 60000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Passion Fruit",
+      "unit": "Ly",
+      "price": 55000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Guava",
+      "unit": "Ly",
+      "price": 55000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Pineapple",
+      "unit": "Ly",
+      "price": 60000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Orange",
+      "unit": "Ly",
+      "price": 60000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Lavie Sparkling Mineral",
+      "unit": "Chai",
+      "price": 60000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Lavie Natural Mineral",
+      "unit": "Chai",
+      "price": 55000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Coconut",
+      "unit": "Trái",
+      "price": 45000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Ginger Ale",
+      "unit": "Lon",
+      "price": 42000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Coke Zero",
+      "unit": "Lon",
+      "price": 37000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Coke Light",
+      "unit": "Lon",
+      "price": 37000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Fanta",
+      "unit": "Lon",
+      "price": 32000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Sprite",
+      "unit": "Lon",
+      "price": 32000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Coke",
+      "unit": "Lon",
+      "price": 32000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Creamy Chicken Breast",
+      "unit": "Phần",
+      "price": 290000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salmon Fettuccine",
+      "unit": "Phần",
+      "price": 255000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Seafood Squid Ink Spaghetti",
+      "unit": "Phần",
+      "price": 255000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Spaghetti Pomodoro",
+      "unit": "Phần",
+      "price": 175000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Sicillian Penne",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Penne Alfedo",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Spaghetti Aglio E Olio",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Spaghetti Bolognese",
+      "unit": "Phần",
+      "price": 215000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Lasagna",
+      "unit": "Phần",
+      "price": 235000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Penne Chicken Pesto",
+      "unit": "Phần",
+      "price": 225000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Italian Sausage Linguine",
+      "unit": "Phần",
+      "price": 215000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Seafood Linguine (Spicy)",
+      "unit": "Phần",
+      "price": 230000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Spaghetti Carbonara",
+      "unit": "Phần",
+      "price": 225000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Margerita M",
+      "unit": "Phần",
+      "price": 160000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Margerita L",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Mediterranean M",
+      "unit": "Phần",
+      "price": 195000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Mediterranean L",
+      "unit": "Phần",
+      "price": 255000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Spinach Formaggi M",
+      "unit": "Phần",
+      "price": 230000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Spinach Formaggi L",
+      "unit": "Phần",
+      "price": 285000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Veggie M",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Veggie L",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Spinaci E Funghi M",
+      "unit": "Phần",
+      "price": 185000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Spinaci E Funghi L",
+      "unit": "Phần",
+      "price": 235000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Quattro Formaggi M",
+      "unit": "Phần",
+      "price": 200000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Quattro Formaggi L",
+      "unit": "Phần",
+      "price": 265000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Parmigiana M",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "V - Parmigiana L",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Hawaii M",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Hawaii L",
+      "unit": "Phần",
+      "price": 240000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salami Milano M",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Salami Milano L",
+      "unit": "Phần",
+      "price": 240000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Prosciutto e Funghi M",
+      "unit": "Phần",
+      "price": 195000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Prosciutto e Funghi L",
+      "unit": "Phần",
+      "price": 245000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bacon Supreme M",
+      "unit": "Phần",
+      "price": 210000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bacon Supreme L",
+      "unit": "Phần",
+      "price": 280000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Pesto Sausage M",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Pesto Sausage L",
+      "unit": "Phần",
+      "price": 280000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bolognese M",
+      "unit": "Phần",
+      "price": 210000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bolognese L",
+      "unit": "Phần",
+      "price": 270000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Meat Lovers M",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Meat Lovers L",
+      "unit": "Phần",
+      "price": 290000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Pollo E Funghi M",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Pollo E Funghi L",
+      "unit": "Phần",
+      "price": 255000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Parmaham M",
+      "unit": "Phần",
+      "price": 260000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Parmaham L",
+      "unit": "Phần",
+      "price": 320000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Carbonara M",
+      "unit": "Phần",
+      "price": 195000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Carbonara L",
+      "unit": "Phần",
+      "price": 255000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Italian Sausage M",
+      "unit": "Phần",
+      "price": 185000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Italian Sausage L",
+      "unit": "Phần",
+      "price": 245000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Calzone M",
+      "unit": "Phần",
+      "price": 215000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Calzone L",
+      "unit": "Phần",
+      "price": 275000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Seafood M",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Seafood L",
+      "unit": "Phần",
+      "price": 280000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Tonno M",
+      "unit": "Phần",
+      "price": 175000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Tonno L",
+      "unit": "Phần",
+      "price": 235000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Frutti Dimare M (Spicy)",
+      "unit": "Phần",
+      "price": 210000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Frutti Dimare L (Spicy)",
+      "unit": "Phần",
+      "price": 270000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrata M",
+      "unit": "Phần",
+      "price": 300000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Burrata L",
+      "unit": "Phần",
+      "price": 370000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Capricciosa M",
+      "unit": "Phần",
+      "price": 195000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Capricciosa L",
+      "unit": "Phần",
+      "price": 260000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Smoked Salmon M",
+      "unit": "Phần",
+      "price": 220000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Smoked Salmon L",
+      "unit": "Phần",
+      "price": 290000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Shrimp Avocado M (Spicy)",
+      "unit": "Phần",
+      "price": 215000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Shrimp Avocado L (Spicy)",
+      "unit": "Phần",
+      "price": 280000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Veggie Nachos (Bean, Corn, Mushroom)",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Chicken Nachos (Chicken and Olive)",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Ground Beef Nachos (Beef and Bean)",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "SimplePlace-dssanpham_hd.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nachos Bò Bằm (Bò Và Đậu) / Ground Beef Nachos (Beef And Bean)",
+      "unit": "Phần",
+      "price": 190000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nachos Gà (Gà Và Ôliu) / Chicken Nachos (Chicken And Olive)",
+      "unit": "Phần",
+      "price": 180000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nachos Rau Củ (Đậu, Bắp, Nấm) / Veggie Nachos (Bean, Corn, Mushroom)",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Mì Ý Sốt Kem Trứng Thịt Xông Khói (Carbonara) / Spaghetti Carbonara",
+      "unit": "Phần",
+      "price": 225000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Mì Ý Hải Sản Cay / Seafood Linguine (Spicy)",
+      "unit": "Phần",
+      "price": 230000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Mì Ý Xúc Xích Ý / Italian Sausage Linguine",
+      "unit": "Phần",
+      "price": 215000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nui Penne Gà Sốt Pesto / Penne Chicken Pesto",
+      "unit": "Phần",
+      "price": 225000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Lasagna Ý Nhiều Lớp Sốt Bò Bằm Phô Mai / Lasagna",
+      "unit": "Phần",
+      "price": 235000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Mì Ý Sốt Bò Bằm Cà Chua (Bolognese) / Spaghetti Bolognese",
+      "unit": "Phần",
+      "price": 215000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Mì Ý Xào Tỏi Dầu Ôliu Chay / V - Spaghetti Aglio E Olio",
+      "unit": "Phần",
+      "price": 150000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nui Penne Sốt Kem Alfredo Chay / V - Penne Alfedo",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nui Penne Kiểu Sicilia Chay / V - Sicillian Penne",
+      "unit": "Phần",
+      "price": 170000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Mì Ý Sốt Cà Chua Chay / V - Spaghetti Pomodoro",
+      "unit": "Phần",
+      "price": 175000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Mì Ý Mực Sốt Mực Đen / Seafood Squid Ink Spaghetti",
+      "unit": "Phần",
+      "price": 255000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Mì Fettuccine Cá Hồi / Salmon Fettuccine",
+      "unit": "Phần",
+      "price": 255000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Ức Gà Sốt Kem / Creamy Chicken Breast",
+      "unit": "Phần",
+      "price": 290000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Ngọt Coca-Cola / Coke",
+      "unit": "Lon",
+      "price": 32000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Ngọt Sprite / Sprite",
+      "unit": "Lon",
+      "price": 32000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Ngọt Fanta / Fanta",
+      "unit": "Lon",
+      "price": 32000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Ngọt Coca-Cola Ít Đường / Coke Light",
+      "unit": "Lon",
+      "price": 37000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Ngọt Coca-Cola Không Đường / Coke Zero",
+      "unit": "Lon",
+      "price": 37000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Gừng Có Gas / Ginger Ale",
+      "unit": "Lon",
+      "price": 42000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Dừa / Coconut",
+      "unit": "Trái",
+      "price": 45000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Khoáng Lavie / Lavie Natural Mineral",
+      "unit": "Chai",
+      "price": 55000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Khoáng Có Gas Lavie / Lavie Sparkling Mineral",
+      "unit": "Chai",
+      "price": 60000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Cam / Orange",
+      "unit": "Ly",
+      "price": 60000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Ép Dứa / Pineapple",
+      "unit": "Ly",
+      "price": 60000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Ép Ổi / Guava",
+      "unit": "Ly",
+      "price": 55000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Ép Chanh Dây / Passion Fruit",
+      "unit": "Ly",
+      "price": 55000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Ép Cà Rốt / Carrot",
+      "unit": "Ly",
+      "price": 60000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Nước Chanh / Lemonade",
+      "unit": "Ly",
+      "price": 40000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Churros / Churros",
+      "unit": "Phần",
+      "price": 70000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    },
+    {
+      "name": "Bánh Kem Caramel (Crème Brûlée) / Cream Brulee",
+      "unit": "Phần",
+      "price": 80000,
+      "source": "simple-place-menu.xlsx",
+      "isPizza": false,
+      "sizes": null
+    }
+  ]
+}
