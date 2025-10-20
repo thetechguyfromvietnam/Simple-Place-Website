@@ -94,7 +94,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 1.0 }}
             className="mt-8 text-sm text-gray-300"
           >
-            Open today: 11:00-22:00
+            Everyday from 10 AM - 10 PM
           </motion.div>
           
           {/* Google Reviews */}
