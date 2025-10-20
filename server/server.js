@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Email configuration
 const createTransporter = () => {
-  return nodemailer.createTransporter({
+  return nodemailer.createTransport({
     service: 'gmail', // You can change this to your email service
     auth: {
       user: process.env.EMAIL_USER || 'your-email@gmail.com',
