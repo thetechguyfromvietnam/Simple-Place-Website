@@ -276,23 +276,9 @@ const Home = () => {
               </div>
               <div className="p-6 text-sm">
                 <p className="text-neutral-600 mb-4">Walk-ins welcome • Reservations recommended on weekends</p>
-                <div className="grid grid-cols-2 gap-y-3">
-                  <div>
-                    <div className="font-medium">Mon–Thu</div>
-                    <div className="text-neutral-700">11:00 – 22:00</div>
-                  </div>
-                  <div>
-                    <div className="font-medium">Fri</div>
-                    <div className="text-neutral-700">11:00 – 23:00</div>
-                  </div>
-                  <div>
-                    <div className="font-medium">Sat</div>
-                    <div className="text-neutral-700">10:00 – 23:00</div>
-                  </div>
-                  <div>
-                    <div className="font-medium">Sun</div>
-                    <div className="text-neutral-700">10:00 – 21:00</div>
-                  </div>
+                <div className="text-center">
+                  <div className="font-medium text-lg mb-2">Everyday</div>
+                  <div className="text-neutral-700 text-lg">10:00 AM – 10:00 PM</div>
                 </div>
               </div>
             </motion.div>
