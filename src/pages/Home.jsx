@@ -268,17 +268,35 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="rounded-2xl border bg-white hover:shadow-xl transition-shadow"
+              className="rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-200 hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
-              <div className="p-6 border-b flex items-center gap-2">
-                <Clock className="text-amber-600" size={20} />
-                <h4 className="font-semibold text-lg">Hours</h4>
+              <div className="bg-gradient-to-r from-amber-500 to-amber-600 p-6 text-white">
+                <div className="flex items-center gap-3">
+                  <div className="bg-white/20 rounded-full p-2">
+                    <Clock className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-xl">Opening Hours</h4>
+                    <p className="text-amber-100 text-sm">We're here for you</p>
+                  </div>
+                </div>
               </div>
-              <div className="p-6 text-sm">
-                <p className="text-neutral-600 mb-4">Walk-ins welcome • Reservations recommended on weekends</p>
-                <div className="text-center">
-                  <div className="font-medium text-lg mb-2">Everyday</div>
-                  <div className="text-neutral-700 text-lg">10:00 AM – 10:00 PM</div>
+              <div className="p-6">
+                <div className="bg-white rounded-xl p-4 shadow-sm border border-amber-100">
+                  <div className="text-center">
+                    <div className="flex items-center justify-center gap-2 mb-3">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="font-semibold text-green-600 text-sm">Open Now</span>
+                    </div>
+                    <div className="font-bold text-2xl text-gray-800 mb-1">Everyday</div>
+                    <div className="text-gray-600 text-lg font-medium">10:00 AM – 10:00 PM</div>
+                  </div>
+                </div>
+                <div className="mt-4 text-center">
+                  <p className="text-sm text-gray-600 mb-2">Walk-ins welcome</p>
+                  <p className="text-xs text-amber-600 bg-amber-100 rounded-full px-3 py-1 inline-block">
+                    Reservations recommended on weekends
+                  </p>
                 </div>
               </div>
             </motion.div>
