@@ -18,27 +18,41 @@ import pandas as pd
 import json
 import os
 
-# Read all Excel files and combine the data
-files = ['Menu-Taco-Place-Translated.xlsx', 'SimplePlace-dssanpham_hd.xlsx', 'simple-place-menu.xlsx', 'taco-place-menu.xlsx']
+# Read only the simple-place-menu.xlsx file
+files = ['simple-place-menu.xlsx']
 all_items = []
 
 for file in files:
     if os.path.exists(file):
         df = pd.read_excel(file)
         for _, row in df.iterrows():
-            # Check if it's a pizza item
-            name_lower = row['Ten_san_pham'].lower()
-            is_pizza = 'pizza' in name_lower or 'pizzadilla' in name_lower
+            name = row['Ten_san_pham'] if 'Ten_san_pham' in row else row.get('Ten_san_pham_EN', '')
+            unit = row['Don_vi_tinh'] if 'Don_vi_tinh' in row else 'Phần'
+            price = row['Don_gia'] if 'Don_gia' in row else 0
             
-            item = {
-                'name': row['Ten_san_pham'],
-                'unit': row['Don_vi_tinh'],
-                'price': int(row['Don_gia']),
-                'source': file,
-                'isPizza': is_pizza,
-                'sizes': ['Medium', 'Large'] if is_pizza else None
-            }
-            all_items.append(item)
+            if name and price > 0:
+                # Check item type for special handling
+                name_lower = name.lower()
+                is_pizza = 'pizza' in name_lower or 'pizzadilla' in name_lower
+                is_taco = 'taco' in name_lower
+                is_burrito = 'burrito' in name_lower
+                is_quesadilla = 'quesadilla' in name_lower
+                is_spaghetti = 'spaghetti' in name_lower or 'pasta' in name_lower
+                
+                item = {
+                    'name': name,
+                    'unit': unit,
+                    'price': int(price),
+                    'source': file,
+                    'isPizza': is_pizza,
+                    'isTaco': is_taco,
+                    'isBurrito': is_burrito,
+                    'isQuesadilla': is_quesadilla,
+                    'isSpaghetti': is_spaghetti,
+                    'sizes': ['Medium', 'Large'] if is_pizza else None,
+                    'tacoOptions': ['Crispy', 'Soft'] if is_taco else None
+                }
+                all_items.append(item)
 
 # Remove duplicates based on name and price
 unique_items = []
@@ -49,30 +63,44 @@ for item in all_items:
         seen.add(key)
         unique_items.append(item)
 
-# Categorize items
+# Categorize items according to new structure
 categories = {
-    'Pizza': [],
-    'Tacos': [],
     'Appetizers': [],
+    'Salad': [],
+    'Tacos': [],
+    'Burrito': [],
+    'Quesadilla': [],
+    'Pizza': [],
+    'Spaghetti': [],
+    'Main Dish': [],
     'Drinks': [],
-    'Desserts': [],
-    'Other': []
+    'Extra': []
 }
 
 for item in unique_items:
     name = item['name'].lower()
-    if 'pizza' in name or 'margherita' in name or 'pepperoni' in name:
-        categories['Pizza'].append(item)
-    elif 'taco' in name or 'burrito' in name or 'quesadilla' in name:
-        categories['Tacos'].append(item)
-    elif any(word in name for word in ['soup', 'salad', 'bruschetta', 'chips', 'fries', 'nugget', 'fish finger']):
+    
+    # Categorization logic
+    if any(word in name for word in ['appetizer', 'starter', 'bruschetta', 'chips', 'fries', 'nugget', 'fish finger', 'soup']):
         categories['Appetizers'].append(item)
-    elif any(word in name for word in ['beer', 'soda', 'juice', 'coffee', 'tea', 'water', 'bia', 'lon', 'ly']):
+    elif 'salad' in name:
+        categories['Salad'].append(item)
+    elif 'taco' in name:
+        categories['Tacos'].append(item)
+    elif 'burrito' in name:
+        categories['Burrito'].append(item)
+    elif 'quesadilla' in name:
+        categories['Quesadilla'].append(item)
+    elif 'pizza' in name or 'pizzadilla' in name:
+        categories['Pizza'].append(item)
+    elif 'spaghetti' in name or 'pasta' in name:
+        categories['Spaghetti'].append(item)
+    elif any(word in name for word in ['beer', 'soda', 'juice', 'coffee', 'tea', 'water', 'bia', 'lon', 'ly', 'drink']):
         categories['Drinks'].append(item)
-    elif any(word in name for word in ['dessert', 'panna cotta', 'cake', 'ice cream', 'pudding']):
-        categories['Desserts'].append(item)
+    elif any(word in name for word in ['rice', 'noodle', 'main', 'dish', 'entree', 'meal']):
+        categories['Main Dish'].append(item)
     else:
-        categories['Other'].append(item)
+        categories['Extra'].append(item)
 
 # Save to JSON file
 with open('public/menu_data.json', 'w', encoding='utf-8') as f:

@@ -75,8 +75,11 @@ export const CartProvider = ({ children }) => {
   }, [state.items])
 
   const addToCart = (item, quantity = 1) => {
-    // Create unique ID that includes size for pizza items
-    const uniqueId = item.size ? `${item.name}-${item.size}-${item.price}` : `${item.name}-${item.price}`
+    // Create unique ID that includes size for pizza items and taco options
+    let uniqueId = item.name
+    if (item.size) uniqueId += `-${item.size}`
+    if (item.tacoOption) uniqueId += `-${item.tacoOption}`
+    uniqueId += `-${item.price}`
     
     const cartItem = {
       id: uniqueId,
@@ -85,6 +88,7 @@ export const CartProvider = ({ children }) => {
       unit: item.unit,
       image: item.image,
       size: item.size, // Include size information
+      tacoOption: item.tacoOption, // Include taco option information
       quantity
     }
     dispatch({ type: 'ADD_ITEM', payload: cartItem })

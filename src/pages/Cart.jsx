@@ -190,6 +190,11 @@ const Cart = () => {
                           Size: {item.size}
                         </p>
                       )}
+                      {item.tacoOption && (
+                        <p className="text-xs text-amber-600 font-medium">
+                          Style: {item.tacoOption}
+                        </p>
+                      )}
                       <p className="text-xs sm:text-sm text-gray-600">{formatPrice(item.price)} per {item.unit}</p>
                       <div className="flex items-center justify-between mt-2 sm:mt-0">
                         <div className="flex items-center gap-2">

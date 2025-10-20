@@ -4,6 +4,7 @@ import { Search, Filter, ShoppingCart, Star, Phone, Plus } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../contexts/CartContext'
 import PizzaSizeSelector from '../components/PizzaSizeSelector'
+import TacoOptionsSelector from '../components/TacoOptionsSelector'
 
 const Menu = () => {
   const [menuData, setMenuData] = useState({})
@@ -12,27 +13,23 @@ const Menu = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [loading, setLoading] = useState(true)
   const [showPizzaSizeSelector, setShowPizzaSizeSelector] = useState(false)
+  const [showTacoOptionsSelector, setShowTacoOptionsSelector] = useState(false)
   const [selectedPizzaItem, setSelectedPizzaItem] = useState(null)
+  const [selectedTacoItem, setSelectedTacoItem] = useState(null)
   const { addToCart, getTotalItems } = useCart()
 
-  // Test function to add a sample item
-  const addTestItem = () => {
-    const testItem = {
-      name: "Test Pizza",
-      price: 150000,
-      unit: "Phần",
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?q=80&w=400&auto=format&fit=crop"
-    }
-    addToCart(testItem)
-  }
 
-  // Function to handle pizza size selection
+  // Function to handle pizza size selection and taco options
   const handleAddToCart = (item) => {
-    const isPizza = item.name.toLowerCase().includes('pizza') || item.name.toLowerCase().includes('pizzadilla')
+    const isPizza = item.isPizza || item.name.toLowerCase().includes('pizza') || item.name.toLowerCase().includes('pizzadilla')
+    const isTaco = item.isTaco || item.name.toLowerCase().includes('taco')
     
     if (isPizza) {
       setSelectedPizzaItem(item)
       setShowPizzaSizeSelector(true)
+    } else if (isTaco) {
+      setSelectedTacoItem(item)
+      setShowTacoOptionsSelector(true)
     } else {
       addToCart(item)
     }
@@ -40,6 +37,10 @@ const Menu = () => {
 
   const handlePizzaAddToCart = (pizzaItem) => {
     addToCart(pizzaItem)
+  }
+
+  const handleTacoAddToCart = (tacoItem) => {
+    addToCart(tacoItem)
   }
 
   useEffect(() => {
@@ -76,7 +77,7 @@ const Menu = () => {
     setFilteredItems(items)
   }, [menuData, selectedCategory, searchTerm])
 
-  const categories = ['All', 'Pizza', 'Tacos & Burritos', 'Appetizers', 'Drinks', 'Desserts', 'Pasta', 'Other']
+  const categories = ['All', 'Appetizers', 'Salad', 'Tacos', 'Burrito', 'Quesadilla', 'Pizza', 'Spaghetti', 'Main Dish', 'Drinks', 'Extra']
   
   const formatPrice = (price) => {
     return new Intl.NumberFormat('vi-VN', {
@@ -231,6 +232,9 @@ const Menu = () => {
                   {item.isPizza && (
                     <div className="text-xs text-gray-600 mt-1">Medium size</div>
                   )}
+                  {item.isTaco && (
+                    <div className="text-xs text-gray-600 mt-1">Crispy/Soft options</div>
+                  )}
                 </div>
               </div>
 
@@ -296,12 +300,6 @@ const Menu = () => {
                 <span className="xs:hidden">Cart</span>
                 ({getTotalItems()})
               </Link>
-              <button
-                onClick={addTestItem}
-                className="btn-enhanced bg-green-500 text-white px-6 sm:px-8 py-3 rounded-xl font-semibold hover:bg-green-600 transition-all duration-300 inline-flex items-center justify-center gap-2 text-sm sm:text-base"
-              >
-                🧪 <span className="hidden sm:inline">Test Add Item</span><span className="sm:hidden">Test</span>
-              </button>
               <Link
                 to="/booking"
                 className="btn-enhanced border-2 border-amber-500 text-amber-700 px-6 sm:px-8 py-3 rounded-xl font-semibold hover:bg-amber-50 transition-all duration-300 inline-flex items-center justify-center gap-2 text-sm sm:text-base"
@@ -321,6 +319,18 @@ const Menu = () => {
           onClose={() => {
             setShowPizzaSizeSelector(false)
             setSelectedPizzaItem(null)
+          }}
+        />
+      )}
+
+      {/* Taco Options Selector Modal */}
+      {showTacoOptionsSelector && selectedTacoItem && (
+        <TacoOptionsSelector
+          item={selectedTacoItem}
+          onAddToCart={handleTacoAddToCart}
+          onClose={() => {
+            setShowTacoOptionsSelector(false)
+            setSelectedTacoItem(null)
           }}
         />
       )}

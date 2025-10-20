@@ -89,7 +89,7 @@ The menu items are extracted from Excel files and automatically categorized:
    ```env
    EMAIL_USER=your-email@gmail.com
    EMAIL_PASS=your-16-character-app-password
-   RESTAURANT_EMAIL=simpleplace@gmail.com
+   RESTAURANT_EMAIL=simpleplace199f@gmail.com
    ```
 
 ### Development
@@ -233,6 +233,6 @@ This project is licensed under the MIT License.
 ## Contact
 
 For questions about this project, please contact:
-- Email: simpleplace@gmail.com
+- Email: simpleplace199f@gmail.com
 - Phone: (+84) 904421089
 - Address: 199F Nguyễn Văn Hưởng, Thảo Điền, Quận 2, Hồ Chí Minh, Vietnam

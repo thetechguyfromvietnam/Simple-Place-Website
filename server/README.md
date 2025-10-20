@@ -34,10 +34,10 @@ npm install
 
 3. **Update .env with your email details:**
    ```env
-   EMAIL_USER=your-email@gmail.com
+   EMAIL_USER=simpleplace199f@gmail.com
    EMAIL_PASS=your-16-character-app-password
-   RESTAURANT_EMAIL=simpleplace@gmail.com
-   PORT=3001
+   RESTAURANT_EMAIL=simpleplace199f@gmail.com
+   PORT=3002
    NODE_ENV=development
    ```
 
