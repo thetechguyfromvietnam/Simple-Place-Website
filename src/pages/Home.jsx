@@ -97,10 +97,6 @@ const Home = () => {
             Open today: 11:00-22:00
           </motion.div>
         </div>
-        {/* Wave divider */}
-        <svg className="-mb-1 w-full text-neutral-50" viewBox="0 0 1440 80" fill="currentColor" aria-hidden="true">
-          <path d="M0,32L80,26.7C160,21,320,11,480,21.3C640,32,800,64,960,69.3C1120,75,1280,53,1360,42.7L1440,32L1440,80L1360,80C1280,80,1120,80,960,80C800,80,640,80,480,80C320,80,160,80,80,80L0,80Z" />
-        </svg>
       </section>
 
       {/* Stats Section */}
