@@ -96,37 +96,31 @@ const Home = () => {
           >
             Open today: 11:00-22:00
           </motion.div>
-        </div>
-      </section>
-
-      {/* Google Reviews Section */}
-      <section className="px-4 md:px-8 lg:px-12 py-16 bg-gradient-to-r from-amber-50 to-yellow-50">
-        <div className="mx-auto max-w-6xl text-center">
+          
+          {/* Google Reviews */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="mt-8 bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Loved by Our Customers
-            </h2>
-            <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="flex items-center justify-center gap-3 mb-2">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-amber-400 fill-current" />
+                  <Star key={i} className="w-4 h-4 text-amber-400 fill-current" />
                 ))}
               </div>
-              <span className="text-2xl font-bold text-gray-900">4.8</span>
-              <span className="text-gray-600">on Google</span>
+              <span className="text-lg font-bold text-white">4.8</span>
+              <span className="text-white/80 text-sm">on Google</span>
             </div>
-            <div className="bg-white rounded-2xl p-6 shadow-lg inline-block">
-              <div className="text-4xl font-bold text-amber-600 mb-2">974</div>
-              <div className="text-gray-600 font-medium">Happy Customer Reviews</div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white mb-1">974</div>
+              <div className="text-white/80 text-sm">Happy Customer Reviews</div>
             </div>
           </motion.div>
         </div>
       </section>
+
 
       {/* Stats Section */}
       <section className="px-4 md:px-8 lg:px-12 py-16 bg-gradient-to-r from-amber-50 to-yellow-50">
