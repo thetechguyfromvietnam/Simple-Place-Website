@@ -23,13 +23,13 @@ const Home = () => {
       title: 'Taco Tuesday',
       description: 'Join us everyday for only 45,000 VND a Tacos',
       schedule: 'Every Tuesday • 10 AM – 10 PM',
-      image: '/event-image.jpg'
+      image: '/images/event-image.jpg'
     },
     {
       title: 'Wednesday Pizza',
       description: '20% Promotion on all pizzas from 10 AM – 10 PM.',
       schedule: 'Offer valid until: September 30, 2025',
-      image: '/promo.jpg'
+      image: '/images/promo.jpg'
     }
   ]
 
@@ -39,7 +39,7 @@ const Home = () => {
       <section className="relative isolate h-screen flex items-center justify-center">
         <div 
           className="absolute inset-0 -z-10 parallax-bg bg-cover bg-center"
-          style={{ backgroundImage: 'url(/background.jpg)' }}
+            style={{ backgroundImage: 'url(/images/background.jpg)' }}
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-500/20 via-black/40 to-black/70" />
         
