@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu as MenuIcon, X, ShoppingCart } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useCart } from '../contexts/CartContext'
-import DebugInfo from './DebugInfo'
 import FloatingCartButton from './FloatingCartButton'
 
 const Layout = ({ children }) => {
@@ -176,7 +175,6 @@ const Layout = ({ children }) => {
         </footer>
       )}
       <FloatingCartButton />
-      <DebugInfo />
     </div>
   )
 }
