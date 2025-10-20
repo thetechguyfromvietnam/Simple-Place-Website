@@ -15,13 +15,12 @@ const Booking = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
   const timeSlots = [
-    '11:00', '11:30', '12:00', '12:30', '13:00', '13:30',
-    '14:00', '14:30', '15:00', '15:30', '16:00', '16:30',
-    '17:00', '17:30', '18:00', '18:30', '19:00', '19:30',
-    '20:00', '20:30', '21:00', '21:30'
+    '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30',
+    '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
+    '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30'
   ]
 
-  const guestOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  const guestOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
   // Generate available dates (next 30 days)
   const availableDates = Array.from({ length: 30 }, (_, i) => {
@@ -216,7 +215,7 @@ const Booking = () => {
                     <Users size={20} className="text-amber-600" />
                     Number of Guests
                   </label>
-                  <div className="grid grid-cols-5 gap-3">
+                  <div className="grid grid-cols-5 md:grid-cols-6 gap-3">
                     {guestOptions.map((guests) => (
                       <button
                         key={guests}
@@ -231,6 +230,9 @@ const Booking = () => {
                         {guests}
                       </button>
                     ))}
+                  </div>
+                  <div className="mt-2 text-xs text-gray-500">
+                    Need more than 20 guests? Please call us at (+84) 904421089
                   </div>
                 </div>
 
@@ -327,17 +329,14 @@ const Booking = () => {
                   <Clock className="text-amber-600 mt-1" size={20} />
                   <div>
                     <p className="font-medium text-gray-900">Opening Hours</p>
-                    <p className="text-sm text-gray-600">Mon-Thu: 11:00-22:00</p>
-                    <p className="text-sm text-gray-600">Fri: 11:00-23:00</p>
-                    <p className="text-sm text-gray-600">Sat: 10:00-23:00</p>
-                    <p className="text-sm text-gray-600">Sun: 10:00-21:00</p>
+                    <p className="text-sm text-gray-600">Everyday: 10:00-22:00</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Users className="text-amber-600 mt-1" size={20} />
                   <div>
                     <p className="font-medium text-gray-900">Capacity</p>
-                    <p className="text-sm text-gray-600">Max 10 guests per table</p>
+                    <p className="text-sm text-gray-600">No capacity limit - Large groups welcome</p>
                   </div>
                 </div>
               </div>
@@ -369,7 +368,8 @@ const Booking = () => {
                 <li>• Reservations are recommended for weekends</li>
                 <li>• Please arrive within 15 minutes of your booking time</li>
                 <li>• Cancellations should be made at least 2 hours in advance</li>
-                <li>• Large groups (8+) may require a deposit</li>
+                <li>• Large groups welcome - no capacity limits</li>
+                <li>• Open everyday from 10:00 AM to 10:00 PM</li>
               </ul>
             </div>
           </motion.div>

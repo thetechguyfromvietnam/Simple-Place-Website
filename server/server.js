@@ -119,7 +119,8 @@ const createOrderEmailTemplate = (orderData) => {
           <div class="footer">
             <p>Simple Place Restaurant<br>
             199F Nguyễn Văn Hưởng, Thảo Điền, Quận 2, Hồ Chí Minh, Vietnam<br>
-            Phone: (+84) 904421089 | Email: simpleplace@gmail.com</p>
+            Phone: (+84) 904421089 | Email: simpleplace@gmail.com<br>
+            Open Everyday: 10:00 AM - 10:00 PM</p>
           </div>
         </div>
       </div>
@@ -202,7 +203,8 @@ const createOrderConfirmationEmailTemplate = (orderData) => {
           <div class="footer">
             <p><strong>Simple Place Restaurant</strong><br>
             199F Nguyễn Văn Hưởng, Thảo Điền, Quận 2, Hồ Chí Minh, Vietnam<br>
-            Phone: (+84) 904421089 | Email: simpleplace@gmail.com</p>
+            Phone: (+84) 904421089 | Email: simpleplace@gmail.com<br>
+            Open Everyday: 10:00 AM - 10:00 PM</p>
           </div>
         </div>
       </div>
@@ -278,7 +280,8 @@ const createBookingEmailTemplate = (bookingData) => {
           <div class="footer">
             <p>Simple Place Restaurant<br>
             199F Nguyễn Văn Hưởng, Thảo Điền, Quận 2, Hồ Chí Minh, Vietnam<br>
-            Phone: (+84) 904421089 | Email: simpleplace@gmail.com</p>
+            Phone: (+84) 904421089 | Email: simpleplace@gmail.com<br>
+            Open Everyday: 10:00 AM - 10:00 PM</p>
           </div>
         </div>
       </div>
@@ -350,7 +353,8 @@ const createConfirmationEmailTemplate = (bookingData) => {
           <div class="footer">
             <p><strong>Simple Place Restaurant</strong><br>
             199F Nguyễn Văn Hưởng, Thảo Điền, Quận 2, Hồ Chí Minh, Vietnam<br>
-            Phone: (+84) 904421089 | Email: simpleplace@gmail.com</p>
+            Phone: (+84) 904421089 | Email: simpleplace@gmail.com<br>
+            Open Everyday: 10:00 AM - 10:00 PM</p>
           </div>
         </div>
       </div>
@@ -443,6 +447,49 @@ app.post('/api/book', async (req, res) => {
       return res.status(400).json({
         success: false,
         message: `Missing required fields: ${missingFields.join(', ')}`
+      });
+    }
+    
+    // Validate booking date (not in the past)
+    const bookingDate = new Date(bookingData.date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    if (bookingDate < today) {
+      return res.status(400).json({
+        success: false,
+        message: 'Cannot book for past dates'
+      });
+    }
+    
+    // Validate time slot (10:00-22:00)
+    const time = bookingData.time;
+    const timeRegex = /^([01]?[0-9]|2[0-1]):[0-5][0-9]$/;
+    
+    if (!timeRegex.test(time)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid time format'
+      });
+    }
+    
+    const [hours, minutes] = time.split(':').map(Number);
+    const timeInMinutes = hours * 60 + minutes;
+    const openingTime = 10 * 60; // 10:00 AM
+    const closingTime = 22 * 60; // 10:00 PM
+    
+    if (timeInMinutes < openingTime || timeInMinutes >= closingTime) {
+      return res.status(400).json({
+        success: false,
+        message: 'Booking time must be between 10:00 AM and 10:00 PM'
+      });
+    }
+    
+    // Validate guests (minimum 1, no maximum limit)
+    if (bookingData.guests < 1) {
+      return res.status(400).json({
+        success: false,
+        message: 'Minimum 1 guest required'
       });
     }
     

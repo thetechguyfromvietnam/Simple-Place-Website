@@ -36,10 +36,7 @@ const Contact = () => {
       icon: Clock,
       title: 'Hours',
       details: [
-        'Mon-Thu: 11:00-22:00',
-        'Fri: 11:00-23:00',
-        'Sat: 10:00-23:00',
-        'Sun: 10:00-21:00'
+        'Everyday: 10:00-22:00'
       ]
     }
   ]
@@ -54,7 +51,7 @@ const Contact = () => {
     {
       icon: Instagram,
       name: 'Instagram',
-      url: '#',
+      url: 'https://www.instagram.com/simpleplacefusion/',
       color: 'bg-pink-600'
     }
   ]
