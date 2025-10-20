@@ -85,7 +85,7 @@ const Home = () => {
               to="/menu"
               className="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition border border-white/70 text-white hover:bg-white/10"
             >
-              See menu
+              Order now
             </Link>
           </motion.div>
           <motion.div 
