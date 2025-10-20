@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ChevronRight, Star, Users, Clock, MapPin } from 'lucide-react'
+import { Star, Users, Clock, MapPin } from 'lucide-react'
 
 const Home = () => {
   const stats = [
@@ -43,73 +43,59 @@ const Home = () => {
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-500/20 via-black/40 to-black/70" />
         
-        {/* Floating Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="floating-element absolute top-20 left-10 text-amber-300 text-6xl opacity-20">🍕</div>
-          <div className="floating-element absolute top-40 right-20 text-amber-300 text-4xl opacity-20">🌮</div>
-          <div className="floating-element absolute bottom-40 left-20 text-amber-300 text-5xl opacity-20">🌯</div>
-        </div>
         
-        <div className="text-white">
-          <div className="mx-auto max-w-6xl px-4 md:px-8 lg:px-12 py-24 md:py-36">
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-block text-xs uppercase tracking-widest text-amber-300"
+        <div className="relative z-10 text-center text-white px-4 max-w-2xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="inline-block text-xs uppercase tracking-widest text-amber-300"
+          >
+            MEXICO × VIETNAM
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight drop-shadow-lg"
+          >
+            Homemade pizza, taco soul.
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-6 text-lg sm:text-xl drop-shadow-md"
+          >
+            A cheerful yellow kitchen famous for pizza topped with taco goodness — elote corn, lemongrass chicken, and fish-sauce caramel vibes.
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-8 flex flex-col sm:flex-row justify-center gap-4"
+          >
+            <Link 
+              to="/booking"
+              className="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition bg-amber-500 text-white hover:bg-amber-600"
             >
-              Mexico × Vietnam
-            </motion.div>
-            <motion.h1 
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-4xl md:text-6xl font-semibold leading-tight mt-4"
+              Book a table
+            </Link>
+            <Link 
+              to="/menu"
+              className="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition border border-white/70 text-white hover:bg-white/10"
             >
-              Homemade pizza, taco soul.
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-white/90 mt-4 md:text-lg max-w-2xl"
-            >
-              A cheerful yellow kitchen famous for pizza topped with taco goodness — elote corn, lemongrass chicken, and fish‑sauce caramel vibes.
-            </motion.p>
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="mt-8 flex flex-col sm:flex-row gap-3"
-            >
-              <Link 
-                to="/booking"
-                className="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition bg-amber-500 text-white hover:bg-amber-600"
-              >
-                Book a table
-              </Link>
-              <Link 
-                to="/menu"
-                className="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition border border-white/70 text-white hover:bg-white/10"
-              >
-                See menu
-              </Link>
-              <Link 
-                to="/menu"
-                className="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition bg-white text-amber-700 hover:bg-amber-50 inline-flex items-center gap-2"
-              >
-                View Menu <ChevronRight size={16} />
-              </Link>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-              className="mt-5 text-sm text-amber-200"
-            >
-              Open today: 11:00–22:00
-            </motion.div>
-          </div>
+              See menu
+            </Link>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+            className="mt-8 text-sm text-gray-300"
+          >
+            Open today: 11:00-22:00
+          </motion.div>
         </div>
         {/* Wave divider */}
         <svg className="-mb-1 w-full text-neutral-50" viewBox="0 0 1440 80" fill="currentColor" aria-hidden="true">
