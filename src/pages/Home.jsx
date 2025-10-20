@@ -99,6 +99,35 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Google Reviews Section */}
+      <section className="px-4 md:px-8 lg:px-12 py-16 bg-gradient-to-r from-amber-50 to-yellow-50">
+        <div className="mx-auto max-w-6xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Loved by Our Customers
+            </h2>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 text-amber-400 fill-current" />
+                ))}
+              </div>
+              <span className="text-2xl font-bold text-gray-900">4.8</span>
+              <span className="text-gray-600">on Google</span>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-lg inline-block">
+              <div className="text-4xl font-bold text-amber-600 mb-2">974</div>
+              <div className="text-gray-600 font-medium">Happy Customer Reviews</div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="px-4 md:px-8 lg:px-12 py-16 bg-gradient-to-r from-amber-50 to-yellow-50">
         <div className="mx-auto max-w-6xl">
