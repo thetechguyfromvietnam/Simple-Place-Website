@@ -29,6 +29,10 @@ app.use('/api/book', limiter);
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
+// Serve static files (for menu_data.json and images)
+app.use(express.static('../public'));
+app.use('/images', express.static('../public/images'));
+
 // Email configuration
 const createTransporter = () => {
   return nodemailer.createTransport({
