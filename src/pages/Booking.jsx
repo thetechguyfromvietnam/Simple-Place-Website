@@ -47,7 +47,7 @@ const Booking = () => {
       console.log('Sending booking data:', bookingData)
       
       // Send booking to backend API
-      const response = await fetch('http://localhost:3002/api/book', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3002'}/api/book`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
