@@ -3,7 +3,7 @@
 
 # Email Configuration (Required for orders to work)
 EMAIL_USER=your-gmail@gmail.com
-EMAIL_PASS=your-app-password
+EMAIL_PASS=your-gmail-app-password
 RESTAURANT_EMAIL=simpleplace@gmail.com
 
 # Frontend URL (your Vercel frontend domain)
@@ -11,3 +11,14 @@ FRONTEND_URL=https://your-frontend-domain.vercel.app
 
 # Node Environment
 NODE_ENV=production
+
+# ===========================================
+# SETUP INSTRUCTIONS:
+# ===========================================
+# 1. Copy these variables to your Vercel dashboard
+# 2. Replace the placeholder values with your actual credentials
+# 3. For Gmail, you need to create an "App Password" (not your regular password)
+#    - Go to Google Account → Security → App passwords
+#    - Generate a new app password for "Mail"
+#    - Use that password for EMAIL_PASS
+# ===========================================

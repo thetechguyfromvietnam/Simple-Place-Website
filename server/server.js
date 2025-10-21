@@ -563,9 +563,10 @@ app.use('*', (req, res) => {
 });
 
 // For Vercel deployment
-if (process.env.NODE_ENV === 'production') {
-  module.exports = app;
-} else {
+export default app;
+
+// Only start server locally (not in Vercel)
+if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {
     console.log(`🚀 Simple Place API server running on port ${PORT}`);
     console.log(`📧 Email notifications enabled`);
