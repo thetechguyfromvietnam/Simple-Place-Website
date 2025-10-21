@@ -365,7 +365,13 @@ const createConfirmationEmailTemplate = (bookingData) => {
 
 // API Routes
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Simple Place API is running' });
+  res.json({ 
+    status: 'OK', 
+    message: 'Simple Place API is running',
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development',
+    cors_origin: process.env.FRONTEND_URL || 'localhost'
+  });
 });
 
 app.post('/api/order', async (req, res) => {

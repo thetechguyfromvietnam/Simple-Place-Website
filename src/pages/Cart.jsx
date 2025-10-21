@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { useCart } from '../contexts/CartContext'
 import { ShoppingCart, Plus, Minus, Trash2, CreditCard, MapPin, Clock, User, Mail, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { getApiUrl } from '../utils/api'
 
 const Cart = () => {
   const { items, removeFromCart, updateQuantity, clearCart, getTotalPrice, getTotalItems } = useCart()
@@ -36,7 +37,9 @@ const Cart = () => {
       console.log('Sending order data:', orderData)
       
       // Send order to backend API
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3002'}/api/order`, {
+      const apiUrl = getApiUrl();
+      console.log('API URL:', apiUrl);
+      const response = await fetch(`${apiUrl}/api/order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -64,7 +67,19 @@ const Cart = () => {
       
     } catch (error) {
       console.error('Order error:', error)
-      alert(`Order failed: ${error.message}. Please try again or call us at (+84) 904421089.`)
+      
+      // More specific error messages
+      let errorMessage = 'Order failed. Please try again or call us at (+84) 904421089.';
+      
+      if (error.message.includes('Failed to fetch')) {
+        errorMessage = 'Cannot connect to server. Please check your internet connection and try again.';
+      } else if (error.message.includes('NetworkError')) {
+        errorMessage = 'Network error. Please check your connection and try again.';
+      } else if (error.message) {
+        errorMessage = `Order failed: ${error.message}. Please try again or call us at (+84) 904421089.`;
+      }
+      
+      alert(errorMessage)
     } finally {
       setIsSubmitting(false)
     }

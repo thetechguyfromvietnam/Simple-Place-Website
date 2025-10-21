@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Calendar, Clock, Users, Phone, Mail, MessageSquare } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { format, addDays, startOfDay } from 'date-fns'
+import { getApiUrl } from '../utils/api'
 
 const Booking = () => {
   const [selectedDate, setSelectedDate] = useState('')
@@ -47,7 +48,9 @@ const Booking = () => {
       console.log('Sending booking data:', bookingData)
       
       // Send booking to backend API
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3002'}/api/book`, {
+      const apiUrl = getApiUrl();
+      console.log('API URL:', apiUrl);
+      const response = await fetch(`${apiUrl}/api/book`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
