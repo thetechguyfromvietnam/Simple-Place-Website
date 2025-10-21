@@ -55,7 +55,7 @@ In the Vercel dashboard, go to Settings → Environment Variables and add:
 EMAIL_USER=simpleplace199f@gmail.com
 EMAIL_PASS=your-gmail-app-password-here
 RESTAURANT_EMAIL=simpleplace199f@gmail.com
-FRONTEND_URL=https://your-project-name.vercel.app
+FRONTEND_URL=https://simpleplacevn.com
 NODE_ENV=production
 ```
 
@@ -66,13 +66,13 @@ NODE_ENV=production
 ### 4.1 Deploy Frontend
 1. Click "Deploy" in Vercel
 2. Wait for the build to complete
-3. Your frontend will be available at `https://your-project-name.vercel.app`
+3. Your frontend will be available at `https://simpleplacevn.com` (after DNS setup)
 
 ### 4.2 Deploy Backend (API)
 The backend is already configured to work with Vercel's serverless functions. The API endpoints will be available at:
-- `https://your-project-name.vercel.app/api/health`
-- `https://your-project-name.vercel.app/api/order`
-- `https://your-project-name.vercel.app/api/book`
+- `https://simpleplacevn.com/api/health`
+- `https://simpleplacevn.com/api/order`
+- `https://simpleplacevn.com/api/book`
 
 ## Step 5: Test Email Functionality
 
@@ -86,12 +86,46 @@ The backend is already configured to work with Vercel's serverless functions. Th
 2. Make a reservation
 3. Verify confirmation emails are sent
 
-## Step 6: Custom Domain (Optional)
+## Step 6: Custom Domain Setup (simpleplacevn.com)
 
-### 6.1 Add Custom Domain
+### 6.1 Add Custom Domain to Vercel
 1. In Vercel dashboard, go to Settings → Domains
-2. Add your custom domain (e.g., `simpleplace.com`)
-3. Follow Vercel's DNS configuration instructions
+2. Add your custom domain: `simpleplacevn.com`
+3. Vercel will provide DNS configuration instructions
+
+### 6.2 Configure DNS Records
+You need to add these DNS records to your domain provider:
+
+#### Option A: Apex Domain (simpleplacevn.com)
+```
+Type: A
+Name: @
+Value: 76.76.19.61
+```
+
+#### Option B: CNAME Record (if your provider supports it)
+```
+Type: CNAME
+Name: @
+Value: cname.vercel-dns.com
+```
+
+#### Option C: WWW Subdomain
+```
+Type: CNAME
+Name: www
+Value: cname.vercel-dns.com
+```
+
+### 6.3 Verify Domain
+1. After adding DNS records, wait 5-10 minutes for propagation
+2. In Vercel dashboard, click "Verify" next to your domain
+3. Once verified, your site will be live at `https://simpleplacevn.com`
+
+### 6.4 SSL Certificate
+- Vercel automatically provides SSL certificates
+- Your site will be accessible via HTTPS
+- HTTP traffic will automatically redirect to HTTPS
 
 ## Troubleshooting
 
@@ -116,7 +150,7 @@ The backend is already configured to work with Vercel's serverless functions. Th
 | `EMAIL_USER` | Gmail address for sending emails | `simpleplace199f@gmail.com` |
 | `EMAIL_PASS` | Gmail app password | `abcd efgh ijkl mnop` |
 | `RESTAURANT_EMAIL` | Email to receive orders/bookings | `simpleplace199f@gmail.com` |
-| `FRONTEND_URL` | Your Vercel frontend URL | `https://simple-place.vercel.app` |
+| `FRONTEND_URL` | Your custom domain URL | `https://simpleplacevn.com` |
 | `NODE_ENV` | Environment mode | `production` |
 
 ## Security Notes

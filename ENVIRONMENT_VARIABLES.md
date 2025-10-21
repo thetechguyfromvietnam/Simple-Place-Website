@@ -13,7 +13,7 @@ RESTAURANT_EMAIL=simpleplace199f@gmail.com
 
 ### Application Configuration
 ```
-FRONTEND_URL=https://your-project-name.vercel.app
+FRONTEND_URL=https://simpleplacevn.com
 NODE_ENV=production
 ```
 
@@ -29,7 +29,7 @@ NODE_ENV=production
 ## Important Notes
 
 - **Never use your regular Gmail password** - only use app passwords
-- **Replace `your-project-name`** with your actual Vercel project name
+- **Use your custom domain** `simpleplacevn.com` for FRONTEND_URL
 - **Test locally first** before deploying to production
 - **Monitor email usage** to avoid hitting Gmail limits
 
