@@ -374,7 +374,8 @@ app.get('/api/health', (req, res) => {
     message: 'Simple Place API is running',
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || 'development',
-    cors_origin: process.env.FRONTEND_URL || 'localhost'
+    cors_origin: process.env.FRONTEND_URL || 'localhost',
+    email_user: process.env.EMAIL_USER ? 'configured' : 'not configured'
   });
 });
 
@@ -422,9 +423,21 @@ app.post('/api/order', async (req, res) => {
       html: createOrderConfirmationEmailTemplate(completeOrderData)
     };
     
-    // Send both emails
-    await transporter.sendMail(restaurantEmailOptions);
-    await transporter.sendMail(customerEmailOptions);
+    // Send both emails with timeout handling
+    const emailPromises = [
+      transporter.sendMail(restaurantEmailOptions),
+      transporter.sendMail(customerEmailOptions)
+    ];
+    
+    // Add timeout to prevent Vercel function timeout
+    const emailTimeout = new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Email sending timeout')), 20000)
+    );
+    
+    await Promise.race([
+      Promise.all(emailPromises),
+      emailTimeout
+    ]);
     
     // Log order (in production, save to database)
     console.log('New order received:', completeOrderData);
@@ -532,9 +545,21 @@ app.post('/api/book', async (req, res) => {
       html: createConfirmationEmailTemplate(completeBookingData)
     };
     
-    // Send both emails
-    await transporter.sendMail(restaurantEmailOptions);
-    await transporter.sendMail(customerEmailOptions);
+    // Send both emails with timeout handling
+    const emailPromises = [
+      transporter.sendMail(restaurantEmailOptions),
+      transporter.sendMail(customerEmailOptions)
+    ];
+    
+    // Add timeout to prevent Vercel function timeout
+    const emailTimeout = new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Email sending timeout')), 20000)
+    );
+    
+    await Promise.race([
+      Promise.all(emailPromises),
+      emailTimeout
+    ]);
     
     // Log booking (in production, save to database)
     console.log('New booking received:', completeBookingData);
