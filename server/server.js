@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3002;
 // Security middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? 'https://yourdomain.com' : ['http://localhost:3000', 'http://localhost:5173'],
+  origin: process.env.NODE_ENV === 'production' ? process.env.FRONTEND_URL || '*' : ['http://localhost:3000', 'http://localhost:5173'],
   credentials: true
 }));
 
@@ -562,8 +562,13 @@ app.use('*', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Simple Place API server running on port ${PORT}`);
-  console.log(`📧 Email notifications enabled`);
-  console.log(`🌐 CORS enabled for development`);
-});
+// For Vercel deployment
+if (process.env.NODE_ENV === 'production') {
+  module.exports = app;
+} else {
+  app.listen(PORT, () => {
+    console.log(`🚀 Simple Place API server running on port ${PORT}`);
+    console.log(`📧 Email notifications enabled`);
+    console.log(`🌐 CORS enabled for development`);
+  });
+}
