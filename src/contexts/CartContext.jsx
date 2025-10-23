@@ -114,6 +114,41 @@ export const CartProvider = ({ children }) => {
     return state.items.reduce((total, item) => total + item.quantity, 0)
   }
 
+  // VAT calculation functions
+  const isAlcoholItem = (item) => {
+    const name = item.name.toLowerCase()
+    return name.includes('bia') || name.includes('beer') || name.includes('wine') || 
+           name.includes('cocktail') || name.includes('spirit') || name.includes('liquor')
+  }
+
+  const getFoodSubtotal = () => {
+    return state.items
+      .filter(item => !isAlcoholItem(item))
+      .reduce((total, item) => total + (item.price * item.quantity), 0)
+  }
+
+  const getAlcoholSubtotal = () => {
+    return state.items
+      .filter(item => isAlcoholItem(item))
+      .reduce((total, item) => total + (item.price * item.quantity), 0)
+  }
+
+  const getFoodVAT = () => {
+    return Math.round(getFoodSubtotal() * 0.08)
+  }
+
+  const getAlcoholVAT = () => {
+    return Math.round(getAlcoholSubtotal() * 0.10)
+  }
+
+  const getTotalVAT = () => {
+    return getFoodVAT() + getAlcoholVAT()
+  }
+
+  const getTotalWithVAT = () => {
+    return getTotalPrice() + getTotalVAT()
+  }
+
   const value = {
     items: state.items,
     addToCart,
@@ -121,7 +156,15 @@ export const CartProvider = ({ children }) => {
     updateQuantity,
     clearCart,
     getTotalPrice,
-    getTotalItems
+    getTotalItems,
+    // VAT functions
+    isAlcoholItem,
+    getFoodSubtotal,
+    getAlcoholSubtotal,
+    getFoodVAT,
+    getAlcoholVAT,
+    getTotalVAT,
+    getTotalWithVAT
   }
 
   return (

@@ -2,9 +2,9 @@
 # Add these in your Vercel dashboard under Settings > Environment Variables
 
 # Email Configuration (Required for orders to work)
-EMAIL_USER=your-gmail@gmail.com
+EMAIL_USER=simpleplace199f@gmail.com
 EMAIL_PASS=your-gmail-app-password
-RESTAURANT_EMAIL=simpleplace@gmail.com
+RESTAURANT_EMAIL=simpleplace199f@gmail.com
 
 # Frontend URL (your custom domain)
 FRONTEND_URL=https://simpleplacevn.com

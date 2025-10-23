@@ -7,7 +7,20 @@ import { Link } from 'react-router-dom'
 import { getApiUrl } from '../utils/api'
 
 const Cart = () => {
-  const { items, removeFromCart, updateQuantity, clearCart, getTotalPrice, getTotalItems } = useCart()
+  const { 
+    items, 
+    removeFromCart, 
+    updateQuantity, 
+    clearCart, 
+    getTotalPrice, 
+    getTotalItems,
+    getFoodSubtotal,
+    getAlcoholSubtotal,
+    getFoodVAT,
+    getAlcoholVAT,
+    getTotalVAT,
+    getTotalWithVAT
+  } = useCart()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [orderId, setOrderId] = useState('')
@@ -28,7 +41,13 @@ const Cart = () => {
       const orderData = {
         ...data,
         items: items,
-        totalPrice: getTotalPrice(),
+        subtotal: getTotalPrice(),
+        foodSubtotal: getFoodSubtotal(),
+        alcoholSubtotal: getAlcoholSubtotal(),
+        foodVAT: getFoodVAT(),
+        alcoholVAT: getAlcoholVAT(),
+        totalVAT: getTotalVAT(),
+        totalPrice: getTotalWithVAT(),
         totalItems: getTotalItems(),
         orderId: `SP-${Date.now()}`,
         createdAt: new Date().toISOString()
@@ -258,6 +277,25 @@ const Cart = () => {
                   <span>Items ({getTotalItems()})</span>
                   <span>{formatPrice(getTotalPrice())}</span>
                 </div>
+                
+                {/* VAT Breakdown */}
+                {getTotalVAT() > 0 && (
+                  <>
+                    <div className="flex justify-between text-sm text-gray-600">
+                      <span>Food (8% VAT)</span>
+                      <span>{formatPrice(getFoodVAT())}</span>
+                    </div>
+                    <div className="flex justify-between text-sm text-gray-600">
+                      <span>Alcohol (10% VAT)</span>
+                      <span>{formatPrice(getAlcoholVAT())}</span>
+                    </div>
+                    <div className="flex justify-between font-medium">
+                      <span>Total VAT</span>
+                      <span>{formatPrice(getTotalVAT())}</span>
+                    </div>
+                  </>
+                )}
+                
                 <div className="flex justify-between">
                   <span>Delivery Fee</span>
                   <span className="text-green-600">Free</span>
@@ -265,7 +303,7 @@ const Cart = () => {
                 <hr className="my-2" />
                 <div className="flex justify-between font-bold text-lg">
                   <span>Total</span>
-                  <span className="text-amber-600">{formatPrice(getTotalPrice())}</span>
+                  <span className="text-amber-600">{formatPrice(getTotalWithVAT())}</span>
                 </div>
               </div>
               <button
@@ -402,7 +440,7 @@ const Cart = () => {
                   ) : (
                     <>
                       <CreditCard size={20} />
-                      Place Order - {formatPrice(getTotalPrice())}
+                      Place Order - {formatPrice(getTotalWithVAT())}
                     </>
                   )}
                 </button>

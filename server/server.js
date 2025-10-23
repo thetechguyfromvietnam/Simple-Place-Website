@@ -410,7 +410,7 @@ app.post('/api/order', async (req, res) => {
     // Send email to restaurant
     const restaurantEmailOptions = {
       from: process.env.EMAIL_USER || 'your-email@gmail.com',
-      to: process.env.RESTAURANT_EMAIL || 'simpleplace@gmail.com',
+      to: process.env.RESTAURANT_EMAIL || 'simpleplace199f@gmail.com',
       subject: `New Food Order - ${orderData.fullName} - ${orderData.totalItems} items`,
       html: createOrderEmailTemplate(completeOrderData)
     };
@@ -532,7 +532,7 @@ app.post('/api/book', async (req, res) => {
     // Send email to restaurant
     const restaurantEmailOptions = {
       from: process.env.EMAIL_USER || 'your-email@gmail.com',
-      to: process.env.RESTAURANT_EMAIL || 'simpleplace@gmail.com',
+      to: process.env.RESTAURANT_EMAIL || 'simpleplace199f@gmail.com',
       subject: `New Booking - ${bookingData.firstName} ${bookingData.lastName} - ${bookingData.date} at ${bookingData.time}`,
       html: createBookingEmailTemplate(completeBookingData)
     };

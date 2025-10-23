@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { useCart } from '../contexts/CartContext'
 
 const FloatingCartButton = () => {
-  const { getTotalItems, items, getTotalPrice, removeFromCart } = useCart()
+  const { getTotalItems, items, getTotalPrice, getTotalWithVAT, removeFromCart } = useCart()
   const [isHovered, setIsHovered] = useState(false)
 
   const formatPrice = (price) => {
@@ -73,7 +73,7 @@ const FloatingCartButton = () => {
           <div className="p-4 bg-gray-50 border-t border-gray-100">
             <div className="flex justify-between items-center mb-3">
               <span className="font-semibold text-gray-900">Total:</span>
-              <span className="font-bold text-amber-600">{formatPrice(getTotalPrice())}</span>
+              <span className="font-bold text-amber-600">{formatPrice(getTotalWithVAT())}</span>
             </div>
             <Link
               to="/cart"
