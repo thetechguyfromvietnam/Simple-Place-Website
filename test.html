@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Place — Pizza × Tacos Fusion</title>
+  <meta name="description" content="Simple Place: Homemade pizza with tacos — Mexico × Vietnam fusion in Saigon. Reserve a table or order online." />
+  <meta name="theme-color" content="#f59e0b" />
+  <meta property="og:title" content="Simple Place — Pizza × Tacos Fusion" />
+  <meta property="og:description" content="Homemade pizza with tacos — book a table or order online." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1601924572345-0050bd436b0b?q=80&w=1200&auto=format&fit=crop" />
+  <meta property="og:type" content="restaurant" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <style>
+    html{scroll-behavior:smooth}
+    body{font-family:'Sora', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"}
+    dialog::backdrop{background:rgba(0,0,0,.55)}
+    
+    /* Enhanced Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3); }
+      50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.6); }
+    }
+    
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes fadeInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    .float-animation { animation: float 3s ease-in-out infinite; }
+    .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+    .slide-in-left { animation: slideInLeft 0.8s ease-out; }
+    .slide-in-right { animation: slideInRight 0.8s ease-out; }
+    .fade-in-up { animation: fadeInUp 0.8s ease-out; }
+    
+    /* Enhanced Menu Cards */
+    .menu-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+    
+    .menu-card:hover {
+      transform: translateY(-8px) rotateX(5deg);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    .menu-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 1rem;
+      z-index: -1;
+    }
+    
+    .menu-card:hover::before {
+      opacity: 1;
+    }
+    
+    /* Interactive Price Tags */
+    .price-tag {
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+    
+    .menu-card:hover .price-tag {
+      transform: scale(1.1) rotate(2deg);
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+      color: white;
+    }
+    
+    /* Enhanced Buttons */
+    .btn-enhanced {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-enhanced::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+    
+    .btn-enhanced:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+    
+    /* Parallax Effect */
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    /* Interactive Stats */
+    .stat-number {
+      transition: all 0.5s ease;
+    }
+    
+    .stat-number:hover {
+      transform: scale(1.1);
+      color: #f59e0b;
+    }
+    
+    /* Enhanced Navigation */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #f59e0b;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    /* Loading Animation */
+    .loading-dots {
+      display: inline-block;
+    }
+    
+    .loading-dots::after {
+      content: '';
+      animation: loading 1.5s infinite;
+    }
+    
+    @keyframes loading {
+      0%, 20% { content: ''; }
+      40% { content: '.'; }
+      60% { content: '..'; }
+      80%, 100% { content: '...'; }
+    }
+    
+    /* Enhanced Specials Banner */
+    .specials-banner {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%);
+      background-size: 200% 200%;
+      animation: gradientShift 8s ease infinite;
+    }
+    
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    /* Interactive Map Placeholder */
+    .map-placeholder {
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .map-placeholder::before {
+      content: '📍 Interactive Map Coming Soon';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #6b7280;
+      font-weight: 500;
+      text-align: center;
+      z-index: 10;
+    }
+    
+    /* Enhanced Mobile Menu */
+    .mobile-menu-item {
+      transition: all 0.3s ease;
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    
+    .mobile-menu-item.show {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    
+    /* Floating Elements */
+    .floating-element {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .floating-element:nth-child(2) {
+      animation-delay: -2s;
+    }
+    
+    .floating-element:nth-child(3) {
+      animation-delay: -4s;
+    }
+  </style>
+
+  <!-- JSON-LD: Restaurant rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Simple Place",
+    "servesCuisine": ["Pizza","Mexican","Vietnamese","Fusion"],
+    "address": {"@type":"PostalAddress","streetAddress":"123 Lê Lợi, District 1","addressLocality":"Ho Chi Minh City","addressRegion":"HCMC","addressCountry":"VN"},
+    "telephone": "+84 000 000 000",
+    "menu": "https://www.foodbooking.com/api/fb/_xq613",
+    "acceptsReservations": true
+  }
+  </script>
+</head>
+
+<body class="antialiased text-neutral-900 bg-neutral-50">
+  <!-- NAV -->
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur border-b" data-aos="fade-down">
+    <nav class="mx-auto max-w-6xl px-4 md:px-8 lg:px-12 h-16 flex items-center justify-between">
+      <a href="#" class="font-semibold text-lg tracking-tight flex items-center gap-2 hover:scale-105 transition-transform duration-300" aria-label="Simple Place home">
+        <span class="inline-block h-3 w-3 rounded-full bg-amber-500 float-animation"></span>
+        <span>Simple Place</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#menu" class="nav-link hover:opacity-80">Menu</a>
+        <a href="#about" class="nav-link hover:opacity-80">About</a>
+        <a href="#visit" class="nav-link hover:opacity-80">Visit</a>
+        <a href="#contact" class="nav-link hover:opacity-80">Contact</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-2">
+        <a id="orderTop" href="https://www.foodbooking.com/api/fb/_xq613" target="_blank" rel="noopener" class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition bg-amber-500 text-white hover:bg-amber-600">Order Online</a>
+        <button id="reserveBtn" class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition border border-amber-500 text-amber-700 hover:bg-amber-50">Book</button>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="hamburger" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl border text-neutral-700 hover:bg-amber-50 transition-colors" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">☰</button>
+    </nav>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="md:hidden hidden border-t bg-white/95 backdrop-blur">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="#menu" class="mobile-menu-item py-2 hover:text-amber-600 transition-colors">Menu</a>
+        <a href="#about" class="mobile-menu-item py-2 hover:text-amber-600 transition-colors">About</a>
+        <a href="#visit" class="mobile-menu-item py-2 hover:text-amber-600 transition-colors">Visit</a>
+        <a href="#contact" class="mobile-menu-item py-2 hover:text-amber-600 transition-colors">Contact</a>
+        <div class="flex gap-2 pt-2">
+          <a href="https://www.foodbooking.com/api/fb/_xq613" target="_blank" rel="noopener" class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition bg-amber-500 text-white hover:bg-amber-600 flex-1 text-center">Order Online</a>
+          <button class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition border border-amber-500 text-amber-700 hover:bg-amber-50 flex-1" onclick="openReserve()">Book</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative isolate">
+    <div class="absolute inset-0 -z-10 parallax-bg bg-[url('./background.jpg')] md:bg-[url('./background.jpg')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-amber-500/20 via-black/40 to-black/70"></div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="floating-element absolute top-20 left-10 text-amber-300 text-6xl opacity-20">🍕</div>
+      <div class="floating-element absolute top-40 right-20 text-amber-300 text-4xl opacity-20">🌮</div>
+      <div class="floating-element absolute bottom-40 left-20 text-amber-300 text-5xl opacity-20">🌯</div>
+    </div>
+    
+    <div class="text-white">
+      <div class="mx-auto max-w-6xl px-4 md:px-8 lg:px-12 py-24 md:py-36">
+        <span class="inline-block text-xs uppercase tracking-widest text-amber-300 slide-in-left" data-aos="fade-right" data-aos-delay="200">Mexico × Vietnam</span>
+        <h1 class="text-4xl md:text-6xl font-semibold leading-tight slide-in-left" data-aos="fade-right" data-aos-delay="400">Homemade pizza, taco soul.</h1>
+        <p class="text-white/90 mt-4 md:text-lg max-w-2xl slide-in-left" data-aos="fade-right" data-aos-delay="600">A cheerful yellow kitchen famous for pizza topped with taco goodness — elote corn, lemongrass chicken, and fish‑sauce caramel vibes.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3" data-aos="fade-up" data-aos-delay="800">
+          <button id="reserveBtn2" class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition bg-amber-500 text-white hover:bg-amber-600">Book a table</button>
+          <a href="#menu" class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition border border-white/70 text-white hover:bg-white/10">See menu</a>
+          <a href="https://www.foodbooking.com/api/fb/_xq613" target="_blank" rel="noopener" class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition bg-white text-amber-700 hover:bg-amber-50">Order online →</a>
+        </div>
+        <div class="mt-5 text-sm text-amber-200 fade-in-up" data-aos="fade-up" data-aos-delay="1000">Open today: 11:00–22:00</div>
+      </div>
+    </div>
+    <!-- wave divider -->
+    <svg class="-mb-1 w-full text-neutral-50" viewBox="0 0 1440 80" fill="currentColor" aria-hidden="true"><path d="M0,32L80,26.7C160,21,320,11,480,21.3C640,32,800,64,960,69.3C1120,75,1280,53,1360,42.7L1440,32L1440,80L1360,80C1280,80,1120,80,960,80C800,80,640,80,480,80C320,80,160,80,80,80L0,80Z"></path></svg>
+  </section>
+
+  <!-- INTERACTIVE STATS SECTION -->
+  <section class="px-4 md:px-8 lg:px-12 py-16 bg-gradient-to-r from-amber-50 to-yellow-50">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-4xl md:text-5xl font-bold text-amber-600 stat-number" data-count="2000">0</div>
+          <div class="text-sm text-neutral-600 mt-2">Happy Customers</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="text-4xl md:text-5xl font-bold text-amber-600 stat-number" data-count="50">0</div>
+          <div class="text-sm text-neutral-600 mt-2">Unique Dishes</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
+          <div class="text-4xl md:text-5xl font-bold text-amber-600 stat-number" data-count="5">0</div>
+          <div class="text-sm text-neutral-600 mt-2">Years of Service</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="800">
+          <div class="text-4xl md:text-5xl font-bold text-amber-600 stat-number" data-count="98">0</div>
+          <div class="text-sm text-neutral-600 mt-2">% Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENHANCED SPECIALS BANNER -->
+  <section id="specials" class="px-4 md:px-8 lg:px-12">
+    <div class="mx-auto max-w-6xl">
+      <div class="specials-banner rounded-2xl shadow-lg p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3" data-aos="zoom-in">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold text-amber-800">Pizza × Tacos Weekly Specials</h2>
+          <p class="text-amber-700" id="specialText">Ask for the Saigon Elote or the Bánh Mì Supreme this week.</p>
+        </div>
+        <div class="flex gap-2">
+          <a href="https://www.foodbooking.com/api/fb/_xq613" target="_blank" rel="noopener" class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition bg-amber-500 text-white hover:bg-amber-600">Order now</a>
+          <button class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition border border-amber-500 text-amber-700 hover:bg-amber-50" onclick="openReserve()">Reserve</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENHANCED MENU -->
+  <section id="menu" class="px-4 md:px-8 lg:px-12 py-16">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-6 flex items-end justify-between gap-4" data-aos="fade-up">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Menu</h2>
+          <p class="text-neutral-600">Yellow‑hot fusion favorites. Sizes are 10" unless noted.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="All">All</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Pizza">Pizza</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Tacos">Tacos</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Snacks">Snacks</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Drinks">Drinks</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Desserts">Desserts</button>
+        </div>
+      </div>
+
+      <div id="menuGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <!-- PIZZA -->
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="200">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">V - Margherita L</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">129,000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Classic tomato sauce, mozzarella cheese, fresh basil.</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Fresh</span>
+    </div>
+    <div class="mt-4 h-32 rounded-xl overflow-hidden">
+      <img src="https://uk.ooni.com/cdn/shop/articles/20220211142645-margherita-9920_e41233d5-dcec-461c-b07e-03245f031dfe.jpg?v=1737105431&width=2048" alt="Margherita Pizza" class="w-full h-full object-cover rounded-xl">
+    </div>
+  </article>
+
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="250">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">V - Mediterranean L</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">159,000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Tomato base, olives, feta, sundried tomatoes, oregano.</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-purple-500"></span> Rich</span>
+    </div>
+    <div class="mt-4 h-32 rounded-xl overflow-hidden">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYyk-aLtDdVgY-CPgLso_4YIuXy3uPUYC5Qg&s" alt="Mediterranean Pizza" class="w-full h-full object-cover rounded-xl">
+    </div>
+  </article>
+
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="300">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">V - Spinach Formaggi M</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">139,000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Spinach, mozzarella, parmesan, creamy ricotta blend.</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-400"></span> Creamy</span>
+    </div>
+    <div class="mt-4 h-32 rounded-xl overflow-hidden">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQnUkaatbgLoTaBte46qUCpADuhPMI7GXiZ7LcQ1KNHCJebKQtUhWhcqNNUKipqFyMKI&usqp=CAU" alt="Spinach Formaggi Pizza" class="w-full h-full object-cover rounded-xl">
+    </div>
+  </article>
+
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="350">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">V - Veggie M</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">135,000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Seasonal vegetables, mozzarella, tomato base.</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-orange-400"></span> Light</span>
+    </div>
+    <div class="mt-4 h-32 rounded-xl overflow-hidden">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd2x_jhJO_1XQcC1D85m6-QmHdY24qVwRzFA&s" alt="Veggie Pizza" class="w-full h-full object-cover rounded-xl">
+    </div>
+  </article>
+
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="400">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">V - Spinaci E Funghi M</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">145,000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Spinach, mushrooms, garlic oil, mozzarella.</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-brown-500"></span> Earthy</span>
+    </div>
+    <div class="mt-4 h-32 rounded-xl overflow-hidden">
+      <img src="https://pizzana.com/cdn/shop/products/Spinaci1.png?v=1681446410" alt="Spinach Mushroom Pizza" class="w-full h-full object-cover rounded-xl">
+    </div>
+  </article>
+
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="450">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">V - Quattro Formaggi M</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">159,000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Mozzarella, gorgonzola, parmesan, ricotta.</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-blue-500"></span> Rich</span>
+    </div>
+    <div class="mt-4 h-32 rounded-xl overflow-hidden">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7TcAUuyJPatwDlhCsNhxhKRhrD0rKpgXubA&s" alt="Quattro Formaggi Pizza" class="w-full h-full object-cover rounded-xl">
+    </div>
+  </article>
+
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="500">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">V - Parmigiana M</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">149,000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Grilled eggplant, parmesan, tomato sauce, mozzarella.</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-purple-400"></span> Savory</span>
+    </div>
+    <div class="mt-4 h-32 rounded-xl overflow-hidden">
+      <img src="https://foodst.com.au/cdn/shop/files/EggplantParmigianaPizza-SQ-1.jpg?v=1728428992" class="w-full h-full object-cover rounded-xl">
+    </div>
+  </article>
+
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="550">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pepperoni M</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">139,000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pepperoni, tomato sauce, mozzarella cheese.</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-red-500"></span> Spicy</span>
+    </div>
+    <div class="mt-4 h-32 rounded-xl overflow-hidden">
+      <img src="https://mojo.generalmills.com/api/public/content/iD9XDP4qRGCvhuXE9QVkxg_gmi_hi_res_jpeg.jpeg?v=ce3e36a9&t=eae6004af7d84bc5a9fa522ac84b14a8" alt="Pepperoni Pizza" class="w-full h-full object-cover rounded-xl">
+    </div>
+  </article>
+
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="600">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Hawaii M</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">145,000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Ham, pineapple, tomato sauce, mozzarella.</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span> Sweet</span>
+    </div>
+    <div class="mt-4 h-32 rounded-xl overflow-hidden">
+      <img src="https://outgrilling.com/wp-content/uploads/2024/02/Easy-Hawaiian-Pizza-Recipe-Image-F.jpg" alt="Hawaiian Pizza" class="w-full h-full object-cover rounded-xl">
+    </div>
+  </article>
+
+    <div class="mt-8 text-center" data-aos="fade-up" data-aos-delay="800">
+        <a href="https://www.foodbooking.com/api/fb/_xq613" target="_blank" rel="noopener" class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition bg-amber-500 text-white hover:bg-amber-600 inline-flex items-center gap-2">Order these online →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENHANCED ABOUT -->
+  <section id="about" class="px-4 md:px-8 lg:px-12 pb-16">
+    <div class="mx-auto max-w-6xl grid gap-8 md:grid-cols-2 items-center">
+      <div class="rounded-3xl h-72 md:h-96 bg-gradient-to-br from-amber-100 to-yellow-100 shadow-lg flex items-center justify-center relative overflow-hidden" data-aos="fade-right">
+        <div class="text-center">
+          <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Restaurant Kitchen" class="w-full h-full object-cover rounded-3xl"> </div>
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 opacity-10">
+          <div class="absolute top-4 left-4 text-2xl">🍕</div>
+          <div class="absolute top-8 right-8 text-xl">🌮</div>
+          <div class="absolute bottom-8 left-8 text-xl">🌶️</div>
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <h3 class="text-2xl md:text-3xl font-semibold mb-3">Our Story</h3>
+        <p class="text-neutral-700 leading-relaxed">Simple Place started as a tiny home kitchen, obsessed with bold Mexican flavors and Vietnamese herbs. The result: joyful pizza with taco toppings, served in a sunny yellow space.</p>
+        <div class="mt-4 flex items-center gap-2 text-amber-600" aria-label="5 out of 5 stars">
+          <span class="hover:scale-110 transition-transform">★</span><span class="hover:scale-110 transition-transform">★</span><span class="hover:scale-110 transition-transform">★</span><span class="hover:scale-110 transition-transform">★</span><span class="hover:scale-110 transition-transform">★</span>
+          <span class="text-sm text-neutral-500 ml-2">Loved by 2,000+ diners</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENHANCED VISIT -->
+  <section id="visit" class="px-4 md:px-8 lg:px-12 pb-20">
+    <div class="mx-auto max-w-6xl grid gap-8 md:grid-cols-2">
+      <!-- Hours Card -->
+    <div class="rounded-2xl border bg-white hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="200">
+      <div class="p-6 border-b flex items-center gap-2">
+        <span class="text-amber-600 text-lg">⏰</span>
+        <h4 class="font-semibold text-lg">Hours</h4>
+      </div>
+      <div class="p-6 text-sm">
+        <p class="text-neutral-600 mb-4">Walk-ins welcome • Reservations recommended on weekends</p>
+        <div class="grid grid-cols-2 gap-y-3">
+          <div>
+            <div class="font-medium">Mon–Thu</div>
+            <div class="text-neutral-700">11:00 – 22:00</div>
+          </div>
+          <div>
+            <div class="font-medium">Fri</div>
+            <div class="text-neutral-700">11:00 – 23:00</div>
+          </div>
+          <div>
+            <div class="font-medium">Sat</div>
+            <div class="text-neutral-700">10:00 – 23:00</div>
+          </div>
+          <div>
+            <div class="font-medium">Sun</div>
+            <div class="text-neutral-700">10:00 – 21:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="rounded-2xl border bg-white hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="400">
+        <div class="p-5 border-b">
+          <h4 class="font-semibold">Location</h4>
+          <p class="text-sm text-neutral-600">199F Nguyễn Văn Hưởng, Thảo Điền, Quận 2, Hồ Chí Minh, Vietnam</p>
+        </div>
+          <div class="aspect-[16/10] w-full overflow-hidden rounded-xl shadow">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.9736309123427!2d106.7310951750612!3d10.813329758511895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527df16b4efab%3A0x7e7862d6d7c4818b!2sSimple%20Place!5e0!3m2!1sen!2s!4v1756970263264!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ENHANCED EVENTS & PROMOTIONS -->
+  <section id="events" class="px-4 md:px-8 lg:px-12 pb-20 bg-yellow-50">
+    <div class="mx-auto max-w-6xl">
+      <h2 class="text-2xl font-bold text-center text-amber-700 mb-8">Events & Promotions</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <!-- Event Card -->
+        <div class="rounded-2xl border bg-white shadow hover:shadow-lg transition-shadow">
+          <img src="event-image.jpg" alt="Pizza Night Event" class="rounded-t-2xl w-full h-18 object-cover">
+          <div class="p-5">
+            <h3 class="font-semibold text-lg text-amber-700">Taco Tuesday</h3>
+            <p class="text-sm text-neutral-600 mt-2">Join us everyday for only 45.000 VND a Tacos</p>
+            <p class="text-sm text-neutral-800 font-medium mt-3">Date: Every Tuesday • 10 AM – 10 PM</p>
+          </div>
+        </div>
+        <!-- Promotion Card -->
+        <div class="rounded-2xl border bg-white shadow hover:shadow-lg transition-shadow">
+          <img src="promo.jpg" alt="Special Promotion" class="rounded-t-2xl w-full h-18 object-cover">
+          <div class="p-5">
+            <h3 class="font-semibold text-lg text-amber-700">Wednesday Pizza</h3>
+            <p class="text-sm text-neutral-600 mt-2">20% Promotion on all pizzas from 10 AM – 10 PM.</p>
+            <p class="text-sm text-neutral-800 font-medium mt-3">Offer valid until: September 30, 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact" class="px-4 md:px-8 lg:px-12 pb-28">
+  <div class="mx-auto max-w-6xl grid gap-8 md:grid-cols-2 items-stretch">
+    <!-- Contact us -->
+    <div class="rounded-2xl border bg-white p-5 flex flex-col justify-between hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
+      <div>
+        <h4 class="text-lg font-semibold">Contact us</h4>
+        <p class="text-sm text-neutral-600">Questions, parties, or large orders? We've got you.</p>
+        <div class="mt-4 space-y-3 text-sm">
+          <div class="flex items-center gap-2 hover:text-amber-600 transition-colors cursor-pointer">📞 <a class="hover:underline" href="tel:+84000000000">(+84) 904421089</a></div>
+          <div class="flex items-center gap-2 hover:text-amber-600 transition-colors cursor-pointer">✉️ <a class="hover:underline" href="mailto:hello@simpleplace.vn">simpleplace@gmail.com</a></div>
+          <div class="flex items-center gap-2 hover:text-amber-600 transition-colors cursor-pointer">📷 <a class="hover:underline" href="#">@simpleplace.vn</a></div>
+          <div class="flex items-center gap-2 hover:text-amber-600 transition-colors cursor-pointer">📘 <a class="hover:underline" href="https://www.facebook.com/simpleplacepizzasaigon">Fanpage</a></div>
+        </div>
+      </div>
+      <div class="mt-6 flex gap-2">
+        <button class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition bg-amber-500 text-white hover:bg-amber-600" onclick="openReserve()">Book a table</button>
+        <a href="https://www.foodbooking.com/api/fb/_xq613" target="_blank" rel="noopener" class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition border border-amber-500 text-amber-700 hover:bg-amber-50">Order online</a>
+      </div>
+    </div>
+
+    <!-- Private events -->
+    <div class="rounded-2xl border bg-white p-5 flex flex-col justify-between hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="400">
+      <div>
+        <h4 class="text-lg font-semibold">Private events</h4>
+        <p class="text-sm text-neutral-600">Tell us about your event and we'll get back within one business day.</p>
+      </div>
+      <form class="mt-4 space-y-3" onsubmit="event.preventDefault(); alert('Thanks! We\'ll reply by email.'); this.reset();">
+        <input class="w-full rounded-xl border px-4 py-2 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all" placeholder="Your name" required>
+        <input class="w-full rounded-xl border px-4 py-2 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all" placeholder="Email" type="email" required>
+        <textarea class="w-full rounded-xl border px-4 py-2 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all" rows="5" placeholder="What are you planning? (date, group size, budget)"></textarea>
+        <button class="btn-enhanced w-full rounded-2xl px-5 py-3 text-sm font-semibold transition bg-amber-500 text-white hover:bg-amber-600">Submit inquiry</button>
+        <p class="text-xs text-neutral-500">Demo form — connect to your backend or Formspree/Resend.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+    <!-- FOOTER -->
+    <footer class="border-t bg-gradient-to-r from-amber-50 to-yellow-50">
+      <div class="mx-auto max-w-6xl px-4 md:px-8 lg:px-12 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-sm text-neutral-600">© <span id="year"></span> Simple Place. All rights reserved.</div>
+        <div class="flex gap-4 text-sm text-neutral-600">
+          <a href="#about" class="hover:text-amber-600 transition-colors">About</a>
+          <a href="#menu" class="hover:text-amber-600 transition-colors">Menu</a>
+          <a href="#contact" class="hover:text-amber-600 transition-colors">Contact</a>
+        </div>
+      </div>
+    </footer>
+  
+    <!-- Scripts -->
+    <script>
+      // Auto set current year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+  
+      // Mobile menu toggle
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuItems = document.querySelectorAll(".mobile-menu-item");
+  
+      hamburger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        menuItems.forEach((item, i) => {
+          setTimeout(() => item.classList.toggle("show"), i * 100);
+        });
+      });
+  
+      // Reservation dialog (placeholder)
+      function openReserve() {
+        alert("Reservation system coming soon!");
+      }
+  
+      // AOS init
+      AOS.init({ once: true });
+  
+      // Animate stats numbers
+      document.querySelectorAll(".stat-number").forEach(el => {
+        const target = +el.getAttribute("data-count");
+        let count = 0;
+        const step = target / 100;
+        const interval = setInterval(() => {
+          count += step;
+          if (count >= target) {
+            count = target;
+            clearInterval(interval);
+          }
+          el.textContent = Math.floor(count);
+        }, 20);
+      });
+    </script>
+  </body>
+  </html>
+  
