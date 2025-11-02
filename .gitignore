@@ -123,3 +123,9 @@ Thumbs.db
 
 # Local development
 *.local
+
+# Restaurant tax specific
+tax_files/*.xlsx
+.DS_Store
+*.pyc
+__pycache__/
