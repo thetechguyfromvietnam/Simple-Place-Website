@@ -192,10 +192,11 @@
         
         <div class="control-panel">
             <div class="buttons">
-                <button id="btnStart" class="btn-start" onclick="startScript()">▶️ Bắt đầu</button>
-                <button id="btnStop" class="btn-stop" onclick="stopScript()" disabled>⏹️ Dừng</button>
-                <button id="btnClear" class="btn-clear" onclick="clearLogs()">🗑️ Xóa logs</button>
+                <!-- Auto upload disabled; hide start/stop -->
                 <button id="btnProcess" class="btn-clear" onclick="processDefault()">🧾 Xử lý hóa đơn (SBPM)</button>
+                <button id="btnGrab" class="btn-clear" onclick="createGrab()">🏪 Tạo hóa đơn Grab</button>
+                <button id="btnClearLogs" class="btn-clear" onclick="clearLogs()">🗑️ Xóa logs</button>
+                <button id="btnClearFiles" class="btn-stop" onclick="clearFiles()">🗑️ Xóa files đã tạo</button>
             </div>
             
             <div class="info-box" id="infoBox" style="margin-top: 20px;">
@@ -211,6 +212,29 @@
     <script>
         let statusInterval = null;
         let logInterval = null;
+
+        function startPolling() {
+            if (!statusInterval) {
+                statusInterval = setInterval(updateStatus, 1000);
+            }
+            if (!logInterval) {
+                logInterval = setInterval(updateLogs, 500);
+            }
+            // Update immediately when starting
+            updateStatus();
+            updateLogs();
+        }
+
+        function stopPolling() {
+            if (statusInterval) {
+                clearInterval(statusInterval);
+                statusInterval = null;
+            }
+            if (logInterval) {
+                clearInterval(logInterval);
+                logInterval = null;
+            }
+        }
         
         // Kiểm tra status mỗi 1 giây
         function updateStatus() {
@@ -226,11 +250,17 @@
                         statusEl.className = 'status running';
                         btnStart.disabled = true;
                         btnStop.disabled = false;
+                        // Ensure polling is active when running
+                        if (!statusInterval || !logInterval) {
+                            startPolling();
+                        }
                     } else {
                         statusEl.textContent = 'Đang dừng';
                         statusEl.className = 'status stopped';
                         btnStart.disabled = false;
                         btnStop.disabled = true;
+                        // Stop polling when not running
+                        stopPolling();
                     }
                 })
                 .catch(err => console.error('Error updating status:', err));
@@ -259,6 +289,7 @@
                 .then(data => {
                     if (data.success) {
                         alert('✅ Script đã được khởi động!');
+                        startPolling();
                     } else {
                         alert('❌ Lỗi: ' + (data.error || 'Unknown error'));
                     }
@@ -278,6 +309,7 @@
                 .then(data => {
                     if (data.success) {
                         alert('✅ Script đã được dừng!');
+                        stopPolling();
                     } else {
                         alert('❌ Lỗi: ' + (data.error || 'Unknown error'));
                     }
@@ -297,6 +329,39 @@
                 })
                 .catch(err => {
                     alert('❌ Lỗi: ' + err.message);
+                });
+        }
+        
+        function clearFiles() {
+            if (!confirm('⚠️ Bạn có chắc muốn xóa TẤT CẢ files .xlsx trong tax_files/?\n\nHành động này không thể hoàn tác!')) {
+                return;
+            }
+            
+            const btn = document.getElementById('btnClearFiles');
+            btn.disabled = true;
+            btn.textContent = '⏳ Đang xóa...';
+            
+            fetch('/api/clear-files', { method: 'POST' })
+                .then(res => res.json())
+                .then(data => {
+                    const logPanel = document.getElementById('logPanel');
+                    if (data.success) {
+                        const filesList = (data.files || []).map(f => `- ${f}`).join('\n');
+                        const message = `✅ Đã xóa ${data.deleted_count} file(s):\n${filesList}`;
+                        logPanel.innerHTML = `<div class="log-entry">${escapeHtml(message)}</div>`;
+                        logPanel.scrollTop = logPanel.scrollHeight;
+                        alert(`✅ Đã xóa ${data.deleted_count} file(s) trong tax_files/`);
+                    } else {
+                        logPanel.innerHTML = `<div class="log-entry">❌ Lỗi: ${escapeHtml(data.error || 'Unknown error')}</div>`;
+                        alert('❌ Lỗi: ' + (data.error || 'Unknown error'));
+                    }
+                })
+                .catch(err => {
+                    alert('❌ Lỗi kết nối: ' + err.message);
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.textContent = '🗑️ Xóa files đã tạo';
                 });
         }
         
@@ -327,6 +392,46 @@
                     btn.textContent = '🧾 Xử lý hóa đơn (SBPM)';
                 });
         }
+
+        function createGrab() {
+            const menu = prompt("Nhập nhà hàng (simple/taco):", "simple");
+            if (!menu) return;
+            const total = prompt("Nhập tổng tiền (đã gồm VAT 8%):", "1080000");
+            if (!total) return;
+            const date = prompt("Nhập ngày (DD/MM/YYYY) hoặc bỏ trống:", "");
+            const inv = prompt("Nhập số hóa đơn (tùy chọn) hoặc bỏ trống:", "");
+            
+            const btn = document.getElementById('btnGrab');
+            btn.disabled = true;
+            btn.textContent = '⏳ Đang tạo...';
+            
+            fetch('/api/grab-invoice', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ menu, total_with_tax: total, date, invoice_number: inv })
+            })
+            .then(res => res.json())
+            .then(data => {
+                const logPanel = document.getElementById('logPanel');
+                if (data.success) {
+                    const files = (data.files || []).map(f => `- ${f}`).join('\n');
+                    const msg = `✅ Đã tạo hóa đơn Grab (${data.menu}).\nFile: ${data.output}\nTổng files mới: ${data.created_count}\n${files}`;
+                    logPanel.innerHTML = `<div class=\"log-entry\">${escapeHtml(msg)}</div>`;
+                    logPanel.scrollTop = logPanel.scrollHeight;
+                    alert('✅ Đã tạo hóa đơn Grab!');
+                } else {
+                    logPanel.innerHTML = `<div class=\"log-entry\">❌ Lỗi: ${escapeHtml(data.error || 'Unknown')}</div>`;
+                    alert('❌ Lỗi: ' + (data.error || 'Unknown error'));
+                }
+            })
+            .catch(err => {
+                alert('❌ Lỗi kết nối: ' + err.message);
+            })
+            .finally(() => {
+                btn.disabled = false;
+                btn.textContent = '🏪 Tạo hóa đơn Grab';
+            });
+        }
         
         function escapeHtml(text) {
             const div = document.createElement('div');
@@ -334,13 +439,7 @@
             return div.innerHTML;
         }
         
-        // Khởi động polling
-        statusInterval = setInterval(updateStatus, 1000);
-        logInterval = setInterval(updateLogs, 500);
-        
-        // Cập nhật ngay lập tức
-        updateStatus();
-        updateLogs();
+        // Không polling mặc định. Polling chỉ bật khi script đang chạy hoặc sau khi ấn Bắt đầu.
     </script>
 </body>
 </html>
