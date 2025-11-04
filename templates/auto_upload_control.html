@@ -192,7 +192,8 @@
         
         <div class="control-panel">
             <div class="buttons">
-                <!-- Auto upload disabled; hide start/stop -->
+                <button id="btnStart" class="btn-start" onclick="startScript()">▶️ Bắt đầu</button>
+                <button id="btnStop" class="btn-stop" onclick="stopScript()" disabled>⏹️ Dừng</button>
                 <button id="btnProcess" class="btn-clear" onclick="processDefault()">🧾 Xử lý hóa đơn (SBPM)</button>
                 <button id="btnGrab" class="btn-clear" onclick="createGrab()">🏪 Tạo hóa đơn Grab</button>
                 <button id="btnClearLogs" class="btn-clear" onclick="clearLogs()">🗑️ Xóa logs</button>

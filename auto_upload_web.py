@@ -41,8 +41,7 @@ script_status = {
     "logs": []
 }
 
-# Auto-upload script is disabled/removed
-SCRIPT_PATH = None
+SCRIPT_PATH = Path(__file__).parent / "auto_upload_simple.py"
 BASE_DIR = Path(__file__).parent
 DATA_DIR = BASE_DIR / "data"
 TAX_DIR = BASE_DIR / "tax_files"
@@ -61,6 +60,112 @@ def get_status():
         "start_time": script_status["start_time"],
         "logs": script_status["logs"][-50:]  # Chỉ lấy 50 log cuối
     })
+
+@app.route('/api/start', methods=['POST'])
+def start_script():
+    """Start script"""
+    global script_process, script_status
+    
+    if script_status["running"]:
+        return jsonify({"error": "Script đang chạy rồi"}), 400
+    
+    try:
+        # Chạy script trong background
+        script_process = subprocess.Popen(
+            [sys.executable, str(SCRIPT_PATH)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,
+            universal_newlines=True
+        )
+        
+        script_status["running"] = True
+        script_status["pid"] = script_process.pid
+        script_status["start_time"] = datetime.now().isoformat()
+        script_status["logs"].append(f"[{datetime.now().strftime('%H:%M:%S')}] Script đã được khởi động")
+        
+        # Thread để đọc output
+        def read_output():
+            for line in iter(script_process.stdout.readline, ''):
+                if line:
+                    log_entry = f"[{datetime.now().strftime('%H:%M:%S')}] {line.strip()}"
+                    script_status["logs"].append(log_entry)
+                    # Giới hạn log để tránh quá nhiều
+                    if len(script_status["logs"]) > 1000:
+                        script_status["logs"] = script_status["logs"][-500:]
+            
+            # Script đã kết thúc
+            script_process.wait()
+            script_status["running"] = False
+            script_status["logs"].append(f"[{datetime.now().strftime('%H:%M:%S')}] Script đã kết thúc (exit code: {script_process.returncode})")
+            script_process = None
+        
+        thread = threading.Thread(target=read_output, daemon=True)
+        thread.start()
+        
+        return jsonify({"success": True, "pid": script_process.pid})
+    
+    except Exception as e:
+        script_status["running"] = False
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/stop', methods=['POST'])
+def stop_script():
+    """Stop script"""
+    global script_process, script_status
+    
+    if not script_status["running"]:
+        return jsonify({"error": "Script không đang chạy"}), 400
+    
+    try:
+        if script_process:
+            script_process.terminate()
+            script_status["logs"].append(f"[{datetime.now().strftime('%H:%M:%S')}] Đang dừng script...")
+            return jsonify({"success": True})
+        else:
+            script_status["running"] = False
+            return jsonify({"success": True})
+    
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/logs')
+def get_logs():
+    """Lấy logs"""
+    return jsonify({
+        "logs": script_status["logs"],
+        "count": len(script_status["logs"])
+    })
+
+@app.route('/api/clear-logs', methods=['POST'])
+def clear_logs():
+    """Xóa logs"""
+    script_status["logs"] = []
+    return jsonify({"success": True})
+
+@app.route('/api/clear-files', methods=['POST'])
+def clear_files():
+    """Xóa tất cả files .xlsx trong tax_files/"""
+    try:
+        if not TAX_DIR.exists():
+            return jsonify({"success": False, "error": "Thư mục tax_files không tồn tại"}), 400
+        
+        files_deleted = []
+        for file_path in TAX_DIR.glob("*.xlsx"):
+            try:
+                file_path.unlink()
+                files_deleted.append(file_path.name)
+            except Exception as e:
+                return jsonify({"success": False, "error": f"Lỗi khi xóa {file_path.name}: {str(e)}"}), 500
+        
+        return jsonify({
+            "success": True,
+            "deleted_count": len(files_deleted),
+            "files": files_deleted
+        })
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route('/api/process-default', methods=['POST'])
 def process_default():
@@ -171,53 +276,6 @@ def api_grab_invoice():
             "output": out_file,
             "created_count": len(new_files),
             "files": new_files,
-        })
-    except Exception as e:
-        return jsonify({"success": False, "error": str(e)}), 500
-
-@app.route('/api/start', methods=['POST'])
-def start_script():
-    """Start script - disabled"""
-    return jsonify({"error": "Tính năng auto upload đã tắt"}), 400
-
-@app.route('/api/stop', methods=['POST'])
-def stop_script():
-    """Stop script - disabled"""
-    return jsonify({"error": "Tính năng auto upload đã tắt"}), 400
-
-@app.route('/api/logs')
-def get_logs():
-    """Lấy logs"""
-    return jsonify({
-        "logs": script_status["logs"],
-        "count": len(script_status["logs"])
-    })
-
-@app.route('/api/clear-logs', methods=['POST'])
-def clear_logs():
-    """Xóa logs"""
-    script_status["logs"] = []
-    return jsonify({"success": True})
-
-@app.route('/api/clear-files', methods=['POST'])
-def clear_files():
-    """Xóa tất cả files .xlsx trong tax_files/"""
-    try:
-        if not TAX_DIR.exists():
-            return jsonify({"success": False, "error": "Thư mục tax_files không tồn tại"}), 400
-        
-        files_deleted = []
-        for file_path in TAX_DIR.glob("*.xlsx"):
-            try:
-                file_path.unlink()
-                files_deleted.append(file_path.name)
-            except Exception as e:
-                return jsonify({"success": False, "error": f"Lỗi khi xóa {file_path.name}: {str(e)}"}), 500
-        
-        return jsonify({
-            "success": True,
-            "deleted_count": len(files_deleted),
-            "files": files_deleted
         })
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
