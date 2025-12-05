@@ -188,15 +188,15 @@
         <div class="header">
             <h1>🤖 Auto Upload Control</h1>
             <div id="status" class="status stopped">Đang dừng</div>
+            <div id="activity" style="margin-top:8px;color:#fff;font-weight:600"></div>
         </div>
         
         <div class="control-panel">
             <div class="buttons">
                 <button id="btnStart" class="btn-start" onclick="startScript()">▶️ Bắt đầu</button>
-                <button id="btnStop" class="btn-stop" onclick="stopScript()" disabled>⏹️ Dừng</button>
                 <button id="btnProcess" class="btn-clear" onclick="processDefault()">🧾 Xử lý hóa đơn (SBPM)</button>
+                <button id="btnFetch" class="btn-clear" onclick="fetchData()">📥 Lấy dữ liệu Fabi (auto)</button>
                 <button id="btnGrab" class="btn-clear" onclick="createGrab()">🏪 Tạo hóa đơn Grab</button>
-                <button id="btnClearLogs" class="btn-clear" onclick="clearLogs()">🗑️ Xóa logs</button>
                 <button id="btnClearFiles" class="btn-stop" onclick="clearFiles()">🗑️ Xóa files đã tạo</button>
             </div>
             
@@ -213,6 +213,7 @@
     <script>
         let statusInterval = null;
         let logInterval = null;
+        let fetchInterval = null;
 
         function startPolling() {
             if (!statusInterval) {
@@ -244,13 +245,13 @@
                 .then(data => {
                     const statusEl = document.getElementById('status');
                     const btnStart = document.getElementById('btnStart');
-                    const btnStop = document.getElementById('btnStop');
                     
                     if (data.running) {
                         statusEl.textContent = 'Đang chạy';
                         statusEl.className = 'status running';
                         btnStart.disabled = true;
-                        btnStop.disabled = false;
+                        const act = (data.current && data.current.length) ? data.current : '';
+                        document.getElementById('activity').textContent = act;
                         // Ensure polling is active when running
                         if (!statusInterval || !logInterval) {
                             startPolling();
@@ -259,14 +260,14 @@
                         statusEl.textContent = 'Đang dừng';
                         statusEl.className = 'status stopped';
                         btnStart.disabled = false;
-                        btnStop.disabled = true;
+                        document.getElementById('activity').textContent = '';
                         // Stop polling when not running
                         stopPolling();
                     }
                 })
                 .catch(err => console.error('Error updating status:', err));
         }
-        
+
         // Cập nhật logs mỗi 0.5 giây
         function updateLogs() {
             fetch('/api/logs')
@@ -300,38 +301,6 @@
                 });
         }
         
-        function stopScript() {
-            if (!confirm('Bạn có chắc muốn dừng script?')) {
-                return;
-            }
-            
-            fetch('/api/stop', { method: 'POST' })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        alert('✅ Script đã được dừng!');
-                        stopPolling();
-                    } else {
-                        alert('❌ Lỗi: ' + (data.error || 'Unknown error'));
-                    }
-                })
-                .catch(err => {
-                    alert('❌ Lỗi kết nối: ' + err.message);
-                });
-        }
-        
-        function clearLogs() {
-            fetch('/api/clear-logs', { method: 'POST' })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        document.getElementById('logPanel').innerHTML = '<div class="log-entry">Logs đã được xóa</div>';
-                    }
-                })
-                .catch(err => {
-                    alert('❌ Lỗi: ' + err.message);
-                });
-        }
         
         function clearFiles() {
             if (!confirm('⚠️ Bạn có chắc muốn xóa TẤT CẢ files .xlsx trong tax_files/?\n\nHành động này không thể hoàn tác!')) {
@@ -391,6 +360,95 @@
                 .finally(() => {
                     btn.disabled = false;
                     btn.textContent = '🧾 Xử lý hóa đơn (SBPM)';
+                });
+        }
+
+        function fetchData() {
+            if (fetchInterval) {
+                alert('⚠️ Đang chạy lấy dữ liệu, vui lòng chờ.');
+                return;
+            }
+
+            const btn = document.getElementById('btnFetch');
+            const originalText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = '⏳ Đang khởi động...';
+
+            fetch('/api/fetch-data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ headless: false })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    startFetchPolling();
+                } else {
+                    const msg = data.error || 'Unknown error';
+                    alert('❌ Lỗi: ' + msg);
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }
+            })
+            .catch(err => {
+                alert('❌ Lỗi kết nối: ' + err.message);
+                btn.disabled = false;
+                btn.textContent = originalText;
+            })
+            .finally(() => {
+                if (fetchInterval) {
+                    btn.textContent = '⏳ Đang lấy dữ liệu...';
+                } else {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }
+            });
+        }
+
+        function startFetchPolling() {
+            if (fetchInterval) {
+                return;
+            }
+            updateFetchStatus();
+            fetchInterval = setInterval(updateFetchStatus, 1000);
+            const btn = document.getElementById('btnFetch');
+            btn.disabled = true;
+            btn.textContent = '⏳ Đang lấy dữ liệu...';
+        }
+
+        function stopFetchPolling() {
+            if (fetchInterval) {
+                clearInterval(fetchInterval);
+                fetchInterval = null;
+            }
+        }
+
+        function updateFetchStatus() {
+            fetch('/api/fetch-status')
+                .then(res => res.json())
+                .then(data => {
+                    const logPanel = document.getElementById('logPanel');
+                    if (data.logs && data.logs.length) {
+                        logPanel.innerHTML = data.logs.map(line => `<div class="log-entry">${escapeHtml(line)}</div>`).join('');
+                        logPanel.scrollTop = logPanel.scrollHeight;
+                    }
+
+                    if (!data.running) {
+                        stopFetchPolling();
+                        const btn = document.getElementById('btnFetch');
+                        btn.disabled = false;
+                        btn.textContent = '📥 Lấy dữ liệu Fabi (auto)';
+                        if (typeof data.exit_code !== 'undefined' && data.exit_code !== null) {
+                            if (data.exit_code === 0) {
+                                alert('✅ Đã tải dữ liệu Fabi xong!');
+                            } else {
+                                alert('⚠️ Fetch kết thúc với mã lỗi ' + data.exit_code);
+                            }
+                        }
+                    }
+                })
+                .catch(err => {
+                    console.error('Error updating fetch status:', err);
                 });
         }
 

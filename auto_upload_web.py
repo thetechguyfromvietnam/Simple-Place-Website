@@ -13,14 +13,18 @@ import sys
 from pathlib import Path
 import json
 from datetime import datetime
-from pathlib import Path
 import io
 import contextlib
 
-# Import processing functions
-import sys as _sys
-_sys.path.insert(0, str(Path(__file__).parent))
-from process_invoices import (
+# Project structure helpers
+BASE_DIR = Path(__file__).resolve().parent
+AUTOMATION_DIR = BASE_DIR / "automation"
+
+# Ensure automation package remains importable when running as a script
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
+from automation.process_invoices import (
     process_sale_by_payment_method,
     load_menus,
     combine_files,
@@ -38,11 +42,21 @@ script_status = {
     "running": False,
     "pid": None,
     "start_time": None,
-    "logs": []
+    "logs": [],
+    "current": None,
 }
 
-SCRIPT_PATH = Path(__file__).parent / "auto_upload_simple.py"
-BASE_DIR = Path(__file__).parent
+fetch_process = None
+fetch_status = {
+    "running": False,
+    "pid": None,
+    "start_time": None,
+    "logs": [],
+    "exit_code": None,
+}
+
+SCRIPT_PATH = AUTOMATION_DIR / "auto_upload_simple.py"
+FETCH_SCRIPT_PATH = AUTOMATION_DIR / "auto_fetch_fabi.py"
 DATA_DIR = BASE_DIR / "data"
 TAX_DIR = BASE_DIR / "tax_files"
 
@@ -58,6 +72,7 @@ def get_status():
         "running": script_status["running"],
         "pid": script_status["pid"],
         "start_time": script_status["start_time"],
+        "current": script_status.get("current"),
         "logs": script_status["logs"][-50:]  # Chỉ lấy 50 log cuối
     })
 
@@ -91,6 +106,9 @@ def start_script():
                 if line:
                     log_entry = f"[{datetime.now().strftime('%H:%M:%S')}] {line.strip()}"
                     script_status["logs"].append(log_entry)
+                    low = line.strip().lower()
+                    if ("uploading:" in low) or ("processing..." in low) or ("thành công" in low) or ("thất bại" in low):
+                        script_status["current"] = line.strip()
                     # Giới hạn log để tránh quá nhiều
                     if len(script_status["logs"]) > 1000:
                         script_status["logs"] = script_status["logs"][-500:]
@@ -98,6 +116,7 @@ def start_script():
             # Script đã kết thúc
             script_process.wait()
             script_status["running"] = False
+            script_status["current"] = None
             script_status["logs"].append(f"[{datetime.now().strftime('%H:%M:%S')}] Script đã kết thúc (exit code: {script_process.returncode})")
             script_process = None
         
@@ -166,6 +185,81 @@ def clear_files():
         })
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
+
+@app.route('/api/fetch-data', methods=['POST'])
+def fetch_data():
+    """Chạy script auto_fetch_fabi.py để tải dữ liệu báo cáo."""
+    global fetch_process, fetch_status
+
+    if not FETCH_SCRIPT_PATH.exists():
+        return jsonify({"success": False, "error": "auto_fetch_fabi.py không tồn tại"}), 404
+
+    if fetch_status["running"]:
+        return jsonify({"success": False, "error": "Fetch đang chạy"}), 400
+
+    payload = request.get_json(silent=True) or {}
+
+    args = [sys.executable, str(FETCH_SCRIPT_PATH)]
+    if payload.get("headless", True):
+        args.append("--headless")
+    if payload.get("no_click_transfer", False):
+        args.append("--no-click-transfer")
+    if "wait" in payload:
+        args.extend(["--wait", str(payload["wait"])])
+
+    try:
+        fetch_process = subprocess.Popen(
+            args,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,
+            universal_newlines=True,
+            cwd=str(BASE_DIR),
+        )
+    except Exception as exc:
+        return jsonify({"success": False, "error": str(exc)}), 500
+
+    fetch_status.update({
+        "running": True,
+        "pid": fetch_process.pid,
+        "start_time": datetime.now().isoformat(),
+        "logs": [f"[{datetime.now().strftime('%H:%M:%S')}] Fetch script started"],
+        "exit_code": None,
+    })
+
+    def read_output():
+        global fetch_process, fetch_status
+        for line in iter(fetch_process.stdout.readline, ''):
+            if line:
+                entry = f"[{datetime.now().strftime('%H:%M:%S')}] {line.strip()}"
+                fetch_status["logs"].append(entry)
+                if len(fetch_status["logs"]) > 500:
+                    fetch_status["logs"] = fetch_status["logs"][-250:]
+        fetch_process.wait()
+        fetch_status["running"] = False
+        fetch_status["exit_code"] = fetch_process.returncode
+        fetch_status["logs"].append(
+            f"[{datetime.now().strftime('%H:%M:%S')}] Fetch script finished (exit code: {fetch_process.returncode})"
+        )
+        if len(fetch_status["logs"]) > 500:
+            fetch_status["logs"] = fetch_status["logs"][-250:]
+        fetch_process = None
+
+    threading.Thread(target=read_output, daemon=True).start()
+
+    return jsonify({"success": True, "pid": fetch_process.pid})
+
+@app.route('/api/fetch-status')
+def get_fetch_status():
+    """Trả về trạng thái hiện tại của fetch script."""
+    return jsonify({
+        "running": fetch_status["running"],
+        "pid": fetch_status["pid"],
+        "start_time": fetch_status["start_time"],
+        "logs": fetch_status["logs"][-200:],
+        "exit_code": fetch_status["exit_code"],
+    })
 
 @app.route('/api/process-default', methods=['POST'])
 def process_default():
@@ -291,4 +385,14 @@ if __name__ == '__main__':
     print(f"📁 Mở trình duyệt và truy cập: {url}")
     print("="*70)
     
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    # Tự động mở trình duyệt 1 lần khi server start
+    def _open():
+        import time, webbrowser
+        time.sleep(1.2)
+        try:
+            webbrowser.open(url)
+        except Exception:
+            pass
+    threading.Thread(target=_open, daemon=True).start()
+    
+    app.run(host='0.0.0.0', port=5001, debug=False, use_reloader=False)
