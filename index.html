@@ -2831,7 +2831,7 @@
           <p class="text-sm text-neutral-600">215B4 Nguyễn Văn Hưởng, phường An Khánh, Thủ Đức, Thành phố Hồ Chí Minh</p>
         </div>
           <div class="aspect-[16/10] w-full overflow-hidden rounded-xl shadow">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.278!2d106.738!3d10.815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ4JzU0LjAiTiAxMDbCsDQ0JzE2LjgiRQ!5e0!3m2!1sen!2s!4v1756970263264!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.984844463624!2d106.72968057585686!3d10.812471389338468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527df16b4efab%3A0x7e7862d6d7c4818b!2sSimple%20Place!5e0!3m2!1svi!2s!4v1768025098634!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
               </div>
             </div>
@@ -2841,30 +2841,80 @@
     </div>
   </section>
   <!-- ENHANCED EVENTS & PROMOTIONS -->
-  <section id="events" class="px-4 md:px-8 lg:px-12 pb-20 bg-yellow-50">
+  <section id="events" class="px-4 md:px-8 lg:px-12 py-20 bg-gradient-to-br from-amber-50 via-yellow-50 to-amber-100">
     <div class="mx-auto max-w-6xl">
-      <h2 class="text-2xl font-bold text-center text-amber-700 mb-8">Events & Promotions</h2>
-      <div class="grid gap-6 md:grid-cols-2">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold text-amber-900 mb-4">Events & Promotions</h2>
+        <p class="text-lg text-amber-700 max-w-2xl mx-auto">Don't miss out on our weekly specials and exciting promotions</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-2">
         <!-- Event Card -->
-        <div class="rounded-2xl border bg-white shadow hover:shadow-lg transition-shadow overflow-hidden flex flex-col">
-          <div class="w-full bg-gray-100 flex items-center justify-center" style="min-height: 300px;">
-            <img src="images/event-image.jpg" alt="Pizza Night Event" class="rounded-t-2xl w-full h-full object-contain max-h-80" onerror="this.src='https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop'">
+        <div class="group rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-64 overflow-hidden bg-gradient-to-br from-amber-100 to-yellow-100">
+            <img src="images/event-image.jpg" alt="Taco Tuesday Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop'">
+            <div class="absolute top-4 left-4">
+              <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-amber-500 text-white shadow-lg">
+                🎉 Weekly Event
+              </span>
+            </div>
           </div>
-          <div class="p-5">
-            <h3 class="font-semibold text-lg text-amber-700">Taco Tuesday</h3>
-            <p class="text-sm text-neutral-600 mt-2">Join us everyday for only 45.000 VND a Tacos</p>
-            <p class="text-sm text-neutral-800 font-medium mt-3">Date: Every Tuesday • 10 AM – 10 PM</p>
+          <div class="p-6 md:p-8">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-2xl md:text-3xl font-bold text-amber-900">Taco Tuesday</h3>
+              <span class="text-3xl">🌮</span>
+            </div>
+            <p class="text-base text-neutral-700 mb-6 leading-relaxed">Join us every Tuesday for our special Taco Tuesday! Enjoy delicious tacos for only 45,000 VND each.</p>
+            <div class="space-y-3 pt-4 border-t border-amber-200">
+              <div class="flex items-center gap-3 text-neutral-700">
+                <span class="text-amber-600 text-xl">📅</span>
+                <span class="font-medium">Every Tuesday</span>
+              </div>
+              <div class="flex items-center gap-3 text-neutral-700">
+                <span class="text-amber-600 text-xl">🕐</span>
+                <span class="font-medium">10:00 AM – 10:00 PM</span>
+              </div>
+              <div class="flex items-center gap-3 text-amber-700 font-semibold mt-4">
+                <span class="text-2xl">💰</span>
+                <span class="text-lg">Only 45,000 VND per taco</span>
+              </div>
+            </div>
           </div>
         </div>
         <!-- Promotion Card -->
-        <div class="rounded-2xl border bg-white shadow hover:shadow-lg transition-shadow overflow-hidden flex flex-col">
-          <div class="w-full bg-gray-100 flex items-center justify-center" style="min-height: 300px;">
-            <img src="images/promo.jpg" alt="Special Promotion" class="rounded-t-2xl w-full h-full object-contain max-h-80" onerror="this.src='https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=800&auto=format&fit=crop'">
+        <div class="group rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+          <div class="relative h-64 overflow-hidden bg-gradient-to-br from-red-100 to-orange-100">
+            <img src="images/promo.jpg" alt="Wednesday Pizza Promotion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=800&auto=format&fit=crop'">
+            <div class="absolute top-4 left-4">
+              <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-red-500 text-white shadow-lg">
+                🔥 Special Offer
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="inline-flex items-center px-4 py-2 rounded-full text-lg font-bold bg-white text-red-600 shadow-lg border-2 border-red-500">
+                -20%
+              </span>
+            </div>
           </div>
-          <div class="p-5">
-            <h3 class="font-semibold text-lg text-amber-700">Wednesday Pizza</h3>
-            <p class="text-sm text-neutral-600 mt-2">20% Promotion on all pizzas from 10 AM – 10 PM.</p>
-            <p class="text-sm text-neutral-800 font-medium mt-3">Offer valid until: September 30, 2025</p>
+          <div class="p-6 md:p-8">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-2xl md:text-3xl font-bold text-amber-900">Wednesday Pizza</h3>
+              <span class="text-3xl">🍕</span>
+            </div>
+            <p class="text-base text-neutral-700 mb-6 leading-relaxed">Get 20% off on all pizzas every Wednesday! Perfect time to enjoy your favorite pizzas at a great price.</p>
+            <div class="space-y-3 pt-4 border-t border-amber-200">
+              <div class="flex items-center gap-3 text-neutral-700">
+                <span class="text-amber-600 text-xl">📅</span>
+                <span class="font-medium">Every Wednesday</span>
+              </div>
+              <div class="flex items-center gap-3 text-neutral-700">
+                <span class="text-amber-600 text-xl">🕐</span>
+                <span class="font-medium">10:00 AM – 10:00 PM</span>
+              </div>
+              <div class="flex items-center gap-3 text-red-600 font-semibold mt-4">
+                <span class="text-2xl">⏰</span>
+                <span class="text-sm text-neutral-600">Valid until: <span class="font-bold text-red-600">September 30, 2025</span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
