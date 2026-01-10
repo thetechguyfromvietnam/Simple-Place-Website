@@ -297,7 +297,7 @@
 
   <!-- HERO -->
   <section class="relative isolate">
-    <div class="absolute inset-0 -z-10 parallax-bg bg-[url('./background.jpg')] md:bg-[url('./background.jpg')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 -z-10 parallax-bg bg-cover bg-center" style="background-image: url('./images/background.jpg'), url('https://images.unsplash.com/photo-1601924572345-0050bd436b0b?q=80&w=1600&auto=format&fit=crop');"></div>
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-amber-500/20 via-black/40 to-black/70"></div>
     
     <!-- Floating Elements -->
@@ -372,156 +372,2400 @@
           <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Menu</h2>
           <p class="text-neutral-600">Yellow‑hot fusion favorites. Sizes are 10" unless noted.</p>
         </div>
-        <div class="flex flex-wrap gap-2">
-          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="All">All</button>
-          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Pizza">Pizza</button>
-          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Tacos">Tacos</button>
+                <div class="flex flex-wrap gap-2">
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-amber-500 text-white hover:bg-amber-600 transition-colors" data-filter="Best Sellers">Best Sellers</button>
           <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Snacks">Snacks</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Nachos">Nachos</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Tacos">Tacos</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Burritos">Burritos</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Quesadillas">Quesadillas</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Pizza">Pizza</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Pasta">Pasta</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Salads">Salads</button>
+          <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Main Course">Main Course</button>
           <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Drinks">Drinks</button>
           <button class="filter-btn rounded-xl border px-4 py-2 text-sm bg-white hover:bg-amber-50 transition-colors" data-filter="Desserts">Desserts</button>
         </div>
       </div>
 
       <div id="menuGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-  <!-- PIZZA -->
-  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="200">
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Snacks" data-aos="fade-up" data-aos-delay="200">
     <div class="flex items-center justify-between gap-3">
-      <h3 class="text-xl font-semibold">V - Margherita L</h3>
-      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">129,000 ₫</span>
+      <h3 class="text-xl font-semibold">Súp Ngô Kem</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">110.000 ₫</span>
     </div>
-    <p class="mt-1 text-neutral-600">Classic tomato sauce, mozzarella cheese, fresh basil.</p>
+    <p class="mt-1 text-neutral-600">Creamy Corn Soup</p>
     <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
-      <span>Vegetarian</span>
-      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Fresh</span>
-    </div>
-    <div class="mt-4 h-32 rounded-xl overflow-hidden">
-      <img src="https://uk.ooni.com/cdn/shop/articles/20220211142645-margherita-9920_e41233d5-dcec-461c-b07e-03245f031dfe.jpg?v=1737105431&width=2048" alt="Margherita Pizza" class="w-full h-full object-cover rounded-xl">
+      <span>Snacks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
     </div>
   </article>
-
-  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="250">
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Snacks" data-aos="fade-up" data-aos-delay="250">
     <div class="flex items-center justify-between gap-3">
-      <h3 class="text-xl font-semibold">V - Mediterranean L</h3>
-      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">159,000 ₫</span>
+      <h3 class="text-xl font-semibold">Khoai Tây Chiên</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">75.000 ₫</span>
     </div>
-    <p class="mt-1 text-neutral-600">Tomato base, olives, feta, sundried tomatoes, oregano.</p>
+    <p class="mt-1 text-neutral-600">French Fries</p>
     <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
-      <span>Vegetarian</span>
-      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-purple-500"></span> Rich</span>
-    </div>
-    <div class="mt-4 h-32 rounded-xl overflow-hidden">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYyk-aLtDdVgY-CPgLso_4YIuXy3uPUYC5Qg&s" alt="Mediterranean Pizza" class="w-full h-full object-cover rounded-xl">
+      <span>Snacks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
     </div>
   </article>
-
-  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="300">
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Snacks" data-aos="fade-up" data-aos-delay="300">
     <div class="flex items-center justify-between gap-3">
-      <h3 class="text-xl font-semibold">V - Spinach Formaggi M</h3>
-      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">139,000 ₫</span>
+      <h3 class="text-xl font-semibold">Súp Bí Đỏ Khoai Lang</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">95.000 ₫</span>
     </div>
-    <p class="mt-1 text-neutral-600">Spinach, mozzarella, parmesan, creamy ricotta blend.</p>
+    <p class="mt-1 text-neutral-600">Pumpkin And Sweet Potato Soup</p>
     <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
-      <span>Vegetarian</span>
-      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-400"></span> Creamy</span>
-    </div>
-    <div class="mt-4 h-32 rounded-xl overflow-hidden">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQnUkaatbgLoTaBte46qUCpADuhPMI7GXiZ7LcQ1KNHCJebKQtUhWhcqNNUKipqFyMKI&usqp=CAU" alt="Spinach Formaggi Pizza" class="w-full h-full object-cover rounded-xl">
+      <span>Snacks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
     </div>
   </article>
-
-  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="350">
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Snacks" data-aos="fade-up" data-aos-delay="350">
     <div class="flex items-center justify-between gap-3">
-      <h3 class="text-xl font-semibold">V - Veggie M</h3>
-      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">135,000 ₫</span>
+      <h3 class="text-xl font-semibold">Bruschetta Ý Chay (Bánh Mì Nướng Phủ Cà Chua Tươi, Dầu Ôliu)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">95.000 ₫</span>
     </div>
-    <p class="mt-1 text-neutral-600">Seasonal vegetables, mozzarella, tomato base.</p>
+    <p class="mt-1 text-neutral-600">V-Bruschetta</p>
     <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
       <span>Vegetarian</span>
-      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-orange-400"></span> Light</span>
-    </div>
-    <div class="mt-4 h-32 rounded-xl overflow-hidden">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd2x_jhJO_1XQcC1D85m6-QmHdY24qVwRzFA&s" alt="Veggie Pizza" class="w-full h-full object-cover rounded-xl">
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Snacks</span>
     </div>
   </article>
-
-  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="400">
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Snacks" data-aos="fade-up" data-aos-delay="400">
     <div class="flex items-center justify-between gap-3">
-      <h3 class="text-xl font-semibold">V - Spinaci E Funghi M</h3>
-      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">145,000 ₫</span>
+      <h3 class="text-xl font-semibold">Bánh Ngô Tortilla Kèm Salsa Và Guacamole</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">95.000 ₫</span>
     </div>
-    <p class="mt-1 text-neutral-600">Spinach, mushrooms, garlic oil, mozzarella.</p>
+    <p class="mt-1 text-neutral-600">Corn Chips With Salsa And Guacamole</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Snacks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Nachos" data-aos="fade-up" data-aos-delay="450">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nachos Bò Bằm (Bò Và Đậu)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">190.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Ground Beef Nachos (Beef And Bean)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Nachos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Nachos" data-aos="fade-up" data-aos-delay="500">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nachos Gà (Gà Và Ôliu)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">180.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Chicken Nachos (Chicken And Olive)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Nachos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Nachos" data-aos="fade-up" data-aos-delay="550">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nachos Rau Củ (Đậu, Bắp, Nấm)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">170.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Veggie Nachos (Bean, Corn, Mushroom)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Nachos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="600">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Thịt Xông Khói</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">80.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Bacon Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="650">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Thịt Bò Birria (Cay)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">85.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Birria Beef Tacos (Spicy)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Spicy</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-red-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="700">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Xúc Xích Chorizo</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">80.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Chorizo Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="750">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Cá Chiên Giòn (Cay)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">85.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Deep-Fried Fish Tacos (Spicy)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Spicy</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-red-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="800">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Vịt</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">75.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Duck Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="850">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Gà Nướng</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">65.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Grilled Chicken Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="900">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Cá Nướng (Cay)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">65.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Grilled Fish Tacos (Spicy)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Spicy</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-red-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="950">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Thịt Bò Xay (Cay)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">75.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Ground Beef Tacos (Spicy)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Spicy</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-red-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1000">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Cừu Hầm</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">85.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Lamb Stew Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1050">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Thịt Heo Hầm Xé Sợi</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">75.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pork Carnitas Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1100">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Tôm Sốt Xoài</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">85.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Shrimp Mango Salsa Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1150">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Tôm (Cay)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">75.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Shrimp Tacos (Spicy)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Spicy</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-red-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1200">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Bơ Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Avocado Vegetarian Tacos</p>
     <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
       <span>Vegetarian</span>
-      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-brown-500"></span> Earthy</span>
-    </div>
-    <div class="mt-4 h-32 rounded-xl overflow-hidden">
-      <img src="https://pizzana.com/cdn/shop/products/Spinaci1.png?v=1681446410" alt="Spinach Mushroom Pizza" class="w-full h-full object-cover rounded-xl">
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Tacos</span>
     </div>
   </article>
-
-  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="450">
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1250">
     <div class="flex items-center justify-between gap-3">
-      <h3 class="text-xl font-semibold">V - Quattro Formaggi M</h3>
-      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">159,000 ₫</span>
+      <h3 class="text-xl font-semibold">Taco Thịt Xông Khói</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
     </div>
-    <p class="mt-1 text-neutral-600">Mozzarella, gorgonzola, parmesan, ricotta.</p>
+    <p class="mt-1 text-neutral-600">Bacon Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1300">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Đậu Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Bean Vegetarian Tacos</p>
     <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
       <span>Vegetarian</span>
-      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-blue-500"></span> Rich</span>
-    </div>
-    <div class="mt-4 h-32 rounded-xl overflow-hidden">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7TcAUuyJPatwDlhCsNhxhKRhrD0rKpgXubA&s" alt="Quattro Formaggi Pizza" class="w-full h-full object-cover rounded-xl">
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Tacos</span>
     </div>
   </article>
-
-  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="500">
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1350">
     <div class="flex items-center justify-between gap-3">
-      <h3 class="text-xl font-semibold">V - Parmigiana M</h3>
-      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">149,000 ₫</span>
+      <h3 class="text-xl font-semibold">Taco Thịt Bò Birria (Cay)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
     </div>
-    <p class="mt-1 text-neutral-600">Grilled eggplant, parmesan, tomato sauce, mozzarella.</p>
+    <p class="mt-1 text-neutral-600">Birria Beef Tacos (Spicy)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Spicy</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-red-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1400">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Xúc Xích Chorizo</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Chorizo Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1450">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Cá Chiên Giòn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Deep-Fried Fish Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1500">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Vịt</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Duck Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1550">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Gà Nướng</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Grilled Chicken Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1600">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Cá Nướng</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Grilled Fish Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1650">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Bò Bằm</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Ground Beef Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1700">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Rau Củ Tổng Hợp Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Mix Veggie Vegetarian Tacos</p>
     <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
       <span>Vegetarian</span>
-      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-purple-400"></span> Savory</span>
-    </div>
-    <div class="mt-4 h-32 rounded-xl overflow-hidden">
-      <img src="https://foodst.com.au/cdn/shop/files/EggplantParmigianaPizza-SQ-1.jpg?v=1728428992" class="w-full h-full object-cover rounded-xl">
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Tacos</span>
     </div>
   </article>
-
-  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="550">
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1750">
     <div class="flex items-center justify-between gap-3">
-      <h3 class="text-xl font-semibold">Pepperoni M</h3>
-      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">139,000 ₫</span>
+      <h3 class="text-xl font-semibold">Taco Nấm Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
     </div>
-    <p class="mt-1 text-neutral-600">Pepperoni, tomato sauce, mozzarella cheese.</p>
+    <p class="mt-1 text-neutral-600">Mushroom Vegetarian Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1800">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Thịt Heo Hầm Xé Sợi</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pork Carnitas Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1850">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Khoai Lang Chay (Cay)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Potato Vegetarian Tacos (Spicy)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1900">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Tôm</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Shrimp Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="1950">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Tôm Sốt Xoài</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Shrimp Mango Salsa Tacos</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Tacos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="2000">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Bơ Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">70.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Avocado Vegetarian Taco</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="2050">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Đậu Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">65.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Bean Vegetarian Taco</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="2100">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Rau Củ Tổng Hợp Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">60.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Mix Veggie Vegetarian Taco</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="2150">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Nấm Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">70.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Mushroom Vegetarian Taco</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Tacos" data-aos="fade-up" data-aos-delay="2200">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Taco Khoai Lang Chay (Cay)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">65.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Potato Vegetarian Taco (Spicy)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Tacos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Burritos" data-aos="fade-up" data-aos-delay="2250">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Burrito Thịt Xông Khói</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">145.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Bacon Burrito</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Burritos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Burritos" data-aos="fade-up" data-aos-delay="2300">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Burrito Gà Cà Ri</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">120.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Chicken Curry Burrito</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Burritos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Burritos" data-aos="fade-up" data-aos-delay="2350">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Burrito Cá Chiên Giòn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">170.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Deep-Fried Fish Burrito</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Burritos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Burritos" data-aos="fade-up" data-aos-delay="2400">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Burrito Vịt</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">135.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Duck Burrito</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Burritos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Burritos" data-aos="fade-up" data-aos-delay="2450">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Burrito Cá Nướng</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">120.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Grilled Fish Burrito</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Burritos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Burritos" data-best-seller="true" data-aos="fade-up" data-aos-delay="2500">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Burrito Bò Bằm</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">135.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Ground Beef Burrito</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Burritos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Burritos" data-aos="fade-up" data-aos-delay="2550">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Burrito Thịt Heo Hầm Xé Sợi</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">130.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pork Carnitas Burrito</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Burritos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Burritos" data-aos="fade-up" data-aos-delay="2600">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Burrito Tôm</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">135.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Shrimp Burrito</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Burritos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Burritos" data-aos="fade-up" data-aos-delay="2650">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Burrito Bơ Khoai Lang</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">120.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Avocado Sweet Potato Burrito</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Burritos</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Burritos" data-aos="fade-up" data-aos-delay="2700">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Burrito Đậu Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">120.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Bean & Corn Vegetarian Burrito</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Burritos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Burritos" data-aos="fade-up" data-aos-delay="2750">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Burrito Rau Củ Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">115.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Mix Veggie Vegetarian Burrito</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Burritos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Burritos" data-aos="fade-up" data-aos-delay="2800">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Burrito Rau Cải Bó Xôi Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">120.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Spinach Vegetarian Burrito</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Burritos</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Quesadillas" data-aos="fade-up" data-aos-delay="2850">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bánh Quesadilla Vịt</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">190.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Duck Quesadilla</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Quesadillas</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Quesadillas" data-aos="fade-up" data-aos-delay="2900">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bánh Quesadilla Gà Nướng</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">175.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Grilled Chicken Quesadilla</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Quesadillas</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Quesadillas" data-aos="fade-up" data-aos-delay="2950">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bánh Quesadilla Bò Bằm</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">190.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Ground Beef Quesadilla</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Quesadillas</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Quesadillas" data-aos="fade-up" data-aos-delay="3000">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Quesadilla Thịt Heo Hầm Xé Sợi</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">185.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pork Carnitas Quesadilla</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Quesadillas</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Quesadillas" data-best-seller="true" data-aos="fade-up" data-aos-delay="3050">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bánh Quesadilla Tôm</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">190.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Shrimp Quesadilla</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Quesadillas</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Quesadillas" data-aos="fade-up" data-aos-delay="3100">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bánh Quesadilla Bít Tết</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">270.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Steak Quesadilla</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Quesadillas</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Quesadillas" data-aos="fade-up" data-aos-delay="3150">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bánh Quesadilla Bơ Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">150.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Avocado Vegetarian Quesadilla</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Quesadillas</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Quesadillas" data-aos="fade-up" data-aos-delay="3200">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bánh Quesadilla Đậu Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">160.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Bean Pumpkin Vegetarian Quesadilla</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Quesadillas</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Quesadillas" data-aos="fade-up" data-aos-delay="3250">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bánh Quesadilla Phô Mai Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">140.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Plain Cheese Vegetarian Quesadilla</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Quesadillas</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3300">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Cá Cơm Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">265.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Anchovy L</p>
     <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
       <span>Pizza</span>
-      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-red-500"></span> Spicy</span>
-    </div>
-    <div class="mt-4 h-32 rounded-xl overflow-hidden">
-      <img src="https://mojo.generalmills.com/api/public/content/iD9XDP4qRGCvhuXE9QVkxg_gmi_hi_res_jpeg.jpeg?v=ce3e36a9&t=eae6004af7d84bc5a9fa522ac84b14a8" alt="Pepperoni Pizza" class="w-full h-full object-cover rounded-xl">
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
     </div>
   </article>
-
-  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="600">
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3350">
     <div class="flex items-center justify-between gap-3">
-      <h3 class="text-xl font-semibold">Hawaii M</h3>
-      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">145,000 ₫</span>
+      <h3 class="text-xl font-semibold">Pizza Cá Cơm Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">200.000 ₫</span>
     </div>
-    <p class="mt-1 text-neutral-600">Ham, pineapple, tomato sauce, mozzarella.</p>
+    <p class="mt-1 text-neutral-600">Anchovy M</p>
     <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
       <span>Pizza</span>
-      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span> Sweet</span>
-    </div>
-    <div class="mt-4 h-32 rounded-xl overflow-hidden">
-      <img src="https://outgrilling.com/wp-content/uploads/2024/02/Easy-Hawaiian-Pizza-Recipe-Image-F.jpg" alt="Hawaiian Pizza" class="w-full h-full object-cover rounded-xl">
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
     </div>
   </article>
-
-    <div class="mt-8 text-center" data-aos="fade-up" data-aos-delay="800">
-        <a href="https://www.foodbooking.com/ordering/restaurant/menu?company_uid=0c670ecc-f5f8-48f9-831a-800a7831f98d&restaurant_uid=65f7acf1-fa1e-4a04-98ad-ed4e9f4bbb64&facebook=true" target="_blank" rel="noopener" class="btn-enhanced rounded-2xl px-5 py-3 text-sm font-semibold transition bg-amber-500 text-white hover:bg-amber-600 inline-flex items-center gap-2">Order these online →</a>
-      </div>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3400">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Thịt Xông Khói Đặc Biệt Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">290.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Bacon Supreme L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3450">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Thịt Xông Khói Đặc Biệt Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">230.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Bacon Supreme M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3500">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Thịt Bò Birria</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">475.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Birria Beef Pizza (L)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3550">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Thịt Bò Birria</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">350.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Birria Beef Pizza (M)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3600">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Sốt Bò Bằm Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">280.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Bolognese L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-best-seller="true" data-aos="fade-up" data-aos-delay="3650">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Sốt Bò Bằm Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">220.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Bolognese M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3700">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Phô Mai Burrata Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">380.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Burrata L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3750">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Phô Mai Burrata Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">310.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Burrata M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3800">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Calzone Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">295.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Calzone L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3850">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Calzone Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">235.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Calzone M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3900">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Capricciosa Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">280.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Capricciosa L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="3950">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Capricciosa Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">220.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Capricciosa M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4000">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Sốt Kem Trứng Thịt Xông Khói Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">275.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Carbonara L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4050">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Sốt Kem Trứng Thịt Xông Khói Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">210.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Carbonara M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4100">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bánh Mì Tỏi Kiểu Pizza</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">85.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Garlic Pizza Bread</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4150">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Hawaii Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">250.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Hawaii L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4200">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Hawaii Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">200.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Hawaii M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4250">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Xúc Xích Ý Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">275.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Italian Sausage L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4300">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Xúc Xích Ý Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">210.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Italian Sausage M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4350">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Thập Cẩm Thịt Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">300.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Meat Lovers L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4400">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Thập Cẩm Thịt Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">240.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Meat Lovers M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4450">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Thịt Sống Parmaham Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">330.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Parmaham L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4500">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Thịt Sống Parmaham Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">270.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Parmaham M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4550">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Xúc Xích Pepperoni Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">255.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pepperoni L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4600">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Xúc Xích Pepperoni Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">205.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pepperoni M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4650">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Xúc Xích Pesto Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">295.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pesto Sausage L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4700">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Xúc Xích Pesto Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">235.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pesto Sausage M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4750">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Bít Tết Phô Mai Philly Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">295.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Philly Cheese Steak L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4800">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Bít Tết Phô Mai Philly Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">240.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Philly Cheese Steak M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4850">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Gà Nấm Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">265.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pollo E Funghi L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4900">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Gà Nấm Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">200.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pollo E Funghi M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="4950">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Giăm Bông Nấm Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">255.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Prosciutto E Funghi L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5000">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Giăm Bông Nấm Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">205.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Prosciutto E Funghi M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5050">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Hải Sản (Cay) Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">295.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Seafood Pizza L (Spicy)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Spicy</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-red-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5100">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Hải Sản (Cay) Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">240.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Seafood Pizza M (Spicy)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Spicy</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-red-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5150">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Cá Hồi Xông Khói Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">300.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Smoked Salmon L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5200">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Cá Hồi Xông Khói Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">240.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Smoked Salmon M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pizza</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5250">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Margherita Chay Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">190.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Margerita L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5300">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Margherita Chay Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">160.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Margerita M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5350">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Địa Trung Hải Chay Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">265.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Mediterranean L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5400">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Địa Trung Hải Chay Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">205.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Mediterranean M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5450">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Parmigiana Chay Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">230.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Parmigiana L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5500">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Parmigiana Chay Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">190.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Parmigiana M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5550">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Bốn Loại Phô Mai Chay Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">285.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Quattro Formaggi L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5600">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Bốn Loại Phô Mai Chay Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">220.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Quattro Formaggi M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5650">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Rau Cải Bó Xôi Phô Mai Chay Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">295.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Spinach Formaggi L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5700">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Rau Cải Bó Xôi Phô Mai Chay Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">240.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Spinach Formaggi M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5750">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Rau Bina Nấm Chay Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">265.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Spinaci E Funghi L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5800">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Rau Bina Nấm Chay Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">205.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Spinaci E Funghi M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5850">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Rau Củ Chay Cỡ Lớn</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">230.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Veggie L</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5900">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Rau Củ Chay Cỡ Vừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">190.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Veggie M</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="5950">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Giăm Bông Cỡ Nhỏ</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">110.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Ham Pizza Kid</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Kid Size</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="6000">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Xúc Xích Ý Cỡ Nhỏ</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">120.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Italian Sausage Pizza Kid</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Kid Size</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="6050">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Margherita Cỡ Nhỏ</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">95.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Margherita Kid</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Kid Size</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="6100">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Thịt Nhiều Cỡ Nhỏ</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">120.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Meatlover Pizza Kid</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Kid Size</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="6150">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Xúc Xích Pepperoni Cỡ Nhỏ</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">110.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pepperoni Pizza Kid</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Kid Size</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pizza" data-aos="fade-up" data-aos-delay="6200">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Pizza Hải Sản Cỡ Nhỏ</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">120.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Seafood Pizza Kid</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Kid Size</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span> Pizza</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-aos="fade-up" data-aos-delay="6250">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Mì Ý Xúc Xích Ý</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">230.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Italian Sausage Linguine</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pasta</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-aos="fade-up" data-aos-delay="6300">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Lasagna Ý Nhiều Lớp Sốt Bò Bằm Phô Mai</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">265.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Lasagna</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pasta</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-aos="fade-up" data-aos-delay="6350">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nui Penne Gà Sốt Pesto</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">245.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Penne Chicken Pesto</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pasta</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-aos="fade-up" data-aos-delay="6400">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Mì Fettuccine Cá Hồi</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">275.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Salmon Fettuccine</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pasta</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-aos="fade-up" data-aos-delay="6450">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Mì Ý Hải Sản Cay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">240.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Seafood Linguine (Spicy)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Spicy</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-red-500"></span> Pasta</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-aos="fade-up" data-aos-delay="6500">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Mì Ý Hải Sản Sốt Pesto</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">265.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Seafood Pesto Spaghetti</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pasta</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-aos="fade-up" data-aos-delay="6550">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Mì Ý Mực Sốt Mực Đen</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">275.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Seafood Squid Ink Spaghetti</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pasta</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-best-seller="true" data-aos="fade-up" data-aos-delay="6600">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Mì Ý Sốt Bò Bằm Cà Chua (Bolognese)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">235.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Spaghetti Bolognese</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pasta</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-aos="fade-up" data-aos-delay="6650">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Mì Ý Sốt Kem Trứng Thịt Xông Khói (Carbonara)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">240.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Spaghetti Carbonara</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Pasta</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-aos="fade-up" data-aos-delay="6700">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nui Penne Sốt Kem Alfredo Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">180.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Penne Alfedo</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pasta</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-aos="fade-up" data-aos-delay="6750">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nui Penne Kiểu Sicilia Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">180.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Sicillian Penne</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pasta</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-aos="fade-up" data-aos-delay="6800">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Mì Ý Xào Tỏi Dầu Ôliu Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">160.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Spaghetti Aglio E Olio</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pasta</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Pasta" data-aos="fade-up" data-aos-delay="6850">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Mì Ý Sốt Cà Chua Chay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">185.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Spaghetti Pomodoro</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Vegetarian</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Pasta</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Salads" data-aos="fade-up" data-aos-delay="6900">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Salad Caesar (Xà Lách Romaine, Sốt Caesar, Phô Mai Parmesan)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">210.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Caesar Salad</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Salads</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Salads" data-aos="fade-up" data-aos-delay="6950">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Salad Cá Hồi Xông Khói Và Bơ</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">225.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Smoked Salmon & Avocado Salad</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Salads</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Salads" data-aos="fade-up" data-aos-delay="7000">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Salad Tôm Cay</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">215.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Spicy Shrimp Salad</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Spicy</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-red-500"></span> Salads</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Salads" data-aos="fade-up" data-aos-delay="7050">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Salad Rau Rocket</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">195.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Arugula Salad</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Salads</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Salads" data-aos="fade-up" data-aos-delay="7100">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Salad Caprese</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">225.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Caprese Salad</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Salads</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Salads" data-aos="fade-up" data-aos-delay="7150">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Salad Hy Lap</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">195.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Greek Salad</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Salads</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Salads" data-aos="fade-up" data-aos-delay="7200">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Salad Xanh</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">190.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Green Salad</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Salads</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Salads" data-aos="fade-up" data-aos-delay="7250">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Salad Mùa Hè</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">195.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">V - Summer Salad</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Salads</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Main Course" data-aos="fade-up" data-aos-delay="7300">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Ức Gà Sốt Kem</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">320.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Creamy Chicken Breast</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Main Course</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Main Course" data-aos="fade-up" data-aos-delay="7350">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Cá Hồi Nướng</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">365.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Grilled Salmon Steak</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Main Course</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Main Course" data-aos="fade-up" data-aos-delay="7400">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bít Tết Bò Nướng</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">410.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Grilled Steak</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Main Course</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="7450">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Soda Việt Quất</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">65.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Blueberry Soda</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="7500">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Đóng Chai</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">22.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Bottled Water</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="7550">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Dừa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Coconut</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="7600">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Ngọt Coca-Cola</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">35.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Coke</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="7650">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Ngọt Coca-Cola Ít Đường</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">40.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Coke Light</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="7700">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Ngọt Coca-Cola Không Đường</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">40.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Coke Zero</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="7750">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Ngọt Fanta</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">35.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Fanta</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="7800">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Gừng Có Gas</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">42.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Ginger Ale</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="7850">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Khoáng Lavie</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">55.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Lavie Natural Mineral</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="7900">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Khoáng Có Gas Lavie</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">60.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Lavie Sparkling Mineral</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="7950">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Soda Chanh Dây</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">65.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Passion Fruit Soda</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8000">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Soda Tonic</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">40.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Soda Tonic</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8050">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Soda</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">35.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Soda Water</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8100">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Ngọt Sprite</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">35.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Sprite</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8150">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Sinh Tố Bơ</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">70.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Avocado Smoothie (Sinh Tố Bơ)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8200">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Ép Cà Rốt</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">60.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Carrot</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8250">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Ép Ổi</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">55.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Guava</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8300">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Chanh</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">40.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Lemonade</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8350">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Sinh Tố Xoài</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">60.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Mango Smoothie (Sinh Tố Xoài)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8400">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Cam</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">60.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Orange</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8450">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Ép Chanh Dây</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">55.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Passion Fruit</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8500">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Ép Dứa</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">60.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Pineapple</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8550">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Sinh Tố Dâu</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">70.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Strawberry Smoothie (Sinh Tố Dâu)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8600">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Nước Dưa Hấu</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">55.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Watermelon</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8650">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bia 333</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">35.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">333</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8700">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bia Heineken</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">50.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Heineken</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8750">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bia Heineken</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">40.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Heineken</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8800">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bia Heineken</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">65.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Heineken</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8850">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bia Saigon Special</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">40.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Saigon Special</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8900">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bia Sapporo</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">550.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Sapporo Tower Beer</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="8950">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bia Thủ Công Sapporo</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">65.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Sapporo Craft Beer</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9000">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bia Tiger</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">45.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Tiger</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9050">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bia Tiger</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">55.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Tiger</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9100">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Sangria Đỏ (Ly)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">109.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Sangria Red (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9150">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Sangria Đỏ (Bình)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">490.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Sangria Red (Carafe)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9200">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Sangria Hồng (Ly)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">109.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Sangria Rose (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9250">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Sangria Hồng (Bình)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">490.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Sangria Rose (Carafe)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9300">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Sangria Trắng (Ly)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">109.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Sangria White (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9350">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Sangria Trắng (Bình)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">490.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Sangria White (Carafe)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9400">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Sangria Trắng Có Gas</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">135.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">White Fizzy Sangria</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9450">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Sangria Happy Hour (3H)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">239.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Happy Hour Sangria (3H)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9500">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Aromo Varietal - Red (Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">109.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Aromo Varietal - Red (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9550">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Chateau Vartely Cabernet Sauvignon(Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">140.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Chateau Vartely Cabernet Sauvignon(Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9600">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Château Des Chevaliers Cabernet Sauvignon (Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">150.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Château Des Chevaliers Cabernet Sauvignon (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9650">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Costera Red Cabernet Sauvignon (Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">109.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Costera Red Cabernet Sauvignon (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9700">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ False Bay Old School Syrah (Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">150.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">False Bay Old School Syrah (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9750">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Flamenco Cabernet Sauvignon (Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">120.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Flamenco Cabernet Sauvignon (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9800">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Individo Malbec Rara Negra (Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">160.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Individo Malbec Rara Negra (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9850">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Individo Merlot Cabernet(Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">160.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Individo Merlot Cabernet(Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9900">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ River Retreat - Shiraz (Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">99.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">River Retreat - Shiraz (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="9950">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Aromo Varietal - Red (Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">555.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Aromo Varietal - Red (Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="10000">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Chateau Vartely Cabernet Sauvignon(Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">630.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Chateau Vartely Cabernet Sauvignon(Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="200">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Château Des Chevaliers Cabernet Sauvignon (Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">740.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Château Des Chevaliers Cabernet Sauvignon (Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="250">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Costera Red Cabernet Sauvignon (Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">590.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Costera Red Cabernet Sauvignon (Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="300">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ False Bay Old School Syrah (Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">650.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">False Bay Old School Syrah (Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="350">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Flamenco Cabernet Sauvignon (Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">590.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Flamenco Cabernet Sauvignon (Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="400">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Individo Malbec Rara Negra(Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">660.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Individo Malbec Rara Negra(Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="450">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ Individo Merlot Cabenet(Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">660.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Individo Merlot Cabenet(Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="500">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Đỏ River Retreat - Shiraz (Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">499.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">River Retreat - Shiraz (Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="550">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Trắng Aromo Varietal - White (Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">109.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Aromo Varietal - White (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="600">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Trắng Costera White Chardonnay - White (Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">109.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Costera White Chardonnay - White (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="650">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Trắng False Bay Sauvignon Blanc (Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">150.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">False Bay Sauvignon Blanc (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="700">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Trắng Flamenco Chardonnay - White (Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">120.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Flamenco Chardonnay - White (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="750">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Trắng River Retreat - Sauvignon Blanc (Glass)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">99.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">River Retreat - Sauvignon Blanc (Glass)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="800">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Trắng Aromo Varietal - White (Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">555.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Aromo Varietal - White (Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="850">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Trắng Costera White Chardonnay - White (Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">500.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Costera White Chardonnay - White (Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="900">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Trắng False Bay Sauvignon Blanc (Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">650.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">False Bay Sauvignon Blanc (Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="950">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Trắng Flamenco Chardonnay - White (Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">590.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Flamenco Chardonnay - White (Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Drinks" data-aos="fade-up" data-aos-delay="1000">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Rượu Vang Trắng River Retreat - Sauvignon Blanc (Bottle)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">499.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">River Retreat - Sauvignon Blanc (Bottle)</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Drinks</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Desserts" data-aos="fade-up" data-aos-delay="1050">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bánh Churros</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">75.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Churros</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Desserts</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+  <article class="menu-card rounded-2xl border bg-white p-5 relative overflow-hidden" data-category="Desserts" data-aos="fade-up" data-aos-delay="1100">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-xl font-semibold">Bánh Kem Caramel (Crème Brûlée)</h3>
+      <span class="price-tag text-base font-medium text-amber-700 bg-amber-100 px-3 py-1 rounded-full">85.000 ₫</span>
+    </div>
+    <p class="mt-1 text-neutral-600">Cream Brulee</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-neutral-500">
+      <span>Desserts</span>
+      <span class="inline-flex items-center gap-1"><span class="inline-block h-2 w-2 rounded-full bg-amber-400"></span> Fresh</span>
+    </div>
+  </article>
+</div>
     </div>
   </section>
 
@@ -602,8 +2846,8 @@
       <h2 class="text-2xl font-bold text-center text-amber-700 mb-8">Events & Promotions</h2>
       <div class="grid gap-6 md:grid-cols-2">
         <!-- Event Card -->
-        <div class="rounded-2xl border bg-white shadow hover:shadow-lg transition-shadow">
-          <img src="event-image.jpg" alt="Pizza Night Event" class="rounded-t-2xl w-full h-18 object-cover">
+        <div class="rounded-2xl border bg-white shadow hover:shadow-lg transition-shadow overflow-hidden">
+          <img src="images/event-image.jpg" alt="Pizza Night Event" class="rounded-t-2xl w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop'">
           <div class="p-5">
             <h3 class="font-semibold text-lg text-amber-700">Taco Tuesday</h3>
             <p class="text-sm text-neutral-600 mt-2">Join us everyday for only 45.000 VND a Tacos</p>
@@ -611,8 +2855,8 @@
           </div>
         </div>
         <!-- Promotion Card -->
-        <div class="rounded-2xl border bg-white shadow hover:shadow-lg transition-shadow">
-          <img src="promo.jpg" alt="Special Promotion" class="rounded-t-2xl w-full h-18 object-cover">
+        <div class="rounded-2xl border bg-white shadow hover:shadow-lg transition-shadow overflow-hidden">
+          <img src="images/promo.jpg" alt="Special Promotion" class="rounded-t-2xl w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=800&auto=format&fit=crop'">
           <div class="p-5">
             <h3 class="font-semibold text-lg text-amber-700">Wednesday Pizza</h3>
             <p class="text-sm text-neutral-600 mt-2">20% Promotion on all pizzas from 10 AM – 10 PM.</p>
@@ -714,6 +2958,62 @@
           el.textContent = Math.floor(count);
         }, 20);
       });
+
+      // Menu filter functionality
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const menuCards = document.querySelectorAll(".menu-card");
+
+      function filterMenu(filter) {
+        // Update active button
+        filterButtons.forEach(btn => {
+          const btnFilter = btn.getAttribute("data-filter");
+          if (btnFilter === filter) {
+            btn.classList.add("bg-amber-500", "text-white");
+            btn.classList.remove("bg-white");
+          } else {
+            btn.classList.remove("bg-amber-500", "text-white");
+            btn.classList.add("bg-white");
+          }
+        });
+
+        // Filter menu items
+        menuCards.forEach(item => {
+          const category = item.getAttribute("data-category");
+          const isBestSeller = item.getAttribute("data-best-seller") === "true";
+          
+          if (filter === "Best Sellers") {
+            // Show only best sellers
+            if (isBestSeller) {
+              item.style.display = "block";
+              item.setAttribute("data-aos", "fade-up");
+            } else {
+              item.style.display = "none";
+            }
+          } else if (filter === "All") {
+            // Show all items
+            item.style.display = "block";
+            item.setAttribute("data-aos", "fade-up");
+          } else {
+            // Filter by category
+            if (category === filter) {
+              item.style.display = "block";
+              item.setAttribute("data-aos", "fade-up");
+            } else {
+              item.style.display = "none";
+            }
+          }
+        });
+      }
+
+      filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          const filter = button.getAttribute("data-filter");
+          filterMenu(filter);
+        });
+      });
+
+      // Set "Best Sellers" as default on page load
+      filterMenu("Best Sellers");
     </script>
   </body>
   </html>
