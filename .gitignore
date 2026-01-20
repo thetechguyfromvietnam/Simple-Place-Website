@@ -1,48 +1,39 @@
 # Dependencies
 node_modules/
-server/node_modules/
-restaurant-shift/node_modules/
-facebook-automation/node_modules/
+/.pnp
+.pnp.js
 
-# Production builds
-dist/
-build/
+# Testing
+/coverage
 
-# Environment variables
-.env
-.env.local
-.env.production
-.env.development
-server/.env
-server/.env.local
-server/.env.production
-server/.env.development
+# Next.js
+/.next/
+/out/
 
-# Logs
+# Production
+/build
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-# OS files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Local env files
+.env*.local
+.env
 
-# Editor
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
 
 # Restaurant tax specific
 restaurant-tax/tax_files/*.xlsx
 *.pyc
 __pycache__/
-
