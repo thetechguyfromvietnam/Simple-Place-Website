@@ -15,7 +15,7 @@ interface MenuItem {
   isVegetarian: boolean
   isSpicy: boolean
   isKidSize: boolean
-  image?: string
+  image?: string | null
 }
 
 export default function Menu() {
@@ -23,8 +23,12 @@ export default function Menu() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([])
 
   useEffect(() => {
-    // Load menu items
-    setMenuItems(menuData.items || [])
+    // Load menu items and normalize image field (convert null to undefined)
+    const items = (menuData.items || []).map(item => ({
+      ...item,
+      image: item.image ?? undefined
+    }))
+    setMenuItems(items)
   }, [])
 
   const categories = ['Best Sellers', 'All', ...(menuData.categories || [])]

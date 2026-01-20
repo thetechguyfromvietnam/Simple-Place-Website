@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Sora } from 'next/font/google'
 import './globals.css'
 import 'aos/dist/aos.css'
@@ -12,13 +12,16 @@ const sora = Sora({
 export const metadata: Metadata = {
   title: 'Simple Place — Pizza × Tacos Fusion',
   description: 'Simple Place: Homemade pizza with tacos — Mexico × Vietnam fusion in Saigon. Reserve a table or order online.',
-  themeColor: '#f59e0b',
   openGraph: {
     title: 'Simple Place — Pizza × Tacos Fusion',
     description: 'Homemade pizza with tacos — reserve a table or order online.',
     images: ['https://images.unsplash.com/photo-1601924572345-0050bd436b0b?q=80&w=1200&auto=format&fit=crop'],
     type: 'website',
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#f59e0b',
 }
 
 export default function RootLayout({
