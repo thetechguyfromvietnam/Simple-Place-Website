@@ -29,7 +29,7 @@ export default function Contact() {
         <div className="rounded-2xl border bg-white p-5 flex flex-col justify-between hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
           <div>
             <h4 className="text-lg font-semibold">Contact us</h4>
-            <p className="text-sm text-neutral-600">Questions, parties, or large orders? We've got you.</p>
+            <p className="text-sm text-neutral-600">Questions, parties, or large orders? We&apos;ve got you.</p>
             <div className="mt-4 space-y-3 text-sm">
               <div className="flex items-center gap-2 hover:text-amber-600 transition-colors">
                 <span>📞</span>
@@ -79,7 +79,7 @@ export default function Contact() {
         <div className="rounded-2xl border bg-white p-5 flex flex-col justify-between hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="400">
           <div>
             <h4 className="text-lg font-semibold">Private events</h4>
-            <p className="text-sm text-neutral-600">Tell us about your event and we'll get back within one business day.</p>
+            <p className="text-sm text-neutral-600">Tell us about your event and we&apos;ll get back within one business day.</p>
           </div>
           <form onSubmit={handleSubmit} className="mt-4 space-y-3">
             <input

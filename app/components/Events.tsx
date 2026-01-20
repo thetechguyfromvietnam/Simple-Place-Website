@@ -9,7 +9,7 @@ export default function Events() {
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-bold text-amber-900 mb-4">Events & Promotions</h2>
           <p className="text-lg text-amber-700 max-w-2xl mx-auto">
-            Don't miss out on our weekly specials and exciting promotions
+            Don&apos;t miss out on our weekly specials and exciting promotions
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-2">

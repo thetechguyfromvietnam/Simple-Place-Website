@@ -76,7 +76,7 @@ export default function BookingDialog() {
           <div className="text-center py-8">
             <div className="text-5xl mb-4">✅</div>
             <p className="text-lg font-semibold text-green-600">Booking submitted successfully!</p>
-            <p className="text-sm text-neutral-600 mt-2">We'll contact you soon to confirm.</p>
+            <p className="text-sm text-neutral-600 mt-2">We&apos;ll contact you soon to confirm.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">

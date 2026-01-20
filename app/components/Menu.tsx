@@ -53,7 +53,7 @@ export default function Menu() {
         <div className="mb-6 flex items-end justify-between gap-4" data-aos="fade-up">
           <div>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Menu</h2>
-            <p className="text-neutral-600">Yellow‑hot fusion favorites. Sizes are 10" unless noted.</p>
+            <p className="text-neutral-600">Yellow‑hot fusion favorites. Sizes are 10&quot; unless noted.</p>
           </div>
           <div className="flex flex-wrap gap-2">
             {categories.map((category) => (
