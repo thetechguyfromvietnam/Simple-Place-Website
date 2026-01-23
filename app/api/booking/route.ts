@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import nodemailer from 'nodemailer'
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,53 +14,135 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Google Sheets API setup
-    // Note: You'll need to install googleapis: npm install googleapis
-    // And set up Google Service Account credentials in environment variables
-    if (
-      process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL &&
-      process.env.GOOGLE_PRIVATE_KEY &&
-      process.env.GOOGLE_SHEET_ID
-    ) {
+    // Format date and time
+    const bookingDateTime = new Date(`${date}T${time}`)
+    const formattedDateTime = bookingDateTime.toLocaleString('vi-VN', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    })
+
+    const timestamp = new Date().toLocaleString('vi-VN', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    })
+
+    // Send email notification
+    const notificationEmail = process.env.NOTIFICATION_EMAIL
+    const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com'
+    const smtpPort = parseInt(process.env.SMTP_PORT || '587')
+    const smtpUser = process.env.SMTP_USER
+    const smtpPassword = process.env.SMTP_PASSWORD
+
+    if (notificationEmail && smtpUser && smtpPassword) {
       try {
-        const { google } = await import('googleapis')
-        
-        const auth = new google.auth.GoogleAuth({
-          credentials: {
-            client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-            private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-          },
-          scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-        })
-
-        const sheets = google.sheets({ version: 'v4', auth })
-        const spreadsheetId = process.env.GOOGLE_SHEET_ID
-
-        // Append booking data to Google Sheet
-        await sheets.spreadsheets.values.append({
-          spreadsheetId,
-          range: 'Bookings!A:G',
-          valueInputOption: 'RAW',
-          requestBody: {
-            values: [[
-              new Date().toISOString(),
-              name,
-              email,
-              phone,
-              `${date} ${time}`,
-              guests,
-              message || ''
-            ]],
+        // Create transporter
+        const transporter = nodemailer.createTransport({
+          host: smtpHost,
+          port: smtpPort,
+          secure: smtpPort === 465, // true for 465, false for other ports
+          auth: {
+            user: smtpUser,
+            pass: smtpPassword,
           },
         })
-      } catch (sheetsError: any) {
-        // Log error but don't fail the request
-        console.error('Google Sheets error:', sheetsError)
-        // In production, you might want to send to a logging service
+
+        // Email content
+        const emailSubject = `🔔 Đặt bàn mới - ${name}`
+        const emailText = `
+📅 ĐẶT BÀN MỚI
+
+👤 Tên: ${name}
+📧 Email: ${email}
+📱 Số điện thoại: ${phone}
+🕐 Ngày giờ: ${formattedDateTime}
+👥 Số khách: ${guests}
+💬 Ghi chú: ${message || 'Không có'}
+⏰ Thời gian đặt: ${timestamp}
+
+---
+Simple Place - Booking System
+        `.trim()
+
+        const emailHtml = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { background: #4285f4; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+    .content { background: #f9f9f9; padding: 20px; border-radius: 0 0 8px 8px; }
+    .info-row { margin: 15px 0; padding: 10px; background: white; border-radius: 4px; }
+    .label { font-weight: bold; color: #666; }
+    .footer { text-align: center; margin-top: 20px; color: #999; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔔 Đặt bàn mới</h1>
+    </div>
+    <div class="content">
+      <div class="info-row">
+        <span class="label">👤 Tên:</span> ${name}
+      </div>
+      <div class="info-row">
+        <span class="label">📧 Email:</span> ${email}
+      </div>
+      <div class="info-row">
+        <span class="label">📱 Số điện thoại:</span> ${phone}
+      </div>
+      <div class="info-row">
+        <span class="label">🕐 Ngày giờ:</span> ${formattedDateTime}
+      </div>
+      <div class="info-row">
+        <span class="label">👥 Số khách:</span> ${guests}
+      </div>
+      <div class="info-row">
+        <span class="label">💬 Ghi chú:</span> ${message || 'Không có'}
+      </div>
+      <div class="info-row">
+        <span class="label">⏰ Thời gian đặt:</span> ${timestamp}
+      </div>
+    </div>
+    <div class="footer">
+      Simple Place - Booking System
+    </div>
+  </div>
+</body>
+</html>
+        `
+
+        // Send email
+        await transporter.sendMail({
+          from: `"Simple Place" <${smtpUser}>`,
+          to: notificationEmail,
+          subject: emailSubject,
+          text: emailText,
+          html: emailHtml,
+        })
+
+        console.log('Email notification sent successfully')
+      } catch (emailError: any) {
+        console.error('Email notification error:', emailError)
+        // Don't fail the request, booking was received
+        return NextResponse.json({
+          success: true,
+          message: 'Booking received but failed to send email notification',
+          warning: emailError.message,
+        })
       }
     } else {
-      // Log booking data if Google Sheets is not configured
-      console.log('Booking received (Google Sheets not configured):', {
+      // Log booking data if email is not configured
+      console.log('Booking received (Email not configured):', {
         name,
         email,
         phone,
