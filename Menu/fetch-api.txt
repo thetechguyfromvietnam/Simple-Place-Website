@@ -1,0 +1,548 @@
+After successfully logging in, Find the Button to click with the code : 
+
+<div class="list-menu__item"><span class="badge badge-pill badge-danger d-none badge--new">New</span><div class="d-block list-menu-item__icon cursor-pointer"><img src="/img/report.95951683.svg" alt="Báo cáo" class="icon"></div><p class="mt-2 menu-label text-primary text-center">
+      Báo cáo
+    </p></div>
+
+
+then as usual to B07
+
+From now on this part will be scrol down Find <div class="report-table flex-1"><div><!----></div><div class="overflow-auto"><table class="table mb-0"><thead class="thead-light position-sticky fix-header" style="top: 0px; z-index: 2;"><tr><th rowspan="1" style="vertical-align: middle;">
+        #
+      </th><th rowspan="1" style="vertical-align: middle;">
+        PTTT
+      </th><th class="text-right">
+          Tổng
+          PTTT
+        </th><th class="text-right">
+          Phí cà thẻ
+        </th><th class="text-right">
+          Tổng tiền
+        </th></tr><!----></thead><tbody><tr><td scope="row"><span>1</span></td><td class="">
+      GRAB_ONLINE
+    </td><td align="right" class="">
+        53
+      </td><td align="right" class="">
+        0 ₫
+      </td><td align="right" class="">
+        10,786,000 ₫
+      </td></tr><tr><td scope="row"><span>2</span></td><td class="">
+      TRANSFER
+    </td><td align="right" class="">
+        14
+      </td><td align="right" class="">
+        0 ₫
+      </td><td align="right" class="">
+        3,130,000 ₫
+      </td></tr><tr><td scope="row"><span>3</span></td><td class="">
+      Tiền mặt
+    </td><td align="right" class="">
+        3
+      </td><td align="right" class="">
+        0 ₫
+      </td><td align="right" class="">
+        999,000 ₫
+      </td></tr><tr><td scope="row"><!----></td><td class="text-bold">
+      Tổng
+    </td><td align="right" class="text-bold">
+        70
+      </td><td align="right" class="text-bold">
+        0 ₫
+      </td><td align="right" class="text-bold">
+        14,915,000 ₫
+      </td></tr></tbody><tfoot></tfoot></table></div><!----><!----></div>
+
+
+      then Find <tr><td scope="row"><span>2</span></td><td class="">
+      TRANSFER
+    </td><td align="right" class="">
+        14
+      </td><td align="right" class="">
+        0 ₫
+      </td><td align="right" class="">
+        3,130,000 ₫
+      </td></tr>
+
+      when you click transfer a modle pop up with all the orders and files with the button Xuất Hoá Đơn <div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">
+        Hoá đơn áp dụng PTTT TRANSFER
+      </h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 140px);"><div data-v-cdf5d406="" class="mx-2"><form data-v-cdf5d406="" class="mb-3"><input data-v-cdf5d406="" placeholder="Tìm kiếm theo mã hoá đơn" type="text" class="form-control"></form></div><div data-v-cdf5d406="" class="overflow-auto"><div data-v-cdf5d406="" class="accordion px-2"><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKGFL26NVVUS0T6" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #US0T6 -
+                  Số HĐ:
+                  060045 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 120,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 19:49
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKGFL26NVVUS0T6" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Beef taquitos
+          </div><!----></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) V-Veggie taquitos
+          </div><!----></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            65,000 ₫
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            55,000 ₫
+          </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        120,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">120,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKGFL26NVVUS0T6)<span data-v-31c7f676="" class="float-right">
+          120,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKGFL26NC3OPK8H" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #OPK8H -
+                  Số HĐ:
+                  060042 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 355,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 19:42
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKGFL26NC3OPK8H" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Grilled Fish Taco (Spicy)
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            SOFT
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Ground Beef Taco (Spicy)
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            SOFT
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Grilled Chicken Chimichanga
+          </div><!----></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Coke Zero
+          </div><!----></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Coconut
+          </div><!----></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            55,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            70,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            155,000 ₫
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            35,000 ₫
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            40,000 ₫
+          </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        355,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">355,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKGFL26NC3OPK8H)<span data-v-31c7f676="" class="float-right">
+          355,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKGFL26M32R2KDT" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #R2KDT -
+                  Số HĐ:
+                  060038 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 105,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 19:25
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKGFL26M32R2KDT" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Ground Beef Burrito (Spicy)
+          </div><!----></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            105,000 ₫
+          </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        105,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">105,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKGFL26M32R2KDT)<span data-v-31c7f676="" class="float-right">
+          105,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKGFL26LVAUUTDP" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #UUTDP -
+                  Số HĐ:
+                  060037 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 360,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 19:22
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKGFL26LVAUUTDP" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x2) Pork Carnitas Quesadilla
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x2)
+            Cut in 4
+          </div></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            360,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        360,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">360,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKGFL26LVAUUTDP)<span data-v-31c7f676="" class="float-right">
+          360,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKG1K3TH4XSM0LR" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #SM0LR -
+                  Số HĐ:
+                  060034 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 330,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 19:10
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKG1K3TH4XSM0LR" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Grilled Chicken Taco
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            CRISPY
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Ground Beef Taco (Spicy)
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            CRISPY
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Shrimp Taco (Spicy)
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            CRISPY
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Chicken Curry Burrito
+          </div><!----></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x2) Bottled Water
+          </div><!----></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            55,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            70,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            70,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            95,000 ₫
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            40,000 ₫
+          </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        330,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">330,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKG1K3TH4XSM0LR)<span data-v-31c7f676="" class="float-right">
+          330,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKG1K3TGWH8SAT6" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #8SAT6 -
+                  Số HĐ:
+                  060033 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 405,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 19:06
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKG1K3TGWH8SAT6" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x2) Grilled Chicken Quesadilla
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x2)
+            Cut in 4
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Shrimp Mango Salsa Special Taco
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            SOFT
+          </div></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            330,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            75,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        405,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">405,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKG1K3TGWH8SAT6)<span data-v-31c7f676="" class="float-right">
+          405,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKG1K3TF52K50NW" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #K50NW -
+                  Số HĐ:
+                  060021 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 350,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 17:36
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKG1K3TF52K50NW" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Duck Burrito
+          </div><!----></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) V-Plain Cheese Quesadilla
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            Cut in 4
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Grilled Fish Taco (Spicy)
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            SOFT
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Ground Beef Taco (Spicy)
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            SOFT
+          </div></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            105,000 ₫
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            120,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            55,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            70,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        350,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">350,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKG1K3TF52K50NW)<span data-v-31c7f676="" class="float-right">
+          350,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKGFL25XUK9R1YD" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #9R1YD -
+                  Số HĐ:
+                  060016 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 70,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 16:11
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKGFL25XUK9R1YD" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Ground Beef Taco (Spicy)
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            SOFT
+          </div></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            70,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        70,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">70,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKGFL25XUK9R1YD)<span data-v-31c7f676="" class="float-right">
+          70,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKG1K3TEQ9RU98P" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #RU98P -
+                  Số HĐ:
+                  060015 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 205,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 16:08
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKG1K3TEQ9RU98P" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Bacon burrito
+          </div><!----></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) French Fries
+          </div><!----></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            135,000 ₫
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            70,000 ₫
+          </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        205,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">205,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKG1K3TEQ9RU98P)<span data-v-31c7f676="" class="float-right">
+          205,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKGFL25B3E675GI" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #675GI -
+                  Số HĐ:
+                  060012 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 85,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 13:17
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKGFL25B3E675GI" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Grilled Fish Taco (Spicy)
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            CRISPY
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Coke
+          </div><!----></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            55,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            30,000 ₫
+          </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        85,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">85,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKGFL25B3E675GI)<span data-v-31c7f676="" class="float-right">
+          85,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKGFL255J8DM41B" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #DM41B -
+                  Số HĐ:
+                  060011 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 245,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 12:45
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKGFL255J8DM41B" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Chicken Curry Burrito
+          </div><!----></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Beef taquitos
+          </div><!----></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Grilled Chicken Taco
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            SOFT
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Coke
+          </div><!----></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            95,000 ₫
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            65,000 ₫
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            55,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            30,000 ₫
+          </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        245,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">245,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKGFL255J8DM41B)<span data-v-31c7f676="" class="float-right">
+          245,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKGFL2550QK8D4I" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #K8D4I -
+                  Số HĐ:
+                  060010 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 165,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 12:38
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKGFL2550QK8D4I" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Soda Tonic
+          </div><!----></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Grilled Fish Taco (Spicy)
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            SOFT
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Deep-Fried Fish Special Taco
+          </div><!----></div><div data-v-31c7f676="" class="ml-3"><div data-v-31c7f676="" class="mt-1 item-name">
+            - (x1)
+            SOFT
+          </div></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            35,000 ₫
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            55,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            75,000 ₫
+          </div><div data-v-31c7f676="" class="mt-1">
+              0 ₫
+            </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        165,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">165,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKGFL2550QK8D4I)<span data-v-31c7f676="" class="float-right">
+          165,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKGFL254XSJC42N" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #JC42N -
+                  Số HĐ:
+                  060009 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 230,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 12:37
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKGFL254XSJC42N" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Coke Light
+          </div><!----></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Ground Beef Burrito (Spicy)
+          </div><!----></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Corn chips with salsa and guacamole
+          </div><!----></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            35,000 ₫
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            105,000 ₫
+          </div></div><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            90,000 ₫
+          </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        230,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">230,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKGFL254XSJC42N)<span data-v-31c7f676="" class="float-right">
+          230,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div><div data-v-cdf5d406="" class="card mb-3 border-bottom rounded"><div data-v-cdf5d406="" class="card-header bg-light"><div data-v-cdf5d406="" data-toggle="collapse" data-target="#sale-LPP6L7KVWGKGFL24O75TDCUP" aria-expanded="true" class="collapse-section mb-0 d-flex align-items-start justify-content-between collapsed"><div data-v-cdf5d406=""><p data-v-cdf5d406="" class="text-bold mb-0">
+                  #TDCUP -
+                  Số HĐ:
+                  060001 
+                  <!----><!----></p><!----><p data-v-cdf5d406="" class="mb-0">
+                  Taco Place - Lê Văn Miến -
+                  DELIVERY
+                  - 105,000 ₫
+                </p><!----></div><div data-v-cdf5d406=""><span data-v-cdf5d406="" class="d-flex align-items-baseline">
+                  05/12/2025 10:20
+                  <i data-v-cdf5d406="" class="ml-2 show-less fas fa-sort-up"></i><i data-v-cdf5d406="" class="ml-2 show-more fas fa-sort-down"></i></span><!----><div data-v-cdf5d406=""><p class="text-link-blue cursor-pointer text-right mb-0">
+    Xem nhật ký order
+  </p><div data-v-cdf5d406="" tabindex="-1" role="dialog" class="modal fade show kit-modal__container" style="display: none;"><div data-v-cdf5d406="" class="fade show modal-backdrop"></div><div data-v-cdf5d406="" role="document" class="modal-dialog modal-lg"><div data-v-cdf5d406="" class="modal-content"><div data-v-cdf5d406="" class="modal-header"><h5 data-v-cdf5d406="" class="text-heading--medium mb-0 text-center mx-auto">Nhật ký order</h5><button data-v-cdf5d406="" type="button" data-dismiss="modal" aria-label="Close" class="close ml-0 close__btn"><span data-v-cdf5d406="" aria-hidden="true">×</span></button></div><div data-v-cdf5d406="" class="modal-body overflow-auto" style="max-height: calc(100% - 70px);"><div class="overflow-auto" data-v-cdf5d406=""><!----></div></div><!----></div></div></div></div></div></div></div><div data-v-cdf5d406="" id="sale-LPP6L7KVWGKGFL24O75TDCUP" class="collapse"><div data-v-31c7f676="" class="card-body" data-v-cdf5d406=""><div data-v-31c7f676="" class="d-flex justify-content-between pb-2 mb-3 border-bottom"><div data-v-31c7f676=""><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="item-name">
+            (x1) Shrimp Burrito (Spicy)
+          </div><!----></div></div><div data-v-31c7f676="" class="d-flex g-1" style="white-space: nowrap;"><div data-v-31c7f676="" class="text-right"><div data-v-31c7f676="" class="main-item"><div data-v-31c7f676="" class="">
+            105,000 ₫
+          </div></div></div><!----></div></div><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="">Thành tiền</div><div data-v-31c7f676="">
+        105,000 ₫
+      </div></div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div data-v-31c7f676="" class="d-flex align-items-center justify-content-between mb-3"><div data-v-31c7f676="" class="text-bold">Tổng tiền</div><div data-v-31c7f676="" class="text-bold">105,000 ₫</div></div><!----><!----><div data-v-31c7f676="" class="text-semi">Phương thức thanh toán:</div><div data-v-31c7f676="">
+        - TRANSFER
+        (LPP6L7KVWGKGFL24O75TDCUP)<span data-v-31c7f676="" class="float-right">
+          105,000 ₫
+        </span><!----><!----></div><!----><!----></div></div></div></div></div><!----></div><div data-v-cdf5d406="" class="modal-footer"><div id="export_1764939117598" class="mr-0 float-right" data-v-cdf5d406=""><button type="button" class="btn btn btn-outline-blue text-link-blue btn-secondary"><i class="fal fa-download"></i>&nbsp;Xuất hoá đơn
+    <!----></button></div></div></div>
+
+    Click on the button to downlaod the file local host. (only once) then click anywhere is not in the model to escape the model to move on downloading the ATM part then finish 
+
