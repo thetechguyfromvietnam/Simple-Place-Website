@@ -3,502 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Upload Control</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .header {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        .status {
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9em;
-            margin-top: 10px;
-        }
-        
-        .status.running {
-            background: #10b981;
-            color: white;
-        }
-        
-        .status.stopped {
-            background: #ef4444;
-            color: white;
-        }
-        
-        .control-panel {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        button {
-            padding: 15px 30px;
-            font-size: 1.1em;
-            font-weight: bold;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-        }
-        
-        button:active {
-            transform: translateY(0);
-        }
-        
-        .btn-start {
-            background: #10b981;
-            color: white;
-        }
-        
-        .btn-start:hover {
-            background: #059669;
-        }
-        
-        .btn-start:disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
-        }
-        
-        .btn-stop {
-            background: #ef4444;
-            color: white;
-        }
-        
-        .btn-stop:hover {
-            background: #dc2626;
-        }
-        
-        .btn-stop:disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
-        }
-        
-        .btn-clear {
-            background: #6366f1;
-            color: white;
-        }
-        
-        .btn-clear:hover {
-            background: #4f46e5;
-        }
-        
-        .log-panel {
-            background: #1e1e1e;
-            color: #d4d4d4;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            max-height: 500px;
-            overflow-y: auto;
-        }
-        
-        .log-panel::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        .log-panel::-webkit-scrollbar-track {
-            background: #2d2d2d;
-            border-radius: 10px;
-        }
-        
-        .log-panel::-webkit-scrollbar-thumb {
-            background: #555;
-            border-radius: 10px;
-        }
-        
-        .log-panel::-webkit-scrollbar-thumb:hover {
-            background: #666;
-        }
-        
-        .log-entry {
-            padding: 5px 0;
-            border-bottom: 1px solid #333;
-            word-wrap: break-word;
-        }
-        
-        .log-entry:last-child {
-            border-bottom: none;
-        }
-        
-        .info-box {
-            background: #f3f4f6;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 10px 0;
-            border-left: 4px solid #6366f1;
-        }
-        
-        .info-box strong {
-            color: #6366f1;
-        }
-    </style>
+    <title>Quản Lý Hóa Đơn - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🤖 Auto Upload Control</h1>
-            <div id="status" class="status stopped">Đang dừng</div>
-            <div id="activity" style="margin-top:8px;color:#fff;font-weight:600"></div>
+        <header>
+            <h1>📋 Quản Lý Hóa Đơn</h1>
+            <p class="subtitle">Phân tách và Upload hóa đơn tự động</p>
+        </header>
+
+        <!-- Status Cards -->
+        <div class="status-grid">
+            <div class="status-card">
+                <div class="status-icon">📁</div>
+                <div class="status-info">
+                    <div class="status-label">File Input (data/)</div>
+                    <div class="status-value" id="data-files-count">0</div>
+                </div>
+            </div>
+            <div class="status-card">
+                <div class="status-icon">📄</div>
+                <div class="status-info">
+                    <div class="status-label">Hóa Đơn Output (tax_files/)</div>
+                    <div class="status-value" id="tax-files-count">0</div>
+                </div>
+            </div>
+            <div class="status-card">
+                <div class="status-icon">🤖</div>
+                <div class="status-info">
+                    <div class="status-label">Trạng Thái Upload</div>
+                    <div class="status-value" id="script-status" style="font-size: 1.2rem;">Đang dừng</div>
+                </div>
+            </div>
         </div>
-        
-        <div class="control-panel">
-            <div class="buttons">
-                <button id="btnStart" class="btn-start" onclick="startScript()">▶️ Bắt đầu</button>
-                <button id="btnProcess" class="btn-clear" onclick="processDefault()">🧾 Xử lý hóa đơn (SBPM)</button>
-                <button id="btnFetch" class="btn-clear" onclick="fetchData()">📥 Lấy dữ liệu Fabi (auto)</button>
-                <button id="btnGrab" class="btn-clear" onclick="createGrab()">🏪 Tạo hóa đơn Grab</button>
-                <button id="btnClearFiles" class="btn-stop" onclick="clearFiles()">🗑️ Xóa files đã tạo</button>
+
+        <!-- Beverage Invoices Section - Always Visible -->
+        <div class="action-section" id="beverage-invoices-section">
+            <h2>🍺 Hóa Đơn Bia/Rượu Đã Được Thay Thế</h2>
+            <div id="beverage-invoices-display">
+                <div class="loading">Đang tải thông tin...</div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-section">
+            <h2>Thao Tác</h2>
+            <div class="button-group">
+                <button id="btn-start" class="btn btn-success" onclick="startScript()">
+                    <span class="btn-icon">▶️</span>
+                    <span class="btn-text">Bắt đầu Upload</span>
+                </button>
+                <button id="btn-reset" class="btn btn-warning" onclick="resetSoftware()">
+                    <span class="btn-icon">🔄</span>
+                    <span class="btn-text">Reset lại phần mềm</span>
+                </button>
+                <button id="btn-process" class="btn btn-primary" onclick="processDefault()">
+                    <span class="btn-icon">🧾</span>
+                    <span class="btn-text">Xử lý hóa đơn (SBPM)</span>
+                </button>
+                <button id="btn-fetch" class="btn btn-secondary" onclick="fetchData()">
+                    <span class="btn-icon">📥</span>
+                    <span class="btn-text">Lấy dữ liệu Fabi</span>
+                </button>
+                <button id="btn-check" class="btn btn-warning" onclick="checkInvoices()">
+                    <span class="btn-icon">🔍</span>
+                    <span class="btn-text">Kiểm Tra Hóa Đơn</span>
+                </button>
+            </div>
+            <div id="activity" style="margin-top: 15px; color: #666; font-weight: 500;"></div>
+        </div>
+
+        <!-- Delete Buttons -->
+        <div class="action-section">
+            <h2>Xóa Files</h2>
+            <div class="button-group">
+                <button id="btn-clear-files" class="btn btn-danger" onclick="clearFiles()">
+                    <span class="btn-icon">🗑️</span>
+                    <span class="btn-text">Xóa Files Output (tax_files/)</span>
+                </button>
+                <button id="btn-clear-data" class="btn btn-danger" onclick="clearDataFiles()">
+                    <span class="btn-icon">🗑️</span>
+                    <span class="btn-text">Xóa Files Input (data/)</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Generate Grab Invoice -->
+        <div class="action-section">
+            <h2>Tạo Hóa Đơn Grab</h2>
+            <div class="grab-invoice-form">
+                <div class="form-group">
+                    <label for="grab-total">Tổng Tiền Grab (đã gồm VAT 8%):</label>
+                    <input type="number" id="grab-total" class="form-input" placeholder="Nhập tổng tiền Grab" min="0" step="1000">
+                </div>
+                <div class="form-group">
+                    <label for="grab-menu">Chọn Menu:</label>
+                    <select id="grab-menu" class="form-input">
+                        <option value="simple">Simple Place</option>
+                        <option value="taco">Taco Place</option>
+                    </select>
+                </div>
+                <button id="btn-generate-grab" class="btn btn-primary" onclick="generateGrabInvoice()">
+                    <span class="btn-icon">🎲</span>
+                    <span class="btn-text">Tạo Hóa Đơn Grab</span>
+                </button>
+            </div>
+            <div id="grab-result" class="grab-result" style="display: none;">
+                <h3>Kết Quả</h3>
+                <div id="grab-result-content"></div>
+            </div>
+        </div>
+
+        <!-- Check Results -->
+        <div class="check-results-section" id="check-results-section" style="display: none;">
+            <h2>Kết Quả Kiểm Tra</h2>
+            
+            <div class="result-card">
+                <h3>📋 Hóa đơn có món chưa format "Tiếng Việt / Tiếng Anh"</h3>
+                <div class="result-content" id="unformatted-invoices">
+                    <div class="loading">Đang tải...</div>
+                </div>
             </div>
             
-            <div class="info-box" id="infoBox" style="margin-top: 20px;">
-                <strong>Thông tin:</strong> Script sẽ tự động upload các file trong thư mục <code>tax_files</code>
+            <div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-radius: 8px; border-left: 4px solid #fda085;">
+                <strong>💡 Lưu ý:</strong> Thông tin về hóa đơn bia/rượu đã được thay thế được hiển thị ở phần <strong>"🍺 Hóa Đơn Bia/Rượu Đã Được Thay Thế"</strong> ở phía trên trang.
             </div>
         </div>
-        
-        <div class="log-panel" id="logPanel">
+
+        <!-- Log Panel -->
+        <div class="log-panel" id="log-panel">
             <div class="log-entry">Chờ lệnh...</div>
         </div>
     </div>
-    
-    <script>
-        let statusInterval = null;
-        let logInterval = null;
-        let fetchInterval = null;
 
-        function startPolling() {
-            if (!statusInterval) {
-                statusInterval = setInterval(updateStatus, 1000);
-            }
-            if (!logInterval) {
-                logInterval = setInterval(updateLogs, 500);
-            }
-            // Update immediately when starting
-            updateStatus();
-            updateLogs();
-        }
-
-        function stopPolling() {
-            if (statusInterval) {
-                clearInterval(statusInterval);
-                statusInterval = null;
-            }
-            if (logInterval) {
-                clearInterval(logInterval);
-                logInterval = null;
-            }
-        }
-        
-        // Kiểm tra status mỗi 1 giây
-        function updateStatus() {
-            fetch('/api/status')
-                .then(res => res.json())
-                .then(data => {
-                    const statusEl = document.getElementById('status');
-                    const btnStart = document.getElementById('btnStart');
-                    
-                    if (data.running) {
-                        statusEl.textContent = 'Đang chạy';
-                        statusEl.className = 'status running';
-                        btnStart.disabled = true;
-                        const act = (data.current && data.current.length) ? data.current : '';
-                        document.getElementById('activity').textContent = act;
-                        // Ensure polling is active when running
-                        if (!statusInterval || !logInterval) {
-                            startPolling();
-                        }
-                    } else {
-                        statusEl.textContent = 'Đang dừng';
-                        statusEl.className = 'status stopped';
-                        btnStart.disabled = false;
-                        document.getElementById('activity').textContent = '';
-                        // Stop polling when not running
-                        stopPolling();
-                    }
-                })
-                .catch(err => console.error('Error updating status:', err));
-        }
-
-        // Cập nhật logs mỗi 0.5 giây
-        function updateLogs() {
-            fetch('/api/logs')
-                .then(res => res.json())
-                .then(data => {
-                    const logPanel = document.getElementById('logPanel');
-                    if (data.logs && data.logs.length > 0) {
-                        logPanel.innerHTML = data.logs.map(log => 
-                            `<div class="log-entry">${escapeHtml(log)}</div>`
-                        ).join('');
-                        // Auto scroll to bottom
-                        logPanel.scrollTop = logPanel.scrollHeight;
-                    }
-                })
-                .catch(err => console.error('Error updating logs:', err));
-        }
-        
-        function startScript() {
-            fetch('/api/start', { method: 'POST' })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        alert('✅ Script đã được khởi động!');
-                        startPolling();
-                    } else {
-                        alert('❌ Lỗi: ' + (data.error || 'Unknown error'));
-                    }
-                })
-                .catch(err => {
-                    alert('❌ Lỗi kết nối: ' + err.message);
-                });
-        }
-        
-        
-        function clearFiles() {
-            if (!confirm('⚠️ Bạn có chắc muốn xóa TẤT CẢ files .xlsx trong tax_files/?\n\nHành động này không thể hoàn tác!')) {
-                return;
-            }
-            
-            const btn = document.getElementById('btnClearFiles');
-            btn.disabled = true;
-            btn.textContent = '⏳ Đang xóa...';
-            
-            fetch('/api/clear-files', { method: 'POST' })
-                .then(res => res.json())
-                .then(data => {
-                    const logPanel = document.getElementById('logPanel');
-                    if (data.success) {
-                        const filesList = (data.files || []).map(f => `- ${f}`).join('\n');
-                        const message = `✅ Đã xóa ${data.deleted_count} file(s):\n${filesList}`;
-                        logPanel.innerHTML = `<div class="log-entry">${escapeHtml(message)}</div>`;
-                        logPanel.scrollTop = logPanel.scrollHeight;
-                        alert(`✅ Đã xóa ${data.deleted_count} file(s) trong tax_files/`);
-                    } else {
-                        logPanel.innerHTML = `<div class="log-entry">❌ Lỗi: ${escapeHtml(data.error || 'Unknown error')}</div>`;
-                        alert('❌ Lỗi: ' + (data.error || 'Unknown error'));
-                    }
-                })
-                .catch(err => {
-                    alert('❌ Lỗi kết nối: ' + err.message);
-                })
-                .finally(() => {
-                    btn.disabled = false;
-                    btn.textContent = '🗑️ Xóa files đã tạo';
-                });
-        }
-        
-        function processDefault() {
-            const btn = document.getElementById('btnProcess');
-            btn.disabled = true;
-            btn.textContent = '⏳ Đang xử lý...';
-            fetch('/api/process-default', { method: 'POST' })
-                .then(res => res.json())
-                .then(data => {
-                    const logPanel = document.getElementById('logPanel');
-                    if (data.success) {
-                        const files = (data.files || []).map(f => `- ${f}`).join('\n');
-                        const msg = `✅ Đã tạo ${data.created} file trong tax_files\n${files}`;
-                        const logs = (data.logs || []).join('\n');
-                        logPanel.innerHTML = `<div class="log-entry">${escapeHtml(msg)}</div>` +
-                          (logs ? `<div class="log-entry">${escapeHtml(logs)}</div>` : '');
-                    } else {
-                        logPanel.innerHTML = `<div class=\"log-entry\">❌ Lỗi: ${escapeHtml(data.error || 'Unknown')}</div>`;
-                    }
-                    logPanel.scrollTop = logPanel.scrollHeight;
-                })
-                .catch(err => {
-                    alert('❌ Lỗi xử lý: ' + err.message);
-                })
-                .finally(() => {
-                    btn.disabled = false;
-                    btn.textContent = '🧾 Xử lý hóa đơn (SBPM)';
-                });
-        }
-
-        function fetchData() {
-            if (fetchInterval) {
-                alert('⚠️ Đang chạy lấy dữ liệu, vui lòng chờ.');
-                return;
-            }
-
-            const btn = document.getElementById('btnFetch');
-            const originalText = btn.textContent;
-            btn.disabled = true;
-            btn.textContent = '⏳ Đang khởi động...';
-
-            fetch('/api/fetch-data', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ headless: false })
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    startFetchPolling();
-                } else {
-                    const msg = data.error || 'Unknown error';
-                    alert('❌ Lỗi: ' + msg);
-                    btn.disabled = false;
-                    btn.textContent = originalText;
-                }
-            })
-            .catch(err => {
-                alert('❌ Lỗi kết nối: ' + err.message);
-                btn.disabled = false;
-                btn.textContent = originalText;
-            })
-            .finally(() => {
-                if (fetchInterval) {
-                    btn.textContent = '⏳ Đang lấy dữ liệu...';
-                } else {
-                    btn.disabled = false;
-                    btn.textContent = originalText;
-                }
-            });
-        }
-
-        function startFetchPolling() {
-            if (fetchInterval) {
-                return;
-            }
-            updateFetchStatus();
-            fetchInterval = setInterval(updateFetchStatus, 1000);
-            const btn = document.getElementById('btnFetch');
-            btn.disabled = true;
-            btn.textContent = '⏳ Đang lấy dữ liệu...';
-        }
-
-        function stopFetchPolling() {
-            if (fetchInterval) {
-                clearInterval(fetchInterval);
-                fetchInterval = null;
-            }
-        }
-
-        function updateFetchStatus() {
-            fetch('/api/fetch-status')
-                .then(res => res.json())
-                .then(data => {
-                    const logPanel = document.getElementById('logPanel');
-                    if (data.logs && data.logs.length) {
-                        logPanel.innerHTML = data.logs.map(line => `<div class="log-entry">${escapeHtml(line)}</div>`).join('');
-                        logPanel.scrollTop = logPanel.scrollHeight;
-                    }
-
-                    if (!data.running) {
-                        stopFetchPolling();
-                        const btn = document.getElementById('btnFetch');
-                        btn.disabled = false;
-                        btn.textContent = '📥 Lấy dữ liệu Fabi (auto)';
-                        if (typeof data.exit_code !== 'undefined' && data.exit_code !== null) {
-                            if (data.exit_code === 0) {
-                                alert('✅ Đã tải dữ liệu Fabi xong!');
-                            } else {
-                                alert('⚠️ Fetch kết thúc với mã lỗi ' + data.exit_code);
-                            }
-                        }
-                    }
-                })
-                .catch(err => {
-                    console.error('Error updating fetch status:', err);
-                });
-        }
-
-        function createGrab() {
-            const menu = prompt("Nhập nhà hàng (simple/taco):", "simple");
-            if (!menu) return;
-            const total = prompt("Nhập tổng tiền (đã gồm VAT 8%):", "1080000");
-            if (!total) return;
-            const date = prompt("Nhập ngày (DD/MM/YYYY) hoặc bỏ trống:", "");
-            const inv = prompt("Nhập số hóa đơn (tùy chọn) hoặc bỏ trống:", "");
-            
-            const btn = document.getElementById('btnGrab');
-            btn.disabled = true;
-            btn.textContent = '⏳ Đang tạo...';
-            
-            fetch('/api/grab-invoice', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ menu, total_with_tax: total, date, invoice_number: inv })
-            })
-            .then(res => res.json())
-            .then(data => {
-                const logPanel = document.getElementById('logPanel');
-                if (data.success) {
-                    const files = (data.files || []).map(f => `- ${f}`).join('\n');
-                    const msg = `✅ Đã tạo hóa đơn Grab (${data.menu}).\nFile: ${data.output}\nTổng files mới: ${data.created_count}\n${files}`;
-                    logPanel.innerHTML = `<div class=\"log-entry\">${escapeHtml(msg)}</div>`;
-                    logPanel.scrollTop = logPanel.scrollHeight;
-                    alert('✅ Đã tạo hóa đơn Grab!');
-                } else {
-                    logPanel.innerHTML = `<div class=\"log-entry\">❌ Lỗi: ${escapeHtml(data.error || 'Unknown')}</div>`;
-                    alert('❌ Lỗi: ' + (data.error || 'Unknown error'));
-                }
-            })
-            .catch(err => {
-                alert('❌ Lỗi kết nối: ' + err.message);
-            })
-            .finally(() => {
-                btn.disabled = false;
-                btn.textContent = '🏪 Tạo hóa đơn Grab';
-            });
-        }
-        
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-        
-        // Không polling mặc định. Polling chỉ bật khi script đang chạy hoặc sau khi ấn Bắt đầu.
-    </script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

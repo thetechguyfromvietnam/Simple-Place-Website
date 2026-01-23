@@ -108,6 +108,11 @@ TRANSFER_TD = (
     By.XPATH,
     "//td[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'transfer')]",
 )
+# More specific selector based on HTML structure: row with TRANSFER text in second td
+TRANSFER_ROW_SPECIFIC = (
+    By.XPATH,
+    "//tr[td[@scope='row']/span[text()='2']][td[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'transfer')]]",
+)
 TRANSFER_FILTER_FALLBACK = (
     By.XPATH,
     "//*[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'transfer') "
@@ -262,7 +267,10 @@ def dismiss_popups(driver: webdriver.Chrome, timeout: int = 5):
 
 
 def close_modal(driver: webdriver.Chrome, wait: WebDriverWait) -> bool:
-    """Close the modal dialog by clicking the X button ONCE."""
+    """Close the modal dialog by clicking outside the modal (on backdrop) or X button ONCE.
+    
+    Per instructions: "click anywhere is not in the model to escape the model"
+    """
     try:
         # Check if modal is already closed
         try:
@@ -275,10 +283,33 @@ def close_modal(driver: webdriver.Chrome, wait: WebDriverWait) -> bool:
             print("ℹ️ Modal not found, already closed")
             return True
         
-        # Find the close button (X) - only get the first one
+        # First, try clicking outside the modal (on the backdrop) as per instructions
+        # "click anywhere is not in the model to escape the model"
+        try:
+            # Find the modal backdrop
+            backdrop = driver.find_element(By.CSS_SELECTOR, ".modal-backdrop, .fade.show.modal-backdrop")
+            if backdrop.is_displayed():
+                # Click on the backdrop (outside the modal) to close it
+                driver.execute_script("arguments[0].click();", backdrop)
+                print("✅ Closed modal by clicking outside (on backdrop)")
+                time.sleep(1)
+                
+                # Verify modal is closed
+                try:
+                    modal_check = driver.find_element(By.CSS_SELECTOR, ".modal.show, .modal[style*='display: block']")
+                    if not modal_check.is_displayed():
+                        return True
+                except Exception:
+                    # Modal not found, it's closed successfully
+                    return True
+        except Exception:
+            # Backdrop not found or click didn't work, try X button instead
+            pass
+        
+        # Fallback: Find the close button (X) - only get the first one
         close_buttons = driver.find_elements(*MODAL_CLOSE_X_BUTTON)
         if not close_buttons:
-            print("⚠️ Could not find modal close button")
+            print("⚠️ Could not find modal close button or backdrop")
             return False
         
         # Get the first visible close button
@@ -451,8 +482,23 @@ def click_transfer_filter(driver: webdriver.Chrome, wait: WebDriverWait) -> bool
     # Wait for the B07 report table to load
     time.sleep(2)  # Give table time to render
     
+    # Scroll down to find the report table as per instructions
+    # The instructions say "From now on this part will be scrol down Find"
+    try:
+        # First, try to find the report table container
+        report_table = driver.find_element(By.CSS_SELECTOR, ".report-table, table.table")
+        driver.execute_script("arguments[0].scrollIntoView({block: 'start', behavior: 'smooth'});", report_table)
+        time.sleep(1)  # Wait for scroll to complete
+        print("✅ Scrolled to report table")
+    except Exception:
+        # If table not found, scroll down the page to reveal content
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight / 2);")
+        time.sleep(1)
+        print("ℹ️ Scrolled down page to find table")
+    
     # Try multiple selectors to find the TRANSFER row - but only click ONCE
-    selectors_to_try = [TRANSFER_FILTER, TRANSFER_TD, TRANSFER_FILTER_FALLBACK]
+    # Order: specific structure > general row > td > fallback
+    selectors_to_try = [TRANSFER_ROW_SPECIFIC, TRANSFER_FILTER, TRANSFER_TD, TRANSFER_FILTER_FALLBACK]
     element = None
     
     for selector in selectors_to_try:
@@ -943,13 +989,16 @@ def main():
                 if atm_files:
                     print(f"✅ Downloaded {len(atm_files)} file(s) for ATM")
                     # Rename ATM files to add "(1)" to avoid overwriting TRANSFER files
+                    # Both TRANSFER and ATM downloads have the same filename (e.g., sale_by_payment_method.xls)
+                    # So we rename ATM file to sale_by_payment_method (1).xls
                     for file_path in atm_files:
                         try:
                             # Get file name and extension
-                            stem = file_path.stem  # filename without extension
-                            suffix = file_path.suffix  # extension (.xls)
+                            stem = file_path.stem  # filename without extension (e.g., "sale_by_payment_method")
+                            suffix = file_path.suffix  # extension (e.g., ".xls")
                             
                             # Create new filename with "(1)" before extension
+                            # Example: sale_by_payment_method.xls → sale_by_payment_method (1).xls
                             new_name = f"{stem} (1){suffix}"
                             new_path = file_path.parent / new_name
                             
@@ -962,7 +1011,8 @@ def main():
                             
                             # Rename the file
                             file_path.rename(new_path)
-                            print(f"   • Renamed: {file_path.name} → {new_path.name}")
+                            print(f"   • Renamed ATM file: {file_path.name} → {new_path.name}")
+                            print(f"     (TRANSFER: {file_path.name}, ATM: {new_path.name})")
                         except Exception as e:
                             print(f"⚠️ Could not rename {file_path.name}: {e}")
                 else:

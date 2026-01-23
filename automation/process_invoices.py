@@ -38,6 +38,30 @@ script_dir = PROJECT_ROOT
 from Menu.parse_menu import parse_excel_menu
 
 # ============================================================================
+# HÀM TIỆN ÍCH CHUẨN HÓA KEY TÊN MÓN
+# ============================================================================
+
+def normalize_menu_key(s):
+    """
+    Chuẩn hóa chuỗi để dùng làm key so sánh tên món:
+    - Đưa về lowercase
+    - Bỏ ký tự đặc biệt (giữ lại chữ, số, khoảng trắng)
+    - Gom nhiều khoảng trắng thành 1
+    
+    Ví dụ:
+        'V - Bruschetta'  -> 'v bruschetta'
+        'V-Bruschetta'    -> 'v bruschetta'
+    """
+    if not s:
+        return ''
+    s = s.lower().strip()
+    # Bỏ ký tự không phải chữ/số/khoảng trắng (bao gồm '-', '/', ',', ...)
+    s = re.sub(r'[^\w\s]', ' ', s)
+    # Gom nhiều khoảng trắng liên tiếp thành 1
+    s = re.sub(r'\s+', ' ', s)
+    return s
+
+# ============================================================================
 # CẤU HÌNH
 # ============================================================================
 
@@ -51,6 +75,22 @@ OUTPUT_DIR = 'tax_files'
 # Default files for combining
 DEFAULT_FILE1 = 'sale_by_payment_method.xls'  # transfer
 DEFAULT_FILE2 = 'sale_by_payment_method (1).xls'  # atm
+
+# ============================================================================
+# CẤU HÌNH PHÍ DỊCH VỤ (CHỈ ÁP DỤNG HÔM NAY - NGÀY LỄ)
+# ============================================================================
+# Phí dịch vụ = 8% của tổng bill, được thêm vào mỗi hóa đơn như một món ăn với số lượng 1.
+# 
+# Cách sử dụng:
+# - Để bật phí dịch vụ: Đặt SERVICE_FEE_ENABLED = True
+# - Để tắt phí dịch vụ: Đặt SERVICE_FEE_ENABLED = False
+# 
+# Phí dịch vụ sẽ được tính = 8% của tổng giá trị các món ăn (trước khi thêm phí dịch vụ)
+# ============================================================================
+SERVICE_FEE_ENABLED = False  # Bật/tắt phí dịch vụ. True = bật, False = tắt
+SERVICE_FEE_PERCENTAGE = 0.08  # 8% của tổng bill
+SERVICE_FEE_NAME = "Phí dịch vụ"  # Tên phí dịch vụ (không cần phần tiếng Anh)
+SERVICE_FEE_UNIT = ""  # Để trống, không cần đơn vị
 
 # ============================================================================
 # LOAD MENU VÀ TẠO MAPPING
@@ -74,6 +114,9 @@ def load_menus():
     name_mapping = {}
     price_to_items = {}
     
+    # Nhóm được xem là bia/rượu: chỉ các nhóm sau trong menu
+    alcohol_groups = {'BEER & CRAFT BEERS', 'SANGRIA', 'RED', 'WHITE'}
+    
     for item in all_items:
         full_name = item['name']
         price = item['price']
@@ -81,21 +124,35 @@ def load_menus():
         # Extract English part (sau dấu /)
         if ' / ' in full_name:
             parts = full_name.split(' / ')
-            english_name = parts[-1].strip().lower()
+            english_name = parts[-1].strip()
+            eng_key = normalize_menu_key(english_name)
             # If duplicate, prefer the first one found (Simple Place takes precedence)
-            if english_name not in name_mapping:
-                name_mapping[english_name] = full_name
+            if eng_key and eng_key not in name_mapping:
+                name_mapping[eng_key] = full_name
         
         # Map cả tên đầy đủ (prefer Simple Place if duplicate)
-        full_name_lower = full_name.lower()
-        if full_name_lower not in name_mapping:
-            name_mapping[full_name_lower] = full_name
+        full_name_key = normalize_menu_key(full_name)
+        if full_name_key and full_name_key not in name_mapping:
+            name_mapping[full_name_key] = full_name
         
-        # Tạo price mapping cho món không phải bia/rượu
-        alcohol_keywords = ['bia', 'beer', 'heineken', 'tiger', 'saigon', '333', 'rượu', 'wine', 
-                           'whisky', 'vodka', 'carlsberg', 'craft']
-        is_alcohol = any(kw in full_name.lower() for kw in alcohol_keywords)
+        # Tạo price mapping cho món không phải bia/rượu và không phải Coke
+        group_name = str(item.get('group', '')).strip().upper()
+        is_alcohol = group_name in alcohol_groups
         
+        # Kiểm tra tên món có chứa từ khóa bia/rượu không (bao gồm cả Coke thường, nhưng KHÔNG bao gồm Coke Light/Zero)
+        if not is_alcohol:
+            item_name_lower = full_name.lower()
+            alcohol_keywords = ['bia', 'beer', 'heineken', 'tiger', 'saigon', '333', 'rượu', 'wine', 'whisky', 'vodka']
+            is_alcohol = any(keyword in item_name_lower for keyword in alcohol_keywords)
+            
+            # Kiểm tra Coke thường (KHÔNG phải Light/Zero)
+            if not is_alcohol and ('coke' in item_name_lower or 'coca' in item_name_lower):
+                exclude_keywords = ['light', 'zero', 'ít đường', 'không đường', 'it duong', 'khong duong']
+                is_coke_light_or_zero = any(exclude_kw in item_name_lower for exclude_kw in exclude_keywords)
+                if not is_coke_light_or_zero:
+                    is_alcohol = True
+        
+        # Chỉ thêm món không phải bia/rượu vào price_to_items
         if not is_alcohol:
             if price not in price_to_items:
                 price_to_items[price] = []
@@ -108,25 +165,131 @@ def load_menus():
 # ============================================================================
 
 def find_replacement_for_alcohol(alcohol_name, alcohol_price, price_to_items):
-    """Tìm món thay thế không cồn và điều chỉnh giá cho thuế"""
+    """
+    Tìm món thay thế không cồn và điều chỉnh giá cho thuế.
+    
+    Logic: Món thay thế sẽ được thêm số tiền bằng với thuế 10% của bia
+    để tổng số tiền ra đủ sau khi đã áp thuế 8%.
+    
+    Công thức:
+    - Giá bia gốc: P
+    - Thuế 10% của bia: P * 0.10
+    - Giá món thay thế = P + (P * 0.10) = P * 1.10
+    - Sau thuế 8%: P * 1.10 * 1.08 = P * 1.188
+    - Để tổng bằng P * 1.10 (như bia với thuế 10%): F * 1.08 = P * 1.10
+    - Vậy: F = P * 1.10 / 1.08
+    
+    QUAN TRỌNG: Không bao giờ thay thế bia/rượu bằng bia/rượu khác.
+    """
     import random
     
-    adjusted_price = alcohol_price * 1.10 / 1.08
+    # Nhóm được xem là bia/rượu: chỉ các nhóm sau trong menu
+    alcohol_groups = {'BEER & CRAFT BEERS', 'SANGRIA', 'RED', 'WHITE'}
     
-    # Tìm món có giá gần với giá gốc
+    # Từ khóa để nhận diện bia/rượu trong tên món (KHÔNG bao gồm Coke Light/Zero)
+    alcohol_keywords = ['bia', 'beer', 'heineken', 'tiger', 'saigon', '333', 'rượu', 'wine', 'whisky', 'vodka']
+    
+    def is_alcohol_item(item):
+        """Kiểm tra xem món có phải là bia/rượu không"""
+        # Kiểm tra nhóm
+        group_name = str(item.get('group', '')).strip().upper()
+        if group_name in alcohol_groups:
+            return True
+        
+        # Kiểm tra tên món
+        item_name_lower = str(item.get('name', '')).lower()
+        if any(keyword in item_name_lower for keyword in alcohol_keywords):
+            return True
+        
+        # Kiểm tra Coke thường (KHÔNG phải Light/Zero)
+        if 'coke' in item_name_lower or 'coca' in item_name_lower:
+            exclude_keywords = ['light', 'zero', 'ít đường', 'không đường', 'it duong', 'khong duong']
+            is_coke_light_or_zero = any(exclude_kw in item_name_lower for exclude_kw in exclude_keywords)
+            if not is_coke_light_or_zero:
+                return True
+        
+        return False
+    
+    # Tính số tiền thuế 10% (áp dụng cho bia/rượu và Coke 10% đường)
+    tax_10_percent = alcohol_price * 0.10
+    
+    # Giá món thay thế = giá gốc (bia/rượu hoặc Coke) + thuế 10%, sau đó điều chỉnh để sau thuế 8% vẫn đủ
+    # Công thức: adjusted_price = (alcohol_price + tax_10_percent) / 1.08 * 1.08 / 1.08
+    # Đơn giản hóa: adjusted_price = alcohol_price * 1.10 / 1.08
+    # Áp dụng cho cả bia/rượu và Coke 10% đường (cùng tính thuế 10%)
+    # Làm tròn thành số nguyên (không có phần thập phân)
+    adjusted_price = round(alcohol_price * 1.10 / 1.08)
+    
+    # Tìm món có giá gần với giá gốc, đảm bảo không phải bia/rượu
     for delta in [0, 5000, -5000, 10000, -10000, 15000, -15000, 20000, -20000]:
         nearby_price = alcohol_price + delta
         if nearby_price in price_to_items and len(price_to_items[nearby_price]) > 0:
-            best_replacement = random.choice(price_to_items[nearby_price])
-            return best_replacement['name'], best_replacement['unit'], adjusted_price
+            # Lọc ra các món không phải bia/rượu
+            non_alcohol_items = [item for item in price_to_items[nearby_price] if not is_alcohol_item(item)]
+            
+            if len(non_alcohol_items) > 0:
+                best_replacement = random.choice(non_alcohol_items)
+                return best_replacement['name'], best_replacement['unit'], adjusted_price
     
-    # Fallback: chọn random
+    # Fallback: chọn random từ tất cả món, nhưng đảm bảo không phải bia/rượu
     if price_to_items:
-        random_price = random.choice(list(price_to_items.keys()))
-        replacement = random.choice(price_to_items[random_price])
-        return replacement['name'], replacement['unit'], adjusted_price
+        # Thu thập tất cả món không phải bia/rượu
+        all_non_alcohol_items = []
+        for price, items in price_to_items.items():
+            for item in items:
+                if not is_alcohol_item(item):
+                    all_non_alcohol_items.append(item)
+        
+        if len(all_non_alcohol_items) > 0:
+            replacement = random.choice(all_non_alcohol_items)
+            return replacement['name'], replacement['unit'], adjusted_price
     
     return alcohol_name, 'Lon', alcohol_price
+
+# ============================================================================
+# TỰ ĐỘNG SỬA FORMAT TÊN MÓN
+# ============================================================================
+
+def fix_item_name_format(item_name):
+    """
+    Tự động sửa format tên món thành 'Tên Tiếng Việt / Tên Tiếng Anh'
+    """
+    if not item_name or ' / ' in item_name:
+        return item_name
+    
+    item_name = item_name.strip()
+    
+    # Mapping các món thường gặp không đúng format
+    format_fixes = {
+        'Avocado Smothie (Sinh tố bơ)': 'Sinh tố bơ / Avocado Smoothie',
+        'Mango Smothie (Sinh tố xoài)': 'Sinh tố xoài / Mango Smoothie',
+        'Strawberry Smothie (Sinh tố dâu)': 'Sinh tố dâu / Strawberry Smoothie',
+        'Lamb Stew': 'Lamb Stew / Lamb Stew',
+        # V - Bruschetta: ép về format Tiếng Việt / Tiếng Anh chuẩn trong menu
+        'V - Bruschetta': 'Bruschetta Ý Chay (Bánh Mì Nướng Phủ Cà Chua Tươi, Dầu Ôliu) / V-Bruschetta',
+    }
+    
+    # Kiểm tra trong mapping
+    if item_name in format_fixes:
+        return format_fixes[item_name]
+    
+    # Nếu có dấu ngoặc đơn với tiếng Việt bên trong: "English (Vietnamese)"
+    if '(' in item_name and ')' in item_name:
+        match = re.match(r'^(.+?)\s*\((.+?)\)\s*$', item_name)
+        if match:
+            english_part = match.group(1).strip()
+            vietnamese_part = match.group(2).strip()
+            # Kiểm tra xem phần trong ngoặc có phải tiếng Việt không
+            if any(ord(char) > 127 for char in vietnamese_part):
+                return f"{vietnamese_part} / {english_part}"
+    
+    # Nếu chỉ có tiếng Anh, thêm lại chính nó làm phần tiếng Anh
+    # (giữ nguyên để có format đúng, nhưng sẽ được match với menu sau)
+    if not any(ord(char) > 127 for char in item_name):
+        return f"{item_name} / {item_name}"
+    
+    # Nếu chỉ có tiếng Việt, thêm lại chính nó
+    return f"{item_name} / {item_name}"
 
 # ============================================================================
 # MATCH TÊN MÓN VỚI MENU
@@ -141,10 +304,12 @@ def match_menu_name(raw_name, all_menu_items, name_mapping):
     raw_without_extra = re.sub(r'\s+extra\s*$', '', raw_normalized).strip()
     raw_without_s = re.sub(r's\s+extra', ' extra', raw_normalized)
     
-    # Direct match
-    for candidate in [raw_normalized, raw_without_s, raw_without_extra, raw_lower]:
-        if candidate in name_mapping:
-            return name_mapping[candidate]
+    # Direct match với key đã chuẩn hóa
+    candidates = [raw_normalized, raw_without_s, raw_without_extra, raw_lower]
+    for candidate in candidates:
+        key = normalize_menu_key(candidate)
+        if key in name_mapping:
+            return name_mapping[key]
     
     # Partial match
     best_match = None
@@ -251,6 +416,7 @@ def parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_ite
     invoices = []
     current_invoice = None
     invoice_counter = 0
+    alcohol_items_found = []  # Track alcohol items for reporting
     
     rows = content.split('<tr>')
     
@@ -344,6 +510,9 @@ def parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_ite
             cells = re.findall(r'<td[^>]*>(.*?)</td>', row)
             cells = [re.sub(r'<[^>]+>', '', cell).strip() for cell in cells]
             
+            # Track items đã parse trong row này để tránh duplicate
+            parsed_in_row = set()
+            
             for i in range(max(0, len(cells) - 3)):
                 try:
                     name = cells[i]
@@ -386,16 +555,101 @@ def parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_ite
                             clean_unit = 'Phần'
                         else:
                             clean_unit = raw_unit
-                        full_name = match_menu_name(name.strip(), all_menu_items, name_mapping)
                         
-                        alcohol_keywords = ['bia', 'beer', 'heineken', 'tiger', 'saigon', '333', 
-                                          'rượu', 'wine', 'whisky', 'vodka', 'carlsberg', 'craft']
-                        is_alcohol = any(kw in full_name.lower() for kw in alcohol_keywords)
+                        # Match với menu
+                        matched_name = match_menu_name(name.strip(), all_menu_items, name_mapping)
+                        
+                        # Tự động sửa format nếu không đúng
+                        full_name = fix_item_name_format(matched_name)
+                        
+                        # Đảm bảo format cuối cùng luôn có " / "
+                        if ' / ' not in full_name:
+                            full_name = f"{full_name} / {full_name}"
+                        
+                        # Tạo key để check duplicate: tên + giá + số lượng
+                        item_key = (full_name, price_value, qty, clean_unit)
+                        
+                        # Kiểm tra duplicate trong row này
+                        if item_key in parsed_in_row:
+                            continue
+                        
+                        # Kiểm tra duplicate trong invoice (cùng tên, giá, số lượng)
+                        # Cho phép cùng món nhưng khác giá hoặc số lượng
+                        existing_item = next(
+                            (item for item in current_invoice['items'] 
+                             if item['name'] == full_name and 
+                                item['price'] == price_value and 
+                                item['quantity'] == qty and
+                                item['unit'] == clean_unit),
+                            None
+                        )
+                        if existing_item:
+                            continue
+                        
+                        # Đánh dấu đã parse
+                        parsed_in_row.add(item_key)
+                        
+                        # Xác định bia/rượu và Coke (thuế 10%) dựa trên Tên nhóm của menu
+                        # Chỉ các nhóm: BEER & CRAFT BEERS, SANGRIA, RED, WHITE mới bị coi là bia/rượu (tính thuế 10%)
+                        # Ngoài ra, Coke (Coca-Cola) THƯỜNG có 10% đường nên cũng tính thuế 10% (giống bia/rượu)
+                        # LƯU Ý: Coke Light và Coke Zero có lượng đường < 10g nên tính thuế 8%, KHÔNG phải 10%
+                        alcohol_groups = {'BEER & CRAFT BEERS', 'SANGRIA', 'RED', 'WHITE'}
+                        matched_item = next((m for m in all_menu_items if m['name'] == full_name), None)
+                        group_name = str(matched_item.get('group', '')).strip().upper() if matched_item else ''
+                        is_alcohol = group_name in alcohol_groups
+                        
+                        # Kiểm tra nếu là Coke (Coca-Cola) THƯỜNG - có 10% đường nên tính thuế 10% (giống bia/rượu)
+                        # LƯU Ý: Chỉ Coke thường (có 10% đường) tính thuế 10%, Coke Light và Coke Zero (ít đường) tính thuế 8%
+                        if not is_alcohol:
+                            item_name_lower = full_name.lower()
+                            # Kiểm tra tên món có chứa "coke" hoặc "coca" nhưng KHÔNG phải Light hoặc Zero
+                            # Chỉ coi là alcohol (thuế 10%) nếu là "Coke" hoặc "Coca-Cola" thường (có 10% đường)
+                            # Loại trừ: Coke Light, Coke Zero, và các biến thể ít đường/không đường
+                            if ('coke' in item_name_lower or 'coca' in item_name_lower):
+                                # Loại trừ Coke Light và Coke Zero (có lượng đường < 10g)
+                                exclude_keywords = ['light', 'zero', 'ít đường', 'không đường', 'it duong', 'khong duong', 'less sugar', 'no sugar']
+                                is_coke_light_or_zero = any(exclude_kw in item_name_lower for exclude_kw in exclude_keywords)
+                                if not is_coke_light_or_zero:
+                                    is_alcohol = True
+                                    # Log để rõ ràng
+                                    print(f"⚠️  PHÁT HIỆN COKE (10% đường) - Mã HĐ: {current_invoice.get('invoice_id', 'N/A')} | Món: {full_name} | Tính thuế 10% (giống bia/rượu)")
                         
                         if is_alcohol:
+                            # Log alcohol/beverage detection (bao gồm bia/rượu và Coke 10% đường)
+                            original_amount = price_value * qty
+                            invoice_id = current_invoice.get('invoice_id', 'N/A')
+                            
+                            # Xác định loại: bia/rượu hay Coke
+                            item_name_lower = full_name.lower()
+                            is_coke = ('coke' in item_name_lower or 'coca' in item_name_lower) and group_name not in alcohol_groups
+                            item_type = "COKE (10% đường)" if is_coke else "BIA/RƯỢU"
+                            
+                            alcohol_items_found.append({
+                                'invoice_id': invoice_id,
+                                'alcohol_name': full_name,
+                                'quantity': qty,
+                                'unit': clean_unit,
+                                'price': price_value,
+                                'total_amount': original_amount
+                            })
+                            
+                            # Tính thuế 10% (áp dụng cho cả bia/rượu và Coke 10% đường)
+                            tax_10_percent = price_value * 0.10
+                            total_with_10_tax = price_value * 1.10
+                            
+                            print(f"⚠️  PHÁT HIỆN {item_type} - Mã HĐ: {invoice_id} | Món: {full_name} | SL: {qty} | Giá: {price_value:,.0f}đ | Tổng: {original_amount:,.0f}đ")
+                            print(f"   Thuế 10%: {tax_10_percent:,.0f}đ | Tổng với thuế 10%: {total_with_10_tax:,.0f}đ")
+                            
+                            # Replace with food item: thêm số tiền bằng thuế 10% để tổng đủ sau thuế 8%
+                            # Áp dụng cho cả bia/rượu và Coke 10% đường
                             full_name, clean_unit, adjusted_price = find_replacement_for_alcohol(
                                 full_name, price_value, price_to_items)
                             price_value = adjusted_price
+                            
+                            # Tính lại để kiểm tra
+                            replacement_total_with_8_tax = adjusted_price * 1.08
+                            print(f"   → Đã thay bằng: {full_name} | Giá mới: {price_value:,.0f}đ (đã thêm {tax_10_percent:,.0f}đ = thuế 10% của {item_type.lower()})")
+                            print(f"   → Tổng sau thuế 8%: {replacement_total_with_8_tax:,.0f}đ (bằng tổng {item_type.lower()} với thuế 10%: {total_with_10_tax:,.0f}đ)")
                         
                         current_invoice['items'].append({
                             'name': full_name,
@@ -414,33 +668,87 @@ def parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_ite
             
         total_discount = invoice['discount'] + invoice['payment_discount']
         
+        # Bỏ qua giảm giá quá nhỏ (có thể là parse sai)
+        if total_discount > 0 and total_discount < 1000:
+            # Giảm giá < 1000đ có thể là parse sai, bỏ qua
+            continue
+        
         if total_discount > 0 and len(invoice['items']) > 0:
-            sorted_items = sorted(invoice['items'], 
-                                key=lambda x: x['quantity'] * x['price'], 
-                                reverse=True)
+            # Tính tổng giá trị tất cả các món
+            total_items_value = sum(item['quantity'] * item['price'] for item in invoice['items'])
             
-            remaining_discount = total_discount
-            
-            for i in range(min(3, len(sorted_items))):
-                if remaining_discount <= 0:
-                    break
-                    
-                item = sorted_items[i]
-                item_total = item['quantity'] * item['price']
+            if total_items_value > 0:
+                # VALIDATION: Chỉ áp dụng giảm giá nếu hợp lý
+                # - Giảm giá không được vượt quá 50% tổng giá trị (tránh parse sai)
+                # - Giảm giá phải nhỏ hơn tổng giá trị
+                max_reasonable_discount = total_items_value * 0.5  # Tối đa 50%
                 
-                if remaining_discount >= item_total:
-                    item['price'] = 0
-                    remaining_discount -= item_total
-                else:
-                    new_item_total = item_total - remaining_discount
-                    item['price'] = new_item_total / item['quantity']
-                    remaining_discount = 0
-                    break
+                if total_discount > max_reasonable_discount:
+                    # Nếu giảm giá quá lớn, có thể là parse sai - bỏ qua
+                    print(f"⚠️  Cảnh báo: Hóa đơn {invoice['invoice_id']} có giảm giá bất thường ({total_discount:,.0f}đ > 50% tổng {total_items_value:,.0f}đ). Bỏ qua phân bổ giảm giá.")
+                    continue
+                
+                if total_discount >= total_items_value:
+                    # Giảm giá >= tổng giá trị là không hợp lý
+                    print(f"⚠️  Cảnh báo: Hóa đơn {invoice['invoice_id']} có giảm giá >= tổng giá trị. Bỏ qua phân bổ giảm giá.")
+                    continue
+                
+                # CHỈ ÁP DỤNG GIẢM GIÁ CHO 1 MÓN (món có giá trị cao nhất)
+                # Tìm món có giá trị cao nhất để áp dụng giảm giá
+                target_item = max(invoice['items'], 
+                                key=lambda x: x['quantity'] * x['price'])
+                
+                target_item_total = target_item['quantity'] * target_item['price']
+                
+                # Đảm bảo giảm giá không vượt quá 90% giá trị món (để giá > 0)
+                max_discount_for_item = min(total_discount, target_item_total * 0.9)
+                
+                # Tính giá mới cho món được chọn
+                new_item_total = target_item_total - max_discount_for_item
+                new_price = max(new_item_total / target_item['quantity'], 1.0)  # Giá tối thiểu là 1 đồng
+                
+                # Áp dụng giá mới
+                old_price = target_item['price']
+                target_item['price'] = new_price
+                
+                # Log thông tin
+                print(f"   💰 HĐ {invoice['invoice_id']}: Áp dụng giảm giá {max_discount_for_item:,.0f}đ cho món '{target_item['name']}' (giá: {old_price:,.0f}đ → {new_price:,.0f}đ)")
+                
+                # Nếu giảm giá còn thừa (do giới hạn 90%), cảnh báo
+                remaining_discount = total_discount - max_discount_for_item
+                if remaining_discount > 1:
+                    print(f"   ⚠️  Cảnh báo: Còn {remaining_discount:,.0f}đ giảm giá chưa được áp dụng (do giới hạn 90% giá trị món)")
+                
+                # Validation: Kiểm tra tổng sau giảm giá có hợp lý không
+                final_total_after_discount = sum(item['quantity'] * item['price'] for item in invoice['items'])
+                # Tính expected_final dựa trên giảm giá thực tế đã áp dụng (có thể nhỏ hơn total_discount nếu bị giới hạn)
+                actual_discount_applied = total_items_value - final_total_after_discount
+                expected_final = total_items_value - max_discount_for_item
+                diff = abs(final_total_after_discount - expected_final)
+                
+                if diff > 1000:  # Chênh lệch > 1000đ là bất thường
+                    print(f"⚠️  Cảnh báo: Hóa đơn {invoice['invoice_id']} sau giảm giá có chênh lệch lớn ({diff:,.0f}đ). Có thể giảm giá bị parse sai.")
     
     # Filter empty invoices
     invoices = [inv for inv in invoices if len(inv['items']) > 0]
     
-    return invoices
+    # Print summary of alcohol items found
+    if alcohol_items_found:
+        print("\n" + "=" * 70)
+        print("📋 TỔNG HỢP BIA/RƯỢU ĐÃ PHÁT HIỆN VÀ THAY THẾ")
+        print("=" * 70)
+        total_alcohol_amount = 0
+        for item in alcohol_items_found:
+            print(f"   Mã HĐ: {item['invoice_id']:<10} | {item['alcohol_name']:<40} | SL: {item['quantity']:<3} | Tổng: {item['total_amount']:>12,.0f}đ")
+            total_alcohol_amount += item['total_amount']
+        print("-" * 70)
+        print(f"   Tổng số hóa đơn có bia/rượu: {len(set(item['invoice_id'] for item in alcohol_items_found))}")
+        print(f"   Tổng số món bia/rượu: {len(alcohol_items_found)}")
+        print(f"   Tổng tiền bia/rượu: {total_alcohol_amount:,.0f}đ")
+        print("=" * 70)
+        print("💡 Vui lòng kiểm tra lại các hóa đơn trên hệ thống!\n")
+    
+    return invoices, alcohol_items_found
 
 # ============================================================================
 # GRAB INVOICE FUNCTIONS
@@ -797,6 +1105,10 @@ def create_grab_invoice(total_with_tax, menu_items, date_str=None, invoice_numbe
         'date': date_str,
         'items': items
     }
+    
+    # Thêm phí dịch vụ vào hóa đơn Grab (nếu được bật)
+    add_service_fee_to_invoice(invoice_data)
+    
     create_invoice_file(invoice_data, str(output_file))
     
     return str(output_file)
@@ -912,7 +1224,7 @@ def process_sale_by_payment_method():
     
     # Parse invoices
     print(f"\n📖 Đang phân tích dữ liệu...")
-    invoices = parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_items, is_combined)
+    invoices, alcohol_items_found = parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_items, is_combined)
     print(f"   ✓ Tìm thấy {len(invoices)} hóa đơn")
     
     if len(invoices) == 0:
@@ -920,7 +1232,7 @@ def process_sale_by_payment_method():
         return
     
     # Process invoices
-    _process_and_save_invoices(invoices, source_type)
+    _process_and_save_invoices(invoices, source_type, alcohol_items_found)
 
 def process_single_file():
     """Process single file"""
@@ -966,7 +1278,7 @@ def process_single_file():
     
     # Parse invoices
     print(f"\n📖 Đang phân tích dữ liệu...")
-    invoices = parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_items, is_combined)
+    invoices, alcohol_items_found = parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_items, is_combined)
     print(f"   ✓ Tìm thấy {len(invoices)} hóa đơn")
     
     if len(invoices) == 0:
@@ -974,9 +1286,9 @@ def process_single_file():
         return
     
     # Process invoices
-    _process_and_save_invoices(invoices, source_type)
+    _process_and_save_invoices(invoices, source_type, alcohol_items_found)
 
-def _process_and_save_invoices(invoices, source_type):
+def _process_and_save_invoices(invoices, source_type, alcohol_items_found=None):
     """Helper function để process và save invoices"""
     output_dir = script_dir / OUTPUT_DIR
     output_dir.mkdir(exist_ok=True)
@@ -987,9 +1299,21 @@ def _process_and_save_invoices(invoices, source_type):
     
     total_created = 0
     validation_warnings = []
+    alcohol_invoices_info = []  # Track invoices with alcohol for summary file
+    
+    # Kiểm tra và thông báo về phí dịch vụ
+    if SERVICE_FEE_ENABLED:
+        print(f"\n💰 Phí dịch vụ đã được bật: {SERVICE_FEE_PERCENTAGE * 100:.0f}% của tổng bill")
     
     for invoice in invoices:
+        # Bước 1: Thêm phí dịch vụ vào hóa đơn (nếu được bật)
+        # Phí dịch vụ = 8% của tổng bill TRƯỚC khi có phí dịch vụ (chưa có VAT)
+        add_service_fee_to_invoice(invoice)
+        
+        # Bước 2: Tính tổng bill sau khi đã có phí dịch vụ (chưa có VAT)
         total = sum(item['quantity'] * item['price'] for item in invoice['items'])
+        
+        # Bước 3: Tính VAT 8% trên tổng bill đã có phí dịch vụ
         final_with_tax = total * 1.08
         total_str = f"{int(final_with_tax):,}".replace(',', '.')
         
@@ -997,6 +1321,18 @@ def _process_and_save_invoices(invoices, source_type):
         
         filename = output_dir / f"{invoice['invoice_id']} - {invoice_source_type} - {total_str}đ.xlsx"
         create_invoice_file(invoice, str(filename))
+        
+        # Track if this invoice has alcohol
+        if alcohol_items_found:
+            invoice_has_alcohol = any(item['invoice_id'] == invoice['invoice_id'] for item in alcohol_items_found)
+            if invoice_has_alcohol:
+                alcohol_invoices_info.append({
+                    'invoice_id': invoice['invoice_id'],
+                    'date': invoice.get('date', ''),
+                    'filename': filename.name,
+                    'total_amount': final_with_tax,
+                    'payment_method': invoice_source_type
+                })
         
         expected_final = total * 1.08
         validation_status = "✓"
@@ -1029,11 +1365,212 @@ def _process_and_save_invoices(invoices, source_type):
             print(f"   Invoice #{warn['id']}: Tính = {warn['calculated']:,.0f}đ | Data = {warn['actual']:,.0f}đ | Chênh = {warn['diff']:,.0f}đ")
         print("   " + "=" * 68)
     
+    # Không tạo file Excel tổng hợp bia/rượu nữa - chỉ hiển thị trên web
+    if alcohol_invoices_info:
+        print(f"\n📋 Tổng hợp: {len(alcohol_invoices_info)} hóa đơn có bia/rượu đã được thay thế")
+        print(f"   💡 Thông tin chi tiết xem trên trang web")
+    
     print("\n" + "=" * 70)
     print(f"✅ HOÀN THÀNH!")
     print(f"📁 Thư mục: {OUTPUT_DIR}/")
     print(f"📊 Tổng số file: {total_created}")
     print("=" * 70)
+
+# ============================================================================
+# TẠO FILE EXCEL TỔNG HỢP BIA/RƯỢU
+# ============================================================================
+
+def create_alcohol_summary_file(alcohol_invoices_info, alcohol_items_found, output_dir):
+    """Tạo file Excel tổng hợp các hóa đơn có bia/rượu đã được thay thế - ĐÃ BỎ"""
+    # Function này đã được bỏ - không tạo file Excel nữa, chỉ hiển thị trên web
+    return None
+    
+    # Create filename with current date - đặt ở thư mục gốc, không phải trong tax_files
+    date_str = datetime.now().strftime("%Y%m%d")
+    summary_filename = PROJECT_ROOT / f"TONG_HOP_BIARUOU_{date_str}.xlsx"
+    
+    workbook = xlsxwriter.Workbook(str(summary_filename))
+    worksheet = workbook.add_worksheet("Danh sách hóa đơn")
+    
+    # Formats
+    header_format = workbook.add_format({
+        'bold': True,
+        'bg_color': '#4472C4',
+        'font_color': '#FFFFFF',
+        'border': 1,
+        'align': 'center',
+        'valign': 'vcenter'
+    })
+    cell_format = workbook.add_format({'border': 1, 'align': 'left'})
+    number_format = workbook.add_format({'border': 1, 'num_format': '#,##0', 'align': 'right'})
+    date_format = workbook.add_format({'border': 1, 'num_format': 'dd/mm/yyyy', 'align': 'center'})
+    
+    # Set column widths
+    worksheet.set_column('A:A', 12)  # Mã HĐ
+    worksheet.set_column('B:B', 12)  # Ngày
+    worksheet.set_column('C:C', 50)  # Tên file
+    worksheet.set_column('D:D', 15)  # Tổng tiền
+    worksheet.set_column('E:E', 15)  # Phương thức
+    worksheet.set_column('F:F', 40)  # Món bia/rượu
+    worksheet.set_column('G:G', 8)   # Số lượng
+    worksheet.set_column('H:H', 15)  # Giá
+    worksheet.set_column('I:I', 15)  # Tổng món
+    
+    # Headers
+    headers = [
+        'Mã Hóa Đơn',
+        'Ngày',
+        'Tên File',
+        'Tổng Tiền HĐ',
+        'Phương Thức',
+        'Món Bia/Rượu',
+        'Số Lượng',
+        'Đơn Giá',
+        'Tổng Tiền Món'
+    ]
+    
+    for col, header in enumerate(headers):
+        worksheet.write(0, col, header, header_format)
+    
+    # Write data
+    row = 1
+    for invoice_info in alcohol_invoices_info:
+        invoice_id = invoice_info['invoice_id']
+        # Find all alcohol items for this invoice
+        invoice_alcohol_items = [item for item in alcohol_items_found if item['invoice_id'] == invoice_id]
+        
+        if invoice_alcohol_items:
+            # First row with invoice info
+            worksheet.write(row, 0, invoice_id, cell_format)
+            worksheet.write(row, 1, invoice_info.get('date', ''), date_format)
+            worksheet.write(row, 2, invoice_info['filename'], cell_format)
+            worksheet.write(row, 3, invoice_info['total_amount'], number_format)
+            worksheet.write(row, 4, invoice_info['payment_method'].upper(), cell_format)
+            
+            # First alcohol item
+            first_item = invoice_alcohol_items[0]
+            worksheet.write(row, 5, first_item['alcohol_name'], cell_format)
+            worksheet.write(row, 6, first_item['quantity'], number_format)
+            worksheet.write(row, 7, first_item['price'], number_format)
+            worksheet.write(row, 8, first_item['total_amount'], number_format)
+            row += 1
+            
+            # Additional alcohol items for same invoice
+            for item in invoice_alcohol_items[1:]:
+                worksheet.write(row, 5, item['alcohol_name'], cell_format)
+                worksheet.write(row, 6, item['quantity'], number_format)
+                worksheet.write(row, 7, item['price'], number_format)
+                worksheet.write(row, 8, item['total_amount'], number_format)
+                row += 1
+    
+    # Add summary row
+    row += 1
+    summary_format = workbook.add_format({
+        'bold': True,
+        'bg_color': '#FFC000',
+        'border': 1
+    })
+    worksheet.write(row, 0, 'TỔNG CỘNG', summary_format)
+    worksheet.write(row, 1, '', summary_format)
+    worksheet.write(row, 2, '', summary_format)
+    total_invoices = sum(inv['total_amount'] for inv in alcohol_invoices_info)
+    worksheet.write(row, 3, total_invoices, workbook.add_format({
+        'bold': True,
+        'bg_color': '#FFC000',
+        'border': 1,
+        'num_format': '#,##0',
+        'align': 'right'
+    }))
+    worksheet.write(row, 4, '', summary_format)
+    worksheet.write(row, 5, '', summary_format)
+    worksheet.write(row, 6, '', summary_format)
+    worksheet.write(row, 7, '', summary_format)
+    total_alcohol = sum(item['total_amount'] for item in alcohol_items_found)
+    worksheet.write(row, 8, total_alcohol, workbook.add_format({
+        'bold': True,
+        'bg_color': '#FFC000',
+        'border': 1,
+        'num_format': '#,##0',
+        'align': 'right'
+    }))
+    
+    # Add note sheet
+    note_sheet = workbook.add_worksheet("Ghi chú")
+    note_sheet.set_column('A:A', 80)
+    note_format = workbook.add_format({'text_wrap': True, 'valign': 'top'})
+    note_sheet.write(0, 0, 'GHI CHÚ:', workbook.add_format({'bold': True}))
+    note_sheet.write(1, 0, 
+        'File này tổng hợp các hóa đơn có chứa bia/rượu đã được thay thế bằng món ăn khác.\n\n'
+        'Các hóa đơn trong danh sách đã được điều chỉnh:\n'
+        '- Thay thế bia/rượu bằng món ăn khác\n'
+        '- Điều chỉnh thuế từ 10% xuống 8%\n'
+        '- Tổng tiền cuối cùng được giữ nguyên\n\n'
+        'Vui lòng kiểm tra lại các hóa đơn trên hệ thống trước khi gửi khách hàng.',
+        note_format)
+    
+    workbook.close()
+    return summary_filename
+
+# ============================================================================
+# THÊM PHÍ DỊCH VỤ
+# ============================================================================
+
+def add_service_fee_to_invoice(invoice):
+    """
+    Thêm phí dịch vụ vào hóa đơn nếu được bật (chỉ hôm nay).
+    
+    LƯU Ý QUAN TRỌNG: Hàm này được gọi SAU KHI đã thay thế bia/rượu bằng món ăn.
+    Phí dịch vụ được tính trên tổng bill ĐÃ THAY THẾ bia/rượu (không thay đổi gì).
+    
+    Thứ tự tính toán:
+    1. Tổng bill các món (chưa có VAT, chưa có phí dịch vụ, ĐÃ THAY THẾ bia/rượu)
+    2. Tính phí dịch vụ = 8% của tổng bill ở bước 1
+    3. Thêm phí dịch vụ vào items như một món ăn (số lượng 1)
+    4. Sau đó, khi tính tổng bill cuối cùng (bao gồm phí dịch vụ), sẽ tính VAT 8% trên tổng đó
+    
+    Phí dịch vụ được thêm như một món ăn với số lượng 1.
+    """
+    # Kiểm tra xem phí dịch vụ có được bật không
+    if not SERVICE_FEE_ENABLED:
+        return False
+    
+    # Bước 1: Tính tổng giá trị các món ăn (TRƯỚC khi thêm phí dịch vụ, chưa có VAT)
+    # LƯU Ý: Tổng bill này đã bao gồm các món đã được thay thế bia/rượu (nếu có)
+    total_bill_before_service_fee = sum(item['quantity'] * item['price'] for item in invoice['items'])
+    
+    # Nếu không có món nào, không thêm phí dịch vụ
+    if total_bill_before_service_fee <= 0:
+        return False
+    
+    # Bước 2: Tính phí dịch vụ = 8% của tổng bill (chưa có VAT, chưa có phí dịch vụ)
+    service_fee_amount = total_bill_before_service_fee * SERVICE_FEE_PERCENTAGE
+    
+    # Làm tròn về số nguyên (VND)
+    service_fee_amount = round(service_fee_amount)
+    
+    # Nếu phí dịch vụ = 0, không thêm
+    if service_fee_amount <= 0:
+        return False
+    
+    # Bước 3: Thêm phí dịch vụ vào đầu danh sách items như một món ăn
+    # Lưu ý: Phí dịch vụ không cần đơn vị, nhưng vẫn cần số lượng = 1
+    service_fee_item = {
+        'name': SERVICE_FEE_NAME,
+        'quantity': 1,  # Số lượng = 1
+        'unit': SERVICE_FEE_UNIT,  # Để trống
+        'price': service_fee_amount  # Giá phí dịch vụ
+    }
+    
+    # Thêm vào đầu danh sách
+    invoice['items'].insert(0, service_fee_item)
+    
+    # Log để debug
+    invoice_id = invoice.get('invoice_id', 'N/A')
+    print(f"   💰 HĐ {invoice_id}: Đã thêm phí dịch vụ {service_fee_amount:,.0f}đ (8% của {total_bill_before_service_fee:,.0f}đ)")
+    
+    # Bước 4: VAT 8% sẽ được tính sau (trong _process_and_save_invoices) trên tổng bill đã có phí dịch vụ
+    
+    return True
 
 # ============================================================================
 # TẠO FILE EXCEL
@@ -1060,10 +1597,25 @@ def create_invoice_file(invoice, output_file):
         worksheet.write(0, col, header, header_format)
     
     for row_idx, item in enumerate(invoice['items'], 1):
+        # Đảm bảo tên món có format đúng trước khi ghi vào file
+        item_name = item['name']
+        
+        # Phí dịch vụ không cần format "Tiếng Việt / Tiếng Anh", giữ nguyên tên
+        is_service_fee = item_name == SERVICE_FEE_NAME or 'Phí dịch vụ' in item_name
+        
+        if not is_service_fee:
+            if ' / ' not in item_name:
+                item_name = fix_item_name_format(item_name)
+                if ' / ' not in item_name:
+                    item_name = f"{item_name} / {item_name}"
+        
         worksheet.write(row_idx, 0, 1, cell_format)
         worksheet.write(row_idx, 1, '', cell_format)
-        worksheet.write(row_idx, 2, item['name'], cell_format)
-        worksheet.write(row_idx, 3, item['unit'], cell_format)
+        worksheet.write(row_idx, 2, item_name, cell_format)
+        # Phí dịch vụ: để trống đơn vị, nhưng vẫn có số lượng = 1
+        unit_value = item['unit'] if item['unit'] else ''
+        worksheet.write(row_idx, 3, unit_value, cell_format)
+        # Số lượng = 1 cho phí dịch vụ
         worksheet.write(row_idx, 4, float(item['quantity']), number_format)
         worksheet.write(row_idx, 5, float(item['price']), number_format)
     
@@ -1106,8 +1658,8 @@ def main():
             source_type = input_path.stem
         
         is_combined = 'sale_by_payment_method' in input_path.name.lower()
-        invoices = parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_items, is_combined)
-        _process_and_save_invoices(invoices, source_type)
+        invoices, alcohol_items_found = parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_items, is_combined)
+        _process_and_save_invoices(invoices, source_type, alcohol_items_found)
         return
     
     # Interactive menu

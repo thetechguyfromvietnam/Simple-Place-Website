@@ -111,6 +111,86 @@ def wait_and_input(driver, by, value, text, timeout=20, description=""):
         print(f"❌ Không nhập được: {description or value} - {e}")
         return False
 
+def close_modal(driver, timeout=10):
+    """Tự động đóng modal sau khi upload xong.
+    Thử các cách: tìm nút Đóng/X, hoặc click vào overlay để đóng.
+    """
+    print("🔒 Đang đóng modal...")
+    time.sleep(1)  # Đợi một chút để modal xuất hiện hoàn toàn
+    
+    # Danh sách các selector để tìm nút Đóng/X (ưu tiên data-dismiss="modal")
+    close_selectors = [
+        # Icon X trong modal-header (ưu tiên nhất - từ HTML được cung cấp)
+        (By.XPATH, "//i[contains(@class, 'fa-times') and @data-dismiss='modal']"),
+        (By.CSS_SELECTOR, "i.fa-times[data-dismiss='modal']"),
+        # Nút Đóng trong modal-footer (ưu tiên thứ hai)
+        (By.XPATH, "//button[@data-dismiss='modal' and contains(text(), 'Đóng')]"),
+        (By.XPATH, "//div[@class='modal-footer']//button[@data-dismiss='modal']"),
+        # Bootstrap modal close button
+        (By.XPATH, "//button[@data-dismiss='modal']"),
+        # SweetAlert2 close button
+        (By.CSS_SELECTOR, ".swal2-close"),
+        (By.CSS_SELECTOR, "button.swal2-close"),
+        # Nút Đóng thông thường
+        (By.XPATH, "//button[contains(@class, 'btn-default') and contains(text(), 'Đóng')]"),
+        (By.XPATH, "//button[contains(text(), 'Đóng')]"),
+        (By.XPATH, "//button[contains(@class, 'close')]"),
+        (By.XPATH, "//span[contains(@class, 'close')]"),
+        # Icon X khác
+        (By.XPATH, "//*[contains(@class, 'fa-times')]"),
+        (By.XPATH, "//*[contains(@class, 'fa-close')]"),
+        (By.XPATH, "//button[@aria-label='Close']"),
+        (By.XPATH, "//span[@aria-label='Close']"),
+    ]
+    
+    # Thử tìm và click nút Đóng/X
+    for by, selector in close_selectors:
+        try:
+            element = driver.find_element(by, selector)
+            if element and element.is_displayed():
+                element.click()
+                print("✓ Đã click nút Đóng/X để đóng modal")
+                time.sleep(0.5)  # Đợi modal đóng
+                return True
+        except Exception:
+            continue
+    
+    # Nếu không tìm thấy nút Đóng, thử click vào overlay/backdrop để đóng modal
+    overlay_selectors = [
+        (By.CSS_SELECTOR, ".swal2-overlay"),
+        (By.CSS_SELECTOR, ".modal-backdrop"),
+        (By.CSS_SELECTOR, ".modal-overlay"),
+        (By.CSS_SELECTOR, "[class*='overlay']"),
+        (By.XPATH, "//div[contains(@class, 'overlay')]"),
+    ]
+    
+    print("ℹ️  Không tìm thấy nút Đóng, thử click vào overlay...")
+    for by, selector in overlay_selectors:
+        try:
+            element = driver.find_element(by, selector)
+            if element and element.is_displayed():
+                # Click vào overlay để đóng modal
+                driver.execute_script("arguments[0].click();", element)
+                print("✓ Đã click vào overlay để đóng modal")
+                time.sleep(0.5)  # Đợi modal đóng
+                return True
+        except Exception:
+            continue
+    
+    # Fallback: Thử ESC key
+    try:
+        from selenium.webdriver.common.keys import Keys
+        body = driver.find_element(By.TAG_NAME, "body")
+        body.send_keys(Keys.ESCAPE)
+        print("✓ Đã nhấn ESC để đóng modal")
+        time.sleep(0.5)
+        return True
+    except Exception:
+        pass
+    
+    print("⚠️  Không thể đóng modal tự động, nhưng sẽ tiếp tục...")
+    return False
+
 # ============================================================================
 # LOGIN
 # ============================================================================
@@ -186,8 +266,66 @@ def upload_one_invoice(driver, file_path):
     if confirm_btn:
         print("✓ Đã xác nhận upload")
     
-    # Đợi user tự ấn nút "Đóng"
-    print("\n👉 Vui lòng tự ấn nút 'Đóng' trong modal...")
+    # Reset trạng thái pressed của nút "Upload file excel" ngay lập tức (không delay)
+    try:
+        # Tìm và reset nút upload file excel bằng JavaScript (nhanh nhất)
+        driver.execute_script("""
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                if (btn.textContent && btn.textContent.includes('Upload file excel')) {
+                    btn.blur();
+                    btn.classList.remove('active', 'pressed', 'focus', 'btn-active');
+                    btn.removeAttribute('aria-pressed');
+                    break;
+                }
+            }
+        """)
+        print("✓ Đã reset trạng thái nút Upload file excel")
+    except Exception as e:
+        print(f"⚠️  Không thể reset trạng thái nút: {e}")
+    
+    # Click vào input field để blur nút (không delay)
+    try:
+        name_input = driver.find_element(By.ID, "txtFullname")
+        driver.execute_script("arguments[0].click();", name_input)
+    except Exception:
+        pass
+    
+    # Đợi modal đóng tự động (giảm thời gian đợi)
+    time.sleep(0.5)  # Giảm từ 1 giây xuống 0.5 giây
+    
+    # Kiểm tra xem modal có còn mở không, nếu có thì mới đóng
+    try:
+        # Kiểm tra xem có modal nào còn hiển thị không
+        modal_elements = driver.find_elements(By.CSS_SELECTOR, ".swal2-show, .modal.show, .modal.in")
+        if modal_elements:
+            # Nếu modal vẫn còn mở, mới gọi close_modal
+            close_modal(driver)
+        else:
+            print("✓ Modal đã đóng tự động")
+    except Exception:
+        # Nếu không kiểm tra được, đợi thêm một chút rồi tiếp tục
+        time.sleep(0.5)
+    
+    # Click nút "Đóng" trong modal (tìm bất kỳ nút nào có text "Đóng")
+    print("🔒 Đang tìm và click nút Đóng trong modal...")
+    close_btn = False
+    try:
+        # Tìm tất cả các nút có text "Đóng" trong modal
+        close_buttons = driver.find_elements(By.XPATH, "//button[contains(text(), 'Đóng')]")
+        for btn in close_buttons:
+            if btn.is_displayed():
+                btn.click()
+                print("✓ Đã click nút Đóng")
+                close_btn = True
+                time.sleep(0.5)  # Đợi modal đóng hoàn toàn
+                break
+    except Exception as e:
+        print(f"⚠️  Không tìm thấy nút Đóng: {e}")
+    
+    if not close_btn:
+        print("⚠️  Không tìm thấy nút Đóng, có thể modal đã đóng")
     
     # Step 5: Tự động click "Lưu lại" button
     save_button = wait_and_click(driver, By.ID, "btnSave", description="Lưu lại button")

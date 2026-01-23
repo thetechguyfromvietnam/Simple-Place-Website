@@ -31,6 +31,10 @@ from automation.process_invoices import (
     parse_invoices_from_html,
     _process_and_save_invoices,
     create_grab_invoice,
+    SERVICE_FEE_ENABLED,
+    SERVICE_FEE_PERCENTAGE,
+    SERVICE_FEE_NAME,
+    SERVICE_FEE_UNIT,
 )
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -65,16 +69,6 @@ def index():
     """Trang chủ"""
     return render_template('auto_upload_control.html')
 
-@app.route('/api/status')
-def get_status():
-    """Lấy trạng thái script"""
-    return jsonify({
-        "running": script_status["running"],
-        "pid": script_status["pid"],
-        "start_time": script_status["start_time"],
-        "current": script_status.get("current"),
-        "logs": script_status["logs"][-50:]  # Chỉ lấy 50 log cuối
-    })
 
 @app.route('/api/start', methods=['POST'])
 def start_script():
@@ -149,6 +143,55 @@ def stop_script():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/reset', methods=['POST'])
+def reset_software():
+    """Reset lại phần mềm: dừng script, clear logs, reset status"""
+    global script_process, script_status, fetch_process, fetch_status
+    
+    try:
+        # Dừng script nếu đang chạy
+        if script_status["running"] and script_process:
+            try:
+                script_process.terminate()
+            except:
+                pass
+        
+        # Dừng fetch nếu đang chạy
+        if fetch_status["running"] and fetch_process:
+            try:
+                fetch_process.terminate()
+            except:
+                pass
+        
+        # Reset script status
+        script_status = {
+            "running": False,
+            "pid": None,
+            "start_time": None,
+            "logs": [],
+            "current": None,
+        }
+        
+        # Reset fetch status
+        fetch_status = {
+            "running": False,
+            "pid": None,
+            "start_time": None,
+            "logs": [],
+            "exit_code": None,
+        }
+        
+        script_process = None
+        fetch_process = None
+        
+        return jsonify({
+            "success": True,
+            "message": "Đã reset lại phần mềm thành công"
+        })
+    
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @app.route('/api/logs')
 def get_logs():
     """Lấy logs"""
@@ -177,6 +220,30 @@ def clear_files():
                 files_deleted.append(file_path.name)
             except Exception as e:
                 return jsonify({"success": False, "error": f"Lỗi khi xóa {file_path.name}: {str(e)}"}), 500
+        
+        return jsonify({
+            "success": True,
+            "deleted_count": len(files_deleted),
+            "files": files_deleted
+        })
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+@app.route('/api/clear-data-files', methods=['POST'])
+def clear_data_files():
+    """Xóa tất cả files trong data/"""
+    try:
+        if not DATA_DIR.exists():
+            return jsonify({"success": False, "error": "Thư mục data không tồn tại"}), 400
+        
+        files_deleted = []
+        for file_path in DATA_DIR.glob("*"):
+            if file_path.is_file():
+                try:
+                    file_path.unlink()
+                    files_deleted.append(file_path.name)
+                except Exception as e:
+                    return jsonify({"success": False, "error": f"Lỗi khi xóa {file_path.name}: {str(e)}"}), 500
         
         return jsonify({
             "success": True,
@@ -280,8 +347,8 @@ def process_default():
                     print(f"\n📂 Using data/: {file_combined_1.name} + {file_combined_2.name}")
                     content, _ = combine_files(str(file_combined_1), str(file_combined_2))
                     all_menu_items, name_mapping, price_to_items = load_menus()
-                    invoices = parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_items, True)
-                    _process_and_save_invoices(invoices, 'combined')
+                    invoices, alcohol_items_found = parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_items, True)
+                    _process_and_save_invoices(invoices, 'combined', alcohol_items_found)
                 else:
                     # Single file path: pick the first .xls/.html-like file
                     preferred_exts = ['.xls', '.xlsx', '.html', '.htm']
@@ -297,7 +364,7 @@ def process_default():
                             content = f.read()
                         all_menu_items, name_mapping, price_to_items = load_menus()
                         is_combined = 'sale_by_payment_method' in input_path.name.lower()
-                        invoices = parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_items, is_combined)
+                        invoices, alcohol_items_found = parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_items, is_combined)
                         # Detect source type from filename
                         name_lower = input_path.name.lower()
                         if 'atm' in name_lower:
@@ -306,7 +373,7 @@ def process_default():
                             source_type = 'transfer'
                         else:
                             source_type = input_path.stem
-                        _process_and_save_invoices(invoices, source_type)
+                        _process_and_save_invoices(invoices, source_type, alcohol_items_found)
             else:
                 # Fallback to original default behavior (root files)
                 print("ℹ️ data/ not found, using default files in project root")
@@ -323,6 +390,17 @@ def process_default():
         })
     except Exception as e:
         return jsonify({"success": False, "error": str(e), "logs": buf.getvalue().splitlines()[-400:]}), 500
+
+@app.route('/api/service-fee-status')
+def get_service_fee_status():
+    """Lấy trạng thái phí dịch vụ"""
+    return jsonify({
+        "enabled": SERVICE_FEE_ENABLED,
+        "percentage": SERVICE_FEE_PERCENTAGE,
+        "percentage_display": f"{SERVICE_FEE_PERCENTAGE * 100:.0f}%",
+        "name": SERVICE_FEE_NAME,
+        "unit": SERVICE_FEE_UNIT,
+    })
 
 @app.route('/api/grab-invoice', methods=['POST'])
 def api_grab_invoice():
@@ -373,6 +451,46 @@ def api_grab_invoice():
         })
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
+
+@app.route('/api/check-invoices', methods=['POST'])
+def check_invoices():
+    """Chạy script kiểm tra hóa đơn - so sánh với menu gốc, không lưu file, chỉ trả về kết quả"""
+    try:
+        from check_invoices import check_invoices as check_invoices_func
+        results = check_invoices_func()
+        
+        return jsonify({
+            'success': True,
+            'results': results
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/check-results')
+def get_check_results():
+    """Lấy kết quả kiểm tra - chạy check mới (so sánh với menu gốc) thay vì đọc file"""
+    try:
+        from check_invoices import check_invoices as check_invoices_func
+        results = check_invoices_func()
+        return jsonify(results)
+    except Exception as e:
+        return jsonify({'error': f'Lỗi: {str(e)}'}), 500
+
+@app.route('/api/status')
+def get_status():
+    """Lấy trạng thái script và file counts"""
+    data_files_count = len(list(DATA_DIR.glob("*"))) if DATA_DIR.exists() else 0
+    tax_files_count = len(list(TAX_DIR.glob("*.xlsx"))) if TAX_DIR.exists() else 0
+    
+    return jsonify({
+        "running": script_status["running"],
+        "pid": script_status["pid"],
+        "start_time": script_status["start_time"],
+        "current": script_status.get("current"),
+        "logs": script_status["logs"][-50:],  # Chỉ lấy 50 log cuối
+        "data_files": data_files_count,
+        "tax_files": tax_files_count,
+    })
 
 if __name__ == '__main__':
     print("="*70)
