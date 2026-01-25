@@ -573,17 +573,19 @@ def parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_ite
                         if ' / ' not in full_name:
                             full_name = f"{full_name} / {full_name}"
                         
-                        # Tạo key để check duplicate trong row này: tên + giá + số lượng
-                        item_key = (full_name, price_value, qty, clean_unit)
+                        # Tạo key để check duplicate dựa trên VỊ TRÍ CELL trong row này
+                        # Tránh parse cùng 1 cell nhiều lần (do logic loop có thể parse lại)
+                        # Sử dụng vị trí cell (i) thay vì nội dung món để tránh bỏ sót món giống nhau
+                        cell_position_key = i
                         
-                        # CHỈ kiểm tra duplicate trong row này (tránh parse cùng 1 món nhiều lần trong cùng row)
-                        # KHÔNG block các món giống nhau ở các row khác nhau
-                        # Cho phép có nhiều món giống nhau trong cùng 1 hóa đơn (ví dụ: 2 coca riêng biệt)
-                        if item_key in parsed_in_row:
+                        # CHỈ kiểm tra duplicate dựa trên vị trí cell trong row này
+                        # Cho phép có nhiều món giống nhau (cùng tên, giá, số lượng) trong cùng row hoặc khác row
+                        # Vì có thể là các món riêng biệt được order ở các thời điểm khác nhau
+                        if cell_position_key in parsed_in_row:
                             continue
                         
-                        # Đánh dấu đã parse trong row này
-                        parsed_in_row.add(item_key)
+                        # Đánh dấu đã parse cell ở vị trí này trong row này
+                        parsed_in_row.add(cell_position_key)
                         
                         # KHÔNG kiểm tra duplicate trong invoice nữa
                         # Cho phép có nhiều món giống nhau (cùng tên, giá, số lượng) trong cùng hóa đơn
