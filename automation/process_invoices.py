@@ -513,14 +513,18 @@ def parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_ite
             # Track items đã parse trong row này để tránh duplicate
             parsed_in_row = set()
             
-            for i in range(max(0, len(cells) - 3)):
+            # Parse tất cả các món có thể trong row
+            # Bắt đầu từ đầu row và parse đến khi không còn đủ 4 cells (name, qty, unit, price)
+            for i in range(len(cells) - 3):
                 try:
                     name = cells[i]
                     qty_candidate = cells[i + 1]
                     unit_candidate = cells[i + 2]
                     price_candidate = cells[i + 3]
                     
-                    if not (qty_candidate.isdigit() and 1 <= int(qty_candidate) <= 100):
+                    # Mở rộng điều kiện số lượng để không bỏ sót món
+                    # Cho phép số lượng từ 1 đến 200
+                    if not (qty_candidate.isdigit() and 1 <= int(qty_candidate) <= 200):
                         continue
                     
                     qty = int(qty_candidate)
@@ -544,8 +548,11 @@ def parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_ite
                     if any(re.search(pattern, name.lower()) for pattern in skip_patterns):
                         continue
                     
-                    if (price_value >= 1000 and price_value <= 1000000 and 
-                        qty >= 1 and qty <= 100 and len(name) > 2):
+                    # Mở rộng điều kiện để không bỏ sót món
+                    # Cho phép giá từ 500 VND (có thể có món rẻ) đến 2,000,000 VND (có thể có món đắt)
+                    # Cho phép số lượng từ 1 đến 200 (có thể có món order nhiều)
+                    if (price_value >= 500 and price_value <= 2000000 and 
+                        qty >= 1 and qty <= 200 and len(name) > 2):
                         
                         raw_unit = unit.strip() if unit else ''
                         raw_unit_lower = raw_unit.lower()
@@ -566,28 +573,21 @@ def parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_ite
                         if ' / ' not in full_name:
                             full_name = f"{full_name} / {full_name}"
                         
-                        # Tạo key để check duplicate: tên + giá + số lượng
+                        # Tạo key để check duplicate trong row này: tên + giá + số lượng
                         item_key = (full_name, price_value, qty, clean_unit)
                         
-                        # Kiểm tra duplicate trong row này
+                        # CHỈ kiểm tra duplicate trong row này (tránh parse cùng 1 món nhiều lần trong cùng row)
+                        # KHÔNG block các món giống nhau ở các row khác nhau
+                        # Cho phép có nhiều món giống nhau trong cùng 1 hóa đơn (ví dụ: 2 coca riêng biệt)
                         if item_key in parsed_in_row:
                             continue
                         
-                        # Kiểm tra duplicate trong invoice (cùng tên, giá, số lượng)
-                        # Cho phép cùng món nhưng khác giá hoặc số lượng
-                        existing_item = next(
-                            (item for item in current_invoice['items'] 
-                             if item['name'] == full_name and 
-                                item['price'] == price_value and 
-                                item['quantity'] == qty and
-                                item['unit'] == clean_unit),
-                            None
-                        )
-                        if existing_item:
-                            continue
-                        
-                        # Đánh dấu đã parse
+                        # Đánh dấu đã parse trong row này
                         parsed_in_row.add(item_key)
+                        
+                        # KHÔNG kiểm tra duplicate trong invoice nữa
+                        # Cho phép có nhiều món giống nhau (cùng tên, giá, số lượng) trong cùng hóa đơn
+                        # Vì có thể là các món riêng biệt được order ở các thời điểm khác nhau
                         
                         # Xác định bia/rượu và Coke (thuế 10%) dựa trên Tên nhóm của menu
                         # Chỉ các nhóm: BEER & CRAFT BEERS, SANGRIA, RED, WHITE mới bị coi là bia/rượu (tính thuế 10%)
