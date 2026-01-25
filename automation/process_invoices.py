@@ -535,8 +535,15 @@ def parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_ite
                     price_value = float(price_clean)
                     unit = unit_candidate if unit_candidate and not unit_candidate.isdigit() else 'Phần'
                     
-                    if (len(name) < 2 or name.isdigit() or 
+                    # Bỏ qua các tên không hợp lệ
+                    # LƯU Ý: Cho phép tên là số (như "333" là tên bia) nếu có giá và số lượng hợp lệ
+                    if (len(name) < 1 or 
                         name in ['', 'STT', 'Mã hoá đơn', 'Simple Place']):
+                        continue
+                    
+                    # Chỉ bỏ qua tên là số nếu không có context hợp lệ (giá và số lượng)
+                    # Nếu có giá và số lượng hợp lệ, có thể là tên món đặc biệt (như "333" là bia)
+                    if name.isdigit() and (not price_clean.isdigit() or not qty_candidate.isdigit()):
                         continue
                     
                     skip_patterns = [
@@ -563,8 +570,12 @@ def parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_ite
                         else:
                             clean_unit = raw_unit
                         
+                        # Lưu tên gốc để check từ khóa bia/rượu trước khi match menu
+                        original_name = name.strip()
+                        original_name_lower = original_name.lower()
+                        
                         # Match với menu
-                        matched_name = match_menu_name(name.strip(), all_menu_items, name_mapping)
+                        matched_name = match_menu_name(original_name, all_menu_items, name_mapping)
                         
                         # Tự động sửa format nếu không đúng
                         full_name = fix_item_name_format(matched_name)
@@ -600,17 +611,30 @@ def parse_invoices_from_html(content, all_menu_items, name_mapping, price_to_ite
                         group_name = str(matched_item.get('group', '')).strip().upper() if matched_item else ''
                         is_alcohol = group_name in alcohol_groups
                         
+                        # QUAN TRỌNG: Check từ khóa bia/rượu trong CẢ tên gốc (original_name) VÀ tên đã match (full_name)
+                        # Để phát hiện các món như "333", "Saigon" ngay cả khi không match được với menu
+                        if not is_alcohol:
+                            # Danh sách từ khóa bia/rượu
+                            alcohol_keywords = ['bia', 'beer', 'heineken', 'tiger', 'saigon', '333', 'rượu', 'wine', 'whisky', 'vodka', 'sapporo', 'craft']
+                            
+                            # Check trong tên gốc (trước khi match menu)
+                            is_alcohol = any(keyword in original_name_lower for keyword in alcohol_keywords)
+                            
+                            # Nếu chưa phát hiện, check trong tên đã match (sau khi match menu)
+                            if not is_alcohol:
+                                full_name_lower = full_name.lower()
+                                is_alcohol = any(keyword in full_name_lower for keyword in alcohol_keywords)
+                        
                         # Kiểm tra nếu là Coke (Coca-Cola) THƯỜNG - có 10% đường nên tính thuế 10% (giống bia/rượu)
                         # LƯU Ý: Chỉ Coke thường (có 10% đường) tính thuế 10%, Coke Light và Coke Zero (ít đường) tính thuế 8%
                         if not is_alcohol:
-                            item_name_lower = full_name.lower()
-                            # Kiểm tra tên món có chứa "coke" hoặc "coca" nhưng KHÔNG phải Light hoặc Zero
-                            # Chỉ coi là alcohol (thuế 10%) nếu là "Coke" hoặc "Coca-Cola" thường (có 10% đường)
-                            # Loại trừ: Coke Light, Coke Zero, và các biến thể ít đường/không đường
-                            if ('coke' in item_name_lower or 'coca' in item_name_lower):
+                            # Check trong cả tên gốc và tên đã match
+                            if ('coke' in original_name_lower or 'coca' in original_name_lower) or ('coke' in full_name.lower() or 'coca' in full_name.lower()):
                                 # Loại trừ Coke Light và Coke Zero (có lượng đường < 10g)
                                 exclude_keywords = ['light', 'zero', 'ít đường', 'không đường', 'it duong', 'khong duong', 'less sugar', 'no sugar']
-                                is_coke_light_or_zero = any(exclude_kw in item_name_lower for exclude_kw in exclude_keywords)
+                                # Check trong cả tên gốc và tên đã match
+                                is_coke_light_or_zero = (any(exclude_kw in original_name_lower for exclude_kw in exclude_keywords) or
+                                                         any(exclude_kw in full_name.lower() for exclude_kw in exclude_keywords))
                                 if not is_coke_light_or_zero:
                                     is_alcohol = True
                                     # Log để rõ ràng
